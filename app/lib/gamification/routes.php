@@ -6,3 +6,4 @@ Route::post('/photos/{id}/set/field', 'lib\gamification\controllers\QuestionsCon
 Route::get('/rank/get', 'lib\gamification\controllers\ScoresController@getRankEval');
 Route::get('/leaderboard', 'lib\gamification\controllers\ScoresController@getLeaderboard');
 Route::get('/badges/{id}', 'lib\gamification\controllers\BadgesController@show');
+Route::get('/quiz', 'lib\gamification\controllers\QuizController@index');
