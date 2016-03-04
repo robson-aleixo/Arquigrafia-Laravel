@@ -175,12 +175,12 @@
       "info": {
         "name":  "Teste o seu conhecimento sobre a arquitetura brasileira!",
         "main":  "",
-        "results": "<h5>Saiba mais</h5><p>Coloque o texto para saiba mais em info.results</p>",
-        "level1":  "Nível mais alto",
-        "level2":  "Nível alto",
-        "level3":  "Nível médio",
-        "level4":  "Nível baixo",
-        "level5":  "Nível mais baixo" // no comma here
+        "results": "", //"<h5>Saiba mais</h5><p>Coloque o texto para saiba mais em info.results</p>",
+        "level1":  "Excelente! Melhore ainda mais seus conhecimentos de arquitetura com o Arquigrafia!", //"Nível mais alto",
+        "level2":  "Bom! Você pode melhorar ainda mais seus conhecimentos de arquitetura  com o Arquigrafia!", //"Nível alto",
+        "level3":  "Regular. Melhore seus conhecimentos com o Arquigrafia.", //"Nível médio",
+        "level4":  "Insuficiente. O Arquigrafia pode lhe ajudar a melhorar seus conhecimentos de arquitetura.", //"Níel baixo",
+        "level5":  "Você precisa estudar mais. O Arquigrafia pode lhe ajudar a melhorar seus conhecimentos de arquitetura." //"Nível mais baixo"// no comm here
       },
       "questions": [
         {
@@ -190,42 +190,42 @@
             {"option": "Lúcio Costa",   "correct": false},
             {"option": "João Batista Vilanova Artigas",    "correct": true}
           ],
-          "img": "arquigrafia-images/100_view.jpg",
-          "correct": "<p><span>Acertou!</span> Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "img": "arquigrafia-images/1822_view.jpg",
+          "correct": "<p><span>Acertou!</span> </p>", //Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
+          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         },
         {
           "q": "Dentre os seguintes elementos, qual não fez parte desta obra?",
           "a": [
-            {"option": "Viga",         "correct": false},
+            {"option": "Telha",         "correct": false},
             {"option": "Concreto",   "correct": true},
-            {"option": "Beiral",         "correct": false}
+            {"option": "Madeira",         "correct": false}
           ],
-          "img": "arquigrafia-images/220_view.jpg",
-          "correct": "<p><span>Acertou!</span> Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "img": "arquigrafia-images/4611_view.jpg",
+          "correct": "<p><span>Acertou!</span> </p>", // Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
+          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         },
         {
           "q": "Você conhece o período de construção desta obra?",
           "a": [
-            {"option": "Entre 1491 e 1500",       "correct": true},
+            {"option": "Entre 1958 e 1971",       "correct": true},
             {"option": "Entre 2001 e 2010",          "correct": false},
             {"option": "Entre 1791 e 1800",  "correct": false}
           ],
-          "img": "arquigrafia-images/100_view.jpg",
-          "correct": "<p><span>Acertou!</span> Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "img": "arquigrafia-images/872_view.jpg",
+          "correct": "<p><span>Acertou!</span> </p>", //Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
+          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         },
         {
-          "q": "Essa arquitetura brasileira é típica de qual século?",
+          "q": "Esta arquitetura brasileira é típica de qual século?",
           "a": [
             {"option": "XVIII",  "correct": false},
-            {"option": "XIX",   "correct": true},
-            {"option": "XX",    "correct": false}
+            {"option": "XIX",   "correct": false},
+            {"option": "XX",    "correct": true}
           ],
-          "img": "arquigrafia-images/220_view.jpg",
-          "correct": "<p><span>Acertou!</span> Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "img": "arquigrafia-images/3347_view.jpg",
+          "correct": "<p><span>Acertou!</span> </p>", //Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
+          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         },
         {
           "q": "Esta imagem de arquitetura apresenta o estilo e olhar únicos de qual fotógrafo?",
@@ -234,9 +234,9 @@
             {"option": "Nelson Kon", "correct": false},
             {"option": "Erieta Attali", "correct": false}
           ],
-          "img": "arquigrafia-images/100_view.jpg",
-          "correct": "<p><span>Acertou!</span> Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "img": "arquigrafia-images/861_view.jpg",
+          "correct": "<p><span>Acertou!</span> </p>", //Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
+          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         } // no comma here
       ]
     };
