@@ -79,5 +79,5 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
-
+require app_path().'/lib/album/album.php';
 require app_path().'/lib/gamification/gamification.php';

@@ -23,16 +23,17 @@
 <script type="text/javascript" src="{{ URL::to("/") }}/js/readURL.js" charset="utf-8"></script>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-{{-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> --}}
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+{{-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> --}} 
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
     
     <script type="text/javascript" src="{{ URL::to("/") }}/js/textext.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ URL::to("/") }}/css/textext.css" />
     
     @stop
     @section('content')
-    <script type="text/javascript">
-    $( window ).load(function() {
+
+
+$(document).ready(function() {
         $("#preview_photo").hide();
         if (document.getElementById("new_album-name").value != "") {
             var select_album = document.getElementsByClassName('select-album');
@@ -64,7 +65,6 @@
             }
         }
     });
-    </script>
     
     <style>
     /* Style select*/

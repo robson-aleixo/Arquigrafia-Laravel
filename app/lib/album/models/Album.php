@@ -1,6 +1,8 @@
-<?php
+<?php namespace lib\album\models;
+use Photo;
+use Institution; 
 
-class Album extends \BaseModel {
+class Album extends \Eloquent {
 
 	public $timestamps = false;
 

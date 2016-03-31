@@ -67,24 +67,6 @@ Route::get('/friends/unfollowInstitution/{institution_id}', 'InstitutionsControl
 // AVATAR 
 Route::get('/profile/10/showphotoprofile/{profile_id}', 'UsersController@profile');
 
-/* ALBUMS */
-Route::resource('/albums','AlbumsController');
-Route::get('/albums/photos/add', 'AlbumsController@paginateByUser');
-Route::get('/albums/{id}/photos/rm', 'AlbumsController@paginateByAlbum');
-Route::get('/albums/{id}/photos/add', 'AlbumsController@paginateByOtherPhotos');
-Route::get('/albums/get/list/{id}', 'AlbumsController@getList');
-Route::post('/albums/photo/add', 'AlbumsController@addPhotoToAlbums');
-Route::delete('/albums/{album_id}/photos/{photo_id}/remove', 'AlbumsController@removePhotoFromAlbum');
-
-/* ALBUMS - ajax */
-Route::get('/albums/get/cover/{id}', 'AlbumsController@paginateCoverPhotos');
-Route::post('/albums/{id}/update/info', 'AlbumsController@updateInfo');
-Route::post('/albums/{id}/detach/photos', 'AlbumsController@detachPhotos');
-Route::post('/albums/{id}/attach/photos', 'AlbumsController@attachPhotos');
-Route::get('/albums/{id}/paginate/photos', 'AlbumsController@paginateAlbumPhotos');
-Route::get('/albums/{id}/paginate/other/photos', 'AlbumsController@paginatePhotosNotInAlbum');
-
-
 /* COMMENTS */
 Route::post('/photos/{photo_id}/comment','PhotosController@comment');
 Route::get('/comments/{comment_id}/like','lib\gamification\controllers\LikesController@commentlike');

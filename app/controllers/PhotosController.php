@@ -4,6 +4,7 @@ use lib\utils\ActionUser;
 use lib\gamification\models\Badge;
 use Carbon\Carbon;
 use lib\date\Date;
+use lib\album\models\Album;
 
 class PhotosController extends \BaseController {
 
