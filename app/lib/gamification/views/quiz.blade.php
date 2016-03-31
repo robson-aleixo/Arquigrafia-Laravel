@@ -192,7 +192,7 @@
           ],
           "img": "arquigrafia-images/1822_view.jpg",
           "correct": "<p><span>Acertou!</span> </p>", //Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "incorrect": "<p><span>Errou! A resposta correta seria João Batista Vilanova Artigas. </span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         },
         {
           "q": "Dentre os seguintes elementos, qual não fez parte desta obra?",
@@ -203,7 +203,7 @@
           ],
           "img": "arquigrafia-images/4611_view.jpg",
           "correct": "<p><span>Acertou!</span> </p>", // Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "incorrect": "<p><span>Errou! A resposta correta seria Concreto.</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         },
         {
           "q": "Você conhece o período de construção desta obra?",
@@ -214,7 +214,7 @@
           ],
           "img": "arquigrafia-images/872_view.jpg",
           "correct": "<p><span>Acertou!</span> </p>", //Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "incorrect": "<p><span>Errou! A resposta correta seria Entre 1958 e 1971.</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         },
         {
           "q": "Esta arquitetura brasileira é típica de qual século?",
@@ -225,7 +225,7 @@
           ],
           "img": "arquigrafia-images/3347_view.jpg",
           "correct": "<p><span>Acertou!</span> </p>", //Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "incorrect": "<p><span>Errou! A resposta correta seria Século XX. </span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         },
         {
           "q": "Esta imagem de arquitetura apresenta o estilo e olhar únicos de qual fotógrafo?",
@@ -236,7 +236,7 @@
           ],
           "img": "arquigrafia-images/861_view.jpg",
           "correct": "<p><span>Acertou!</span> </p>", //Altere ou remova este texto no campo 'correct' desta pergunta!</p>",
-          "incorrect": "<p><span>Errou!</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
+          "incorrect": "<p><span>Errou! A resposta correta seria Cristiano Alckmin Mascaro.</span> </p>" //Altere ou remova este texto no campo 'incorrect' desta pergunta</p>" // no comma here
         } // no comma here
       ]
     };
