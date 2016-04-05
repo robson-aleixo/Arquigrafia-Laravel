@@ -1,7 +1,7 @@
 <?php
 
 use League\FactoryMuffin\Facade as FactoryMuffin;
-
+use lib\album\models\Album as Album;
 FactoryMuffin::define('User', [
 	'name' => 'firstName',
 	'login' => 'unique:word',

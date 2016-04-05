@@ -2,7 +2,7 @@
 
 use League\FactoryMuffin\Facade as FactoryMuffin;
 use Mockery as m;
-
+use lib\album\models\Album as Album;
 class TagTest extends TestCase {
   
   public static function setUpBeforeClass()
