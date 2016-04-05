@@ -22,7 +22,7 @@ $(document).ready(function(){
 		$('#delete_button').click(function(e){
 			e.preventDefault();
 			$('#registration_delete form').attr('action', this.href);
-			if ($(this).hasClass('album'))
+			if ($(this).hasClass('lib/album/models/album'))
 				$('#registration_delete p').html('Tem certeza que deseja excluir este álbum?');
 			else
 				$('#registration_delete p').html('A imagem pode estar avaliada,tem certeza que deseja excluir esta imagem?');
@@ -44,7 +44,7 @@ $(document).ready(function(){
 		$('.title_delete').click(function(e){
 			e.preventDefault();
 			$('#registration_delete form').attr('action', this.href);
-			if ($(this).hasClass('album'))
+			if ($(this).hasClass('lib/album/models/album'))
 				$('#registration_delete p').html('Tem certeza que deseja excluir este álbum?');
 			else
 				$('#registration_delete p').html('Tem certeza que deseja excluir esta imagem?');
