@@ -1,6 +1,6 @@
 <?php namespace lib\album\controllers;
 
-use lib\album\models\Album; 
+use lib\album\models\Album as Album; 
 
 class AlbumsController extends \BaseController {
 
