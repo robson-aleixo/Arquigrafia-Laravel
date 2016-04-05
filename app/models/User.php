@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 use lib\date\Date;
-use lib\album\models\Album;
+use lib\album\models\Album as Album;
 use lib\gamification\traits\UserGamificationTrait;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {

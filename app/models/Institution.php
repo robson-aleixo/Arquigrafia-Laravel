@@ -1,5 +1,5 @@
 <?php
-
+use lib\album\models\Album as Album;
 class Institution extends Eloquent {
 
 	protected $fillable = ['name','country'];

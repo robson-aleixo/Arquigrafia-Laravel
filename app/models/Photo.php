@@ -5,7 +5,7 @@ use lib\date\Date;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use lib\gamification\traits\LikableGamificationTrait;
 use Illuminate\Database\Eloquent\Collection as Collection;
-
+use lib\album\models\Album as Album;
 class Photo extends Eloquent {
 
 	use DraftingTrait;
