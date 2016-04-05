@@ -1,5 +1,6 @@
 <?php
 use lib\utils\HelpTool;
+use lib\album\models\Album as Album;
 class InstitutionsController extends \BaseController {
 
   public function index()

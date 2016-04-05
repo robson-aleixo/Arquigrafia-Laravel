@@ -4,7 +4,7 @@ use lib\utils\ActionUser;
 use lib\gamification\models\Badge;
 use Carbon\Carbon;
 use lib\date\Date;
-use lib\album\models\Album;
+use lib\album\models\Album as Album;
 
 class PhotosController extends \BaseController {
 
@@ -195,7 +195,7 @@ class PhotosController extends \BaseController {
     }
     $user_id = Auth::id();
     $institution = Institution::find(Session::get('institutionId'));
-    $albumsInstitutional = Album::withInstitution($institution)->get();
+    $albumsInstitutional = lib\album\models\Album::withInstitution($institution)->get();
     $albums = [ "" => "Escolha o álbum" ];
     foreach ($albumsInstitutional as $album) {
       $albums[$album->id] = $album->title;
@@ -516,7 +516,7 @@ class PhotosController extends \BaseController {
         }
       }
       if ( !empty($input["new_album-name"]) ) {
-        $album = Album::create([
+        $album = lib\album\models\Album::create([
           'title' => $input["new_album-name"],
           'description' => "",
           'user' => Auth::user(),
@@ -1019,7 +1019,7 @@ class PhotosController extends \BaseController {
       
 
       if ( !empty($input["new_album-name"]) ) {
-        $album = Album::create([
+        $album = lib\album\models\Album::create([
           'title' => $input["new_album-name"],
           'description' => "",
           'user' => Auth::user(),

@@ -7,7 +7,7 @@ use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
 use Facebook\FacebookAuthorizationException;
 use Facebook\FacebookRequestException;
-
+use lib\album\models\Album as Album;
 class UsersController extends \BaseController {
 
   public function __construct()

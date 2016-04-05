@@ -2,7 +2,7 @@
 
 use lib\utils\ActionUser;
 use lib\date\Date;
-
+use lib\album\models\Album as Album;
 
 class PagesController extends BaseController {
 
