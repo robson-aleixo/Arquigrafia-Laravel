@@ -1,7 +1,7 @@
 <?php namespace lib\album\models;
 use Photo;
 use Institution; 
-
+use User;
 class Album extends \Eloquent {
 
 	public $timestamps = false;
