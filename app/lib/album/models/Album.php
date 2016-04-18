@@ -1,7 +1,9 @@
 <?php namespace lib\album\models;
 use Photo;
 use Institution; 
-use User;
+//use app\models\User;
+use Illuminate\Database\Eloquent\Model;
+
 class Album extends \Eloquent {
 
 	public $timestamps = false;
@@ -17,8 +19,8 @@ class Album extends \Eloquent {
 		return $this->belongsToMany('Photo', 'album_elements');
 	}
 
-	public function user()
-	{	
+	public function users()
+	{	//dd("us"); die();
 		return $this->belongsTo('User');
 	}
 
@@ -107,5 +109,9 @@ class Album extends \Eloquent {
 	public function scopeWithoutInstitutions($query) {
 		return $query->whereNull('institution_id');
 	}
-
+	//adicionado
+	public function scopeWithUser($query, $user) {
+		  return $query->where('user_id', $user->id);
+		  
+	}
 }

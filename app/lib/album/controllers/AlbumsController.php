@@ -1,10 +1,14 @@
 <?php namespace lib\album\controllers;
 
-use lib\album\models\Album as Album; 
-
+use lib\album\models\Album; 
+use Illuminate\Routing\Controller;
+use app\views;
+//use app\models\User;
+use User;
 class AlbumsController extends \BaseController {
 
 	public function __construct() {
+		//dd(new \lib\album\models\Album); 
 		$this->beforeFilter('auth',
 			array( 'except' => 'show' ));
 		$this->beforeFilter('ajax',
@@ -16,7 +20,7 @@ class AlbumsController extends \BaseController {
 				'paginatePhotosNotInAlbum',
 				'paginateCoverPhotos',
 				'getList'
-			)));
+			))); 
 	}
 
 	public function index() {
@@ -24,8 +28,9 @@ class AlbumsController extends \BaseController {
 			$albums = Album::withInstitution(\Session::get('institutionId'))->get();
 		} else {
 			$albums = Album::withUser(\Auth::user())->withoutInstitutions()->get();
+			
 		}
-		return \View::make('albums.index')->with('albums', $albums);
+		return \View::make('index_album')->with('albums', $albums);
 	}
 
 	public function create() {

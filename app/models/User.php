@@ -7,6 +7,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 use lib\date\Date;
 use lib\album\models\Album as Album;
 use lib\gamification\traits\UserGamificationTrait;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
@@ -55,12 +56,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 	
 	public function albums()
-	{
-		return $this->hasMany('Album');
+	{	
+		return $this->hasMany('lib\album\models\Album');
 	}
 	public function userAlbums()
 	{
-		return $this->hasMany('Album')->whereNull('institution_id');
+		return $this->hasMany('lib\album\models\Album')->whereNull('institution_id');
 	}
 	public function occupation()
 	{
