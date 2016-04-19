@@ -1019,12 +1019,13 @@ class PhotosController extends \BaseController {
       
 
       if ( !empty($input["new_album-name"]) ) {
-        $album = lib\album\models\Album::create([
+        $album = Album::create([
           'title' => $input["new_album-name"],
           'description' => "",
           'user' => Auth::user(),
           'cover' => $photo,
         ]);
+        
         if ( $album->isValid() ) {
             DB::insert('insert into album_elements (album_id, photo_id) values (?, ?)', array($album->id, $photo->id));
         }
@@ -1036,12 +1037,12 @@ class PhotosController extends \BaseController {
       $photo->nome_arquivo = $photo->id.".".$ext;
 
       $photo->save();
-     
+      
 
       $tags_copy = $input['tags'];
       $tags = explode(',', $input['tags']);
           
-      if (!empty($tags)) {           
+      if (!empty($tags)) {      
               $tags = static::formatTags($tags);              
               $tagsSaved = static::saveTags($tags,$photo);
               
@@ -1067,10 +1068,10 @@ class PhotosController extends \BaseController {
       else
           $angle = 0;
       $metadata       = Image::make(Input::file('photo'))->exif();
-      $public_image   = Image::make(Input::file('photo'))->rotate($angle)->encode('jpg', 80);
+      $public_image   = Image::make(Input::file('photo'))->rotate($angle)->encode('jpg', 80); 
       $original_image = Image::make(Input::file('photo'))->rotate($angle);
-
-      $public_image->widen(600)->save(public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg');
+           
+      $public_image->widen(600)->save(public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg');   
       $public_image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
       $public_image->fit(186, 124)->encode('jpg', 70)->save(public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg');
       $public_image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');

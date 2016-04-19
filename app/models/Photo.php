@@ -99,7 +99,8 @@ class Photo extends Eloquent {
 
 	public function albums()
 	{
-		return $this->belongsToMany('Album', 'album_elements');
+		
+		return $this->belongsToMany('lib\album\models\Album', 'lib\album\models\album_elements');
 	}
 
 	public function evaluations()

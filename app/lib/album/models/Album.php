@@ -19,8 +19,8 @@ class Album extends \Eloquent {
 		return $this->belongsToMany('Photo', 'album_elements');
 	}
 
-	public function users()
-	{	//dd("us"); die();
+	public function user()
+	{	//dd("useeeee"); die();
 		return $this->belongsTo('User');
 	}
 
@@ -54,7 +54,7 @@ class Album extends \Eloquent {
 	}
 
 	public static function create(array $attr) {
-		//dd($attr['user']);
+		
 		$album = new Album;
 		$album->updateInfo($attr['title'], $attr['description'], $attr['cover']);
 		$album->creationDate = date('Y-m-d H:i:s');
@@ -113,5 +113,10 @@ class Album extends \Eloquent {
 	public function scopeWithUser($query, $user) {
 		  return $query->where('user_id', $user->id);
 		  
+	}
+	public function isValid(){
+		if ($this->cover_id != null && $this->user_id !=null) {
+			return true;
+		}
 	}
 }
