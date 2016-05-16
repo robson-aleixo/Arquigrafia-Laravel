@@ -33,7 +33,20 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		/* Validação do input */
+		$input = Input::all();
+		$rules = array( 'photo_name' => 'required',
+      					'photo_imageAuthor' => 'required',
+      					'tags' => 'required',
+      					'photo_country' => 'required', 
+      					);
+		$validator = Validator::make($input, $rules);
+		if ($validator->fails()) {
+			return ;
+		}
+		/* Armazenamento */
+		$photo = new Photo;
+		
 	}
 
 
@@ -45,7 +58,7 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return \Response::json(\Photo::find($id)->toArray());
 	}
 
 
