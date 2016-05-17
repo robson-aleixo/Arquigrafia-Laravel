@@ -40,7 +40,21 @@ class APIUsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		//Validação do input
+		$input = Input::all();
+		$rules = Array( 'name'     => 'required',
+						'email'    => 'required',
+						'password' => 'required',
+						'login'    => 'required');
+		$validator = Validator::make($input, $rules);
+
+		if($validator->fails()){
+			return ;
+		}
+
+		//Armazenamento
+		$photo = new Photo;
+
 	}
 
 
@@ -52,8 +66,9 @@ class APIUsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return \Response::json(\User::find(id)->toArray());
 	}
+
 
 
 	/**

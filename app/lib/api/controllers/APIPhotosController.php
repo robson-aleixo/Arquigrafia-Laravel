@@ -43,10 +43,10 @@ class APIPhotosController extends \BaseController {
 	{
 		/* Validação do input */
 		$input = Input::all();
-		$rules = array( 'photo_name' => 'required',
+		$rules = array( 'photo_name'        => 'required',
       					'photo_imageAuthor' => 'required',
-      					'tags' => 'required',
-      					'photo_country' => 'required', 
+      					'tags'              => 'required',
+      					'photo_country'     => 'required', 
       					);
 		$validator = Validator::make($input, $rules);
 		if ($validator->fails()) {
