@@ -1,7 +1,16 @@
 <?php
+namespace lib\api\controllers;
 
 class APIUsersController extends \BaseController {
 
+	public function __construct()
+	{
+    	$this->afterFilter(function ($route, $req, $resp) {
+    	$resp->headers->set('Access-Control-Allow-Origin', '*');
+    	return $resp;
+		});
+	}
+	
 	/**
 	 * Display a listing of the resource.
 	 *
