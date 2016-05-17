@@ -135,3 +135,10 @@ Route::resource('/institutions','InstitutionsController');
 /* SEARCH PAGE */
 Route::get('/search/paginate/other/photos', 'PagesController@paginatePhotosResult');
 Route::get('/search/more/paginate/other/photos', 'PagesController@paginatePhotosResultAdvance');
+
+/* REST API */
+Route::group(array('prefix' => 'api/'), function()
+{
+    Route::resource('photos', 'lib\api\controllers\APIPhotosController');
+    Route::resource('user', 'lib\api\controllers\APIUsersController');
+});
