@@ -1,15 +1,6 @@
 <?php
-namespace lib\api\controllers;
 
-class APIPhotosController extends \BaseController {
-
-	public function __construct()
-	{
-    	$this->afterFilter(function ($route, $req, $resp) {
-    	$resp->headers->set('Access-Control-Allow-Origin', '*');
-    	return $resp;
-		});
-	}
+class APIUsersController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -18,8 +9,7 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function index()
 	{
-		$all_photos = \Photo::all();
-		return \Response::json($all_photos->toArray());
+		//
 	}
 
 
@@ -41,20 +31,7 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function store()
 	{
-		/* Validação do input */
-		$input = Input::all();
-		$rules = array( 'photo_name' => 'required',
-      					'photo_imageAuthor' => 'required',
-      					'tags' => 'required',
-      					'photo_country' => 'required', 
-      					);
-		$validator = Validator::make($input, $rules);
-		if ($validator->fails()) {
-			return ;
-		}
-		/* Armazenamento */
-		$photo = new Photo;
-		
+		//
 	}
 
 
@@ -66,7 +43,7 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return \Response::json(\Photo::find($id)->toArray());
+		//
 	}
 
 

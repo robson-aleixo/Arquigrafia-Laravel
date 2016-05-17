@@ -140,4 +140,5 @@ Route::get('/search/more/paginate/other/photos', 'PagesController@paginatePhotos
 Route::group(array('prefix' => 'api/'), function()
 {
     Route::resource('photos', 'lib\api\controllers\APIPhotosController');
+    Route::resource('user', 'lib\api\controllers\APIUsersController');
 });
