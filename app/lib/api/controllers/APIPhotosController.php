@@ -18,8 +18,7 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function index()
 	{
-		$all_photos = \Photo::all();
-		return \Response::json($all_photos->toArray());
+		return \Response::json(\Photo::all()->toArray());
 	}
 
 
