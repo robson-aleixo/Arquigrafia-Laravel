@@ -29,6 +29,8 @@ App::before(function($request)
 		$view->with('institution', $institution);
 	});
 
+	header('Access-Control-Allow-Origin: *'); 
+
 });
 
 
