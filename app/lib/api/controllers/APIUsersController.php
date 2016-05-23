@@ -10,7 +10,7 @@ class APIUsersController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return \Response::json(\User::all()->toArray());
 	}
 
 
@@ -58,8 +58,7 @@ class APIUsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return \Response::json(\User::select(
-			['name', 'lastname', 'photo'])->find($id)->toArray());
+		return \Response::json(\User::find($id)->toArray());
 	}
 
 
