@@ -141,5 +141,6 @@ Route::group(array('prefix' => 'api/'), function()
 {
     Route::resource('photos', 'lib\api\controllers\APIPhotosController');
     Route::resource('users' , 'lib\api\controllers\APIUsersController');
-    Route::post('login', 'lib\api\controllers\APILogInController@verify_credentials');
+    Route::post(    'login' , 'lib\api\controllers\APILogInController@verify_credentials');
+    Route::resource('feed'  , 'lib\api\controllers\APIFeedController');
 });
