@@ -142,5 +142,7 @@ Route::group(array('prefix' => 'api/'), function()
     Route::resource('photos', 'lib\api\controllers\APIPhotosController');
     Route::resource('users' , 'lib\api\controllers\APIUsersController');
     Route::post(    'login' , 'lib\api\controllers\APILogInController@verify_credentials');
+    Route::post('auth', 'lib\api\controllers\APILogInController@validate_mobile_token');
+    Route::post('logout', 'lib\api\controllers\APILogInController@log_out');
     Route::resource('feed'  , 'lib\api\controllers\APIFeedController');
 });
