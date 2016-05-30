@@ -56,9 +56,9 @@ class APIUsersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($name)
 	{
-		return \Response::json(\User::find($id)->toArray());
+		return \Response::json(\User::where("login", "=", $name)->first()->toArray());
 	}
 
 
