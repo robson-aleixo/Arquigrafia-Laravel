@@ -58,7 +58,8 @@ class APIUsersController extends \BaseController {
 	 */
 	public function show($name)
 	{
-		return \Response::json(\User::where("login", "=", $name)->first()->toArray());
+		$user = \User::where("login", "=", "test")->first();
+		return \Response::json(array_merge($user->toArray(), ["followers" => count($user->followers), "following" => count($user->following), "photos" => count($user->photos)]));
 	}
 
 
