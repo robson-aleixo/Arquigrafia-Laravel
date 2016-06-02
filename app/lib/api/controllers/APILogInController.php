@@ -9,14 +9,14 @@ class APILogInController extends \BaseController {
 			$user = \User::where('login', '=', $input["login"])->first();
 			$user->mobile_token = \Hash::make(str_random(10));
 			$user->save();
-			return \Response::json(['login' => $input["login"], 'token' => $user->mobile_token, 'valid' => 'true']);
+			return \Response::json(['login' => $input["login"], 'token' => $user->mobile_token, 'id' => $user->id, 'valid' => 'true', 'msg' => 'Login efetuado com sucesso.']);
 		}
-		return \Response::json(['login' => $input["login"], 'token' => '', 'valid' => 'false']);
+		return \Response::json(['login' => $input["login"], 'token' => '', 'id' => '', 'valid' => 'false', 'msg' => 'Usuário ou senha inválidos.']);
 	}
 
 	public function validate_mobile_token() {
 		$input = \Input::all();
-		$user = User::where('login', '=', $input["login"])->first();
+		$user = \User::where('login', '=', $input["login"])->first();
 		if(!is_null($user)) {
 			if($input["token"] == $user->mobile_token) {
 				return \Response::json(['auth' => 'true']);
@@ -27,7 +27,7 @@ class APILogInController extends \BaseController {
 
 	public function log_out() {
 		$input = \Input::all();
-		$user = User::where('login', '=', $input["login"])->first();
+		$user = \User::where('login', '=', $input["login"])->first();
 		if(!is_null($user)) {
 			if($input["token"] == $user->mobile_token) {
 				$user->mobile_token = null;
