@@ -18,6 +18,6 @@ class APIFeedController extends \BaseController {
 			->select('f.id', 'p.id as photo_id', 'p.name', 'p.nome_arquivo')
 			->where('users.id', '=', $id)
 			->whereNull('p.deleted_at')
-			->orderBy('p.updated_at')->get());
+			->orderBy('p.updated_at')->take(20)->get());
 	}
 }
