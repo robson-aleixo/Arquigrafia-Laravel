@@ -17,6 +17,7 @@ class APIFeedController extends \BaseController {
 			->join('photos as p', 'p.user_id', '=', 'f.id')
 			->select('f.id', 'p.id as photo_id', 'p.name', 'p.nome_arquivo')
 			->where('users.id', '=', $id)
+			->whereNull('f.deleted_at')
 			->orderBy('p.updated_at')->get());
 	}
 }
