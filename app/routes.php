@@ -145,5 +145,5 @@ Route::group(array('prefix' => 'api/'), function()
     Route::post(	'auth'     , 'lib\api\controllers\APILogInController@validate_mobile_token');
     Route::post(	'logout'   , 'lib\api\controllers\APILogInController@log_out');
     Route::get(		'feed/{id}', 'lib\api\controllers\APIFeedController@show');
-    Route::post(	'loadMore' , 'lib\api\controllers\APIFeedController@loadMore');
+    Route::get(	'loadMore/{id}', 'lib\api\controllers\APIFeedController@loadMore');
 });
