@@ -30,7 +30,7 @@ class APIFeedController extends \BaseController {
 			->join('photos as p', 'p.user_id', '=', 'f.id')
 			->select('f.id as user_id', 'f.photo as avatar', 'p.id as photo_id', 'p.name', 'p.nome_arquivo')
 			->where('users.id', '=', $id)
-			->where('p.id', '<', $max_id)
+			->where('photo_id', '<', $max_id)
 			->whereNull('p.deleted_at')
 			->orderBy('p.updated_at', 'desc')->take(20)->get());
 	}
