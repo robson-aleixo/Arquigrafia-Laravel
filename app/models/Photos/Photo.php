@@ -735,6 +735,10 @@ class Photo extends Eloquent {
 					
 	}
 
-	
+	public static function updateUserIdInPhoto($accountFrom, $accountTo){
+		//DB::table('photos')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+		Photo::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+	}
+
 
 }

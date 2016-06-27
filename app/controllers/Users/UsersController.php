@@ -94,7 +94,6 @@ class UsersController extends \BaseController {
         $verify_code = str_random(30);       
 
         $user = User::createUser($name,$email,Hash::make($input["password"]),$login,$verify_code);
-        // $user = User::userInformation($login);
         $source_page = Request::header('referer');
         ActionUser::printNewAccount($user->id, $source_page, "arquigrafia", "user"); 
         //send email to user created
@@ -102,7 +101,7 @@ class UsersController extends \BaseController {
           function($msg) use($email) {
             $msg->to($email)
                 ->subject('[Arquigrafia]- Cadastro de Usuário');
-          });      
+          });     
         return Redirect::to("/users/register"); 
     }
   }
@@ -425,8 +424,7 @@ class UsersController extends \BaseController {
         fputs($file, $image);
         fclose($file);
         $user->photo = '/arquigrafia-avatars/'.$user->id.'.jpg';
-        $user->save();
- 
+        $user->save(); 
       }
     }
     return $user->photo;
@@ -476,7 +474,6 @@ class UsersController extends \BaseController {
       $pageSource = Request::header('referer'); //get url of the source page
       ActionUser::printFollowOrUnfollowLog($logged_user_id, $user_id, $pageSource, "deixou de seguir", "user");
     }
-
     return Redirect::to(URL::previous()); // redirecionar para friends
   } 
   
@@ -504,22 +501,18 @@ class UsersController extends \BaseController {
     if (Session::has('institutionId') ) {
       return Redirect::to('/');
     }
-
-    $user = User::find($id);
-    
+    $user = User::find($id);    
     $logged_user = Auth::User();
     if ($logged_user == null) {
       return Redirect::action('PagesController@home');  
-    } 
-    elseif ($logged_user->id == $user->id) { 
+    }elseif ($logged_user->id == $user->id) { 
       return View::make('users.edit')->with( ['user' => $user] );
     }
     return Redirect::action('PagesController@home');
   }
 
   public function update($id) {              
-    $user = User::find($id);
-   
+    $user = User::find($id);   
     Input::flash();    
     $input = Input::only('name', 'login', 'email', 'scholarity', 'lastName', 'site', 'birthday', 'country', 'state', 'city', 
       'photo', 'gender', 'institution', 'occupation', 'visibleBirthday', 'visibleEmail','old_password','user_password','user_password_confirmation');    
@@ -580,27 +573,22 @@ class UsersController extends \BaseController {
       $user->save();   
 
       if ($input["institution"] != null or $input["occupation"] != null) {
-        $occupation = Occupation::firstOrCreate(['user_id'=>$user->id]);
-        $occupation->institution = $input["institution"];
-        $occupation->occupation = $input["occupation"];
-        $occupation->save();
+          $occupation = Occupation::firstOrCreate(['user_id'=>$user->id]);
+          $occupation->institution = $input["institution"];
+          $occupation->occupation = $input["occupation"];
+          $occupation->save();
       }
 
       if (Input::hasFile('photo') and Input::file('photo')->isValid())  {    
-        $file = Input::file('photo');
-        $ext = $file->getClientOriginalExtension();
-        $user->photo = "/arquigrafia-avatars/".$user->id.".jpg";
-        $user->save();
-        $image = Image::make(Input::file('photo'))->encode('jpg', 80);         
-        $image->save(public_path().'/arquigrafia-avatars/'.$user->id.'.jpg');
-        $file->move(public_path().'/arquigrafia-avatars', $user->id."_original.".strtolower($ext)); 
-        
-      
-      } else {
-        
-      }
-      return Redirect::to("/users/{$user->id}")->with('message', '<strong>Edição de perfil do usuário</strong><br>Dados alterados com sucesso'); 
-      
+          $file = Input::file('photo');
+          $ext = $file->getClientOriginalExtension();
+          $user->photo = "/arquigrafia-avatars/".$user->id.".jpg";
+          $user->save();
+          $image = Image::make(Input::file('photo'))->encode('jpg', 80);         
+          $image->save(public_path().'/arquigrafia-avatars/'.$user->id.'.jpg');
+          $file->move(public_path().'/arquigrafia-avatars', $user->id."_original.".strtolower($ext));
+      } 
+      return Redirect::to("/users/{$user->id}")->with('message', '<strong>Edição de perfil do usuário</strong><br>Dados alterados com sucesso');       
     }    
   }
 
@@ -624,13 +612,13 @@ class UsersController extends \BaseController {
   }
 
   public function institutionalLogin() { 
-    Log::info("Login Institution");
+    //Log::info("Login Institution");
     $login = Input::get('login');    
     $institutionId = Input::get('institution');
     $password = Input::get('password');
-    Log::info("Retrieved params login=".$login.", institution=".$institutionId);
+    //Log::info("Retrieved params login=".$login.", institution=".$institutionId);
     $booleanExist = User::userBelongInstitution($login,$institutionId); 
-    Log::info("Result belong institution -> booleanExist=".$booleanExist);
+    //Log::info("Result belong institution -> booleanExist=".$booleanExist);
 
     if ((Auth::attempt(array('login' => $login, 'password' => $password)) == true || 
         Auth::attempt(array('email' => $login, 'password' => $password,'active' => 'yes')) == true) &&
@@ -788,17 +776,21 @@ class UsersController extends \BaseController {
 
   private function getAttributesFromTo($accountFrom, $accountTo) {
     DB::table('friendship')->where('following_id', '=', $accountFrom->id)->update(array('following_id' => $accountTo->id));
-    DB::table('friendship')->where('followed_id', '=', $accountFrom->id)->update(array('followed_id' => $accountTo->id));  
-    DB::table('photos')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    DB::table('friendship')->where('followed_id', '=', $accountFrom->id)->update(array('followed_id' => $accountTo->id));
+    Photo::updateUserIdInPhoto($accountFrom, $accountTo);  
+    //DB::table('photos')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    Role::updateUserIdInRoles($accountFrom, $accountTo);
+    //DB::table('users_roles')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    Album::updateUserIdInAlbum($accountFrom, $accountTo);
+    //DB::table('albums')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    Occupation::updateUserIdInOccupation($accountFrom, $accountTo);
+    //DB::table('occupations')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
     DB::table('binomial_evaluation')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('comments')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('albums')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    DB::table('comments')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
     DB::table('notifications')->where('sender_id', '=', $accountFrom->id)->update(array('sender_id' => $accountTo->id));
     DB::table('notification_user')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('likes')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('occupations')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('scores')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('users_roles')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    DB::table('likes')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
+    DB::table('scores')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
     DB::table('user_badges')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
     DB::table('employees')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
     DB::table('friendship_institution')->where('following_user_id', '=', $accountFrom->id)
