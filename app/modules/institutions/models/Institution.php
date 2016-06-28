@@ -84,4 +84,9 @@ class Institution extends \Eloquent {
                             ->first();
         return $query;
 	}	
+
+	public static function updateUserIdInInstitutionFriendship($accountFrom, $accountTo)
+	{ DB::table('friendship_institution')->where('following_user_id', '=', $accountFrom->id)
+      ->update(array('following_user_id' => $accountTo->id));    
+  	}  	
 }

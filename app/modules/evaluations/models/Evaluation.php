@@ -156,4 +156,11 @@ class Evaluation extends \Eloquent {
 		return $query . " photo_id in ({$innerQuery})";
 	}
 
+	public static function updateUserIdInEvaluation()
+	{
+		//DB::table('binomial_evaluation')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+		Evaluation::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+
+	}
+
 }

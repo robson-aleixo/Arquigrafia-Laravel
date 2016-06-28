@@ -198,6 +198,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		DB::table('users')->where('id', '=', $arqAccount->id)->update(array('id_facebook' => $faceAccount->id));
 	}
 
+	public static function oldUserWhitFacebookIdOrLogin($fbid){
+		$user = User::where('id_facebook', '=', $fbid)
+		->orWhere('login', '=', $fbid)->first();
+		return $user;
+	}
+
 	public static function borrar($email){ 
 		$arq_acc =  User::whereRaw('(email = ?) and (id_stoa is NULL or id_stoa != login) and 
 		(id_facebook is NULL or id_facebook != login)', array($email))->first();

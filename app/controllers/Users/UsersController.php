@@ -20,7 +20,9 @@ class UsersController extends \BaseController {
   }
   
   public function index()
-  {
+  {    
+    //$request = new FacebookRequest(true, 'GET', '/me');
+    //dd($request);
     $users = User::all();
     return View::make('/users/index',['users' => $users]);
   }
@@ -327,7 +329,8 @@ class UsersController extends \BaseController {
       
       $integration_message = $this->integrateAccounts($fbmail);
       //usuarios antigos tem campo id_facebook null, mas existe login = $fbid;
-      $user = User::where('id_facebook', '=', $fbid)->orWhere('login', '=', $fbid)->first();
+      $user = User::oldUserWhitFacebookIdOrLogin($fbid);
+      //$user = User::where('id_facebook', '=', $fbid)->orWhere('login', '=', $fbid)->first();
       
       if (!is_null($user)) {
         // loga usuário existente
@@ -785,15 +788,20 @@ class UsersController extends \BaseController {
     //DB::table('albums')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
     Occupation::updateUserIdInOccupation($accountFrom, $accountTo);
     //DB::table('occupations')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('binomial_evaluation')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('comments')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
+    Evaluation::updateUserIdInEvaluation($accountFrom, $accountTo);
+    //DB::table('binomial_evaluation')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    Employee::updateUserIdInEmployee($accountFrom, $accountTo);
+    //DB::table('employees')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    Comment::updateUserIdInComment($accountFrom, $accountTo);
+    //DB::table('comments')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
+    Like::updateUserIdInLike($accountFrom, $accountTo);
+    //DB::table('likes')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
+    DB::table('scores')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
+    Badge::updateUserIdInBadges($accountFrom, $accountTo);
+    //DB::table('user_badges')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
     DB::table('notifications')->where('sender_id', '=', $accountFrom->id)->update(array('sender_id' => $accountTo->id));
     DB::table('notification_user')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('likes')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
-    DB::table('scores')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
-    DB::table('user_badges')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('employees')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    DB::table('friendship_institution')->where('following_user_id', '=', $accountFrom->id)
-      ->update(array('following_user_id' => $accountTo->id));
+    
+    FriendshipInstitution::updateUserIdInFriendshipInstitution($accountFrom, $accountTo);
   }
 }

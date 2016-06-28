@@ -36,4 +36,9 @@ class Like extends \Eloquent {
 		return $query->where('likable_type', get_class($likable))
 			->where('likable_id', $likable->id);
 	}
+
+	public static function updateUserIdInLike($accountFrom, $accountTo)
+  	{ //DB::table('likes')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
+      Like::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+  	} 
 }
