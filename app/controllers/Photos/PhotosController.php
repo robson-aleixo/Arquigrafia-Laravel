@@ -66,7 +66,8 @@ class PhotosController extends \BaseController {
            $followInstitution = false;
         }        
       }
-      $evaluations =  Evaluation::where("user_id", $user->id)->where("photo_id", $id)->orderBy("binomial_id", "asc")->get();
+      $evaluations = Evaluation::EspecificEvaluationUserAndPhoto($user,$id);
+      //$evaluations =  Evaluation::where("user_id", $user->id)->where("photo_id", $id)->orderBy("binomial_id", "asc")->get();
       
       if ($user->following->contains($photo_owner->id)) {
         $follow = false;
@@ -402,17 +403,15 @@ class PhotosController extends \BaseController {
       
 
             if ( !empty($input["new_album-name"]) ) {
-                $album = Album::create([
-                'title' => $input["new_album-name"],
-                'description' => "",
-                'user' => Auth::user(),
-                'cover' => $photo,
-                ]);
+                Album::createAlbum($input["new_album-name"], "", Auth::user(), $photo);                
                 if ( $album->isValid() ) {
-                  DB::insert('insert into album_elements (album_id, photo_id) values (?, ?)', array($album->id, $photo->id));
+                      //DB::insert('insert into album_elements (album_id, photo_id) 
+                      //values (?, ?)', array($album->id, $photo->id));
+                      PhotoAlbum::createAlbumElements($album->id, $photo->id);
                 }
             } elseif ( !empty($input["photo_album"]) ) {
-                DB::insert('insert into album_elements (album_id, photo_id) values (?, ?)', array($input["photo_album"], $photo->id));
+                  //DB::insert('insert into album_elements (album_id, photo_id) values (?, ?)', array($input["photo_album"], $photo->id));
+                  PhotoAlbum::createAlbumElements($input["photo_album"], $photo->id);
             }
             $ext = $file->getClientOriginalExtension();
             $photo->nome_arquivo = $photo->id.".".$ext;

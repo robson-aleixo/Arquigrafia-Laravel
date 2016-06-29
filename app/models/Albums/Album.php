@@ -111,5 +111,15 @@ class Album extends \BaseModel {
       Album::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
   	}  
 
+  	public static function createAlbum($title, $description, $user, $cover)
+  	{	//DB::insert('insert into album_elements (album_id, photo_id) values (?, ?)', array($album->id, $photo->id));
+		$album = new Album;
+		$album->title = $title ;
+		$album->description = $description;
+		$album->user = $user;
+		$album->cover = $cover;
+		$album->save();		
+  	}
+
 
 }

@@ -185,11 +185,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	public static function userAccountInFacebook($email){
+		//$fb_acc = User::whereRaw('(email = ?) and (id_facebook = login)', array($email))->first();  
 		$user = User::whereRaw('(email = ?) and (id_facebook = login)', array($email))->first();
 		return $user;
 	}
 
 	public static function userAccountInStoa($email){
+		//$stoa_acc = User::whereRaw('(email = ?) and (id_stoa = login)', array($email))->first();
 		$user = User::whereRaw('(email = ?) and (id_stoa = login)', array($email))->first();
 		return $user;
 	}
@@ -244,5 +246,21 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$this->password = Hash::make($password);
 		$this->save();
 	}
+
+	public static function updateUserToFriendship($accountFrom, $accountTo)
+	{
+      	DB::table('friendship')->where('following_id', '=', $accountFrom->id)->update(array('following_id' => $accountTo->id));
+    	DB::table('friendship')->where('followed_id', '=', $accountFrom->id)->update(array('followed_id' => $accountTo->id));      
+  	} 
+
+  	public static function DeleteParallelAccountsFacebook($fb_acc)
+  	{	
+  		User::where('id', '=', $fb_acc->id)->delete();
+  	}
+
+  	public static function DeleteParallelAccountsStoa($stoa_acc)
+  	{	
+  		User::where('id', '=', $stoa_acc->id)->delete();
+  	}
 
 }

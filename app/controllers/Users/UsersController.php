@@ -668,12 +668,9 @@ class UsersController extends \BaseController {
       //return;
     //} 
     /* Pega cada conta separadamente */
-    //$arq_acc =  User::whereRaw('(email = ?) and (id_stoa is NULL or id_stoa != login) and 
-      //(id_facebook is NULL or id_facebook != login)', array($email))->first();    
-    $arq_acc =  User::userInformationObtain($email);    
-    //$fb_acc = User::whereRaw('(email = ?) and (id_facebook = login)', array($email))->first();  
-    $fb_acc = User::userAccountInFacebook($email); 
-    //$stoa_acc = User::whereRaw('(email = ?) and (id_stoa = login)', array($email))->first();
+       
+    $arq_acc = User::userInformationObtain($email);        
+    $fb_acc = User::userAccountInFacebook($email);     
     $stoa_acc = User::userAccountInStoa($email);
 
     /* Existe uma conta Arquigrafia? */
@@ -732,11 +729,11 @@ class UsersController extends \BaseController {
       }
       $result = $result . " foi(ram) integrada(s) à sua conta Arquigrafia";
       /* Exclui as contas paralelas do banco */
-      if (isset($fb_boolean)) {
-        DB::table('users')->where('id', '=', $fb_acc->id)->delete();
+      if (isset($fb_boolean)) {         
+          User::DeleteParallelAccountsFacebook($fb_acc);
       }
-      if (isset($stoa_boolean)) {
-        DB::table('users')->where('id', '=', $stoa_acc->id)->delete();
+      if (isset($stoa_boolean)) {        
+          User::DeleteParallelAccountsStoa($stoa_acc);
       }
       return $result;
     }
@@ -777,10 +774,10 @@ class UsersController extends \BaseController {
     }*/
   }
 
-  private function getAttributesFromTo($accountFrom, $accountTo) {
-    DB::table('friendship')->where('following_id', '=', $accountFrom->id)->update(array('following_id' => $accountTo->id));
-    DB::table('friendship')->where('followed_id', '=', $accountFrom->id)->update(array('followed_id' => $accountTo->id));
-    Photo::updateUserIdInPhoto($accountFrom, $accountTo);  
+  private function getAttributesFromTo($accountFrom, $accountTo) 
+  {
+    User::updateUserToFriendship($accountFrom, $accountTo);    
+    Photo::updateUserIdInPhoto($accountFrom, $accountTo); 
     //DB::table('photos')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
     Role::updateUserIdInRoles($accountFrom, $accountTo);
     //DB::table('users_roles')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
@@ -800,8 +797,7 @@ class UsersController extends \BaseController {
     Badge::updateUserIdInBadges($accountFrom, $accountTo);
     //DB::table('user_badges')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
     DB::table('notifications')->where('sender_id', '=', $accountFrom->id)->update(array('sender_id' => $accountTo->id));
-    DB::table('notification_user')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
-    
+    DB::table('notification_user')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
     FriendshipInstitution::updateUserIdInFriendshipInstitution($accountFrom, $accountTo);
   }
 }
