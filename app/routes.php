@@ -139,11 +139,13 @@ Route::get('/search/more/paginate/other/photos', 'PagesController@paginatePhotos
 /* REST API */
 Route::group(array('prefix' => 'api/'), function()
 {
-    Route::resource('photos'   , 'lib\api\controllers\APIPhotosController');
-    Route::resource('users'    , 'lib\api\controllers\APIUsersController');
-    Route::post(    'login'    , 'lib\api\controllers\APILogInController@verify_credentials');
-    Route::post(	'auth'     , 'lib\api\controllers\APILogInController@validate_mobile_token');
-    Route::post(	'logout'   , 'lib\api\controllers\APILogInController@log_out');
-    Route::get(		'feed/{id}', 'lib\api\controllers\APIFeedController@show');
-    Route::get(	'loadMore/{id}', 'lib\api\controllers\APIFeedController@loadMore');
+    Route::resource('photos', 'lib\api\controllers\APIPhotosController');
+    Route::resource('users', 'lib\api\controllers\APIUsersController');
+    Route::post('login', 'lib\api\controllers\APILogInController@verify_credentials');
+    Route::post('auth', 'lib\api\controllers\APILogInController@validate_mobile_token');
+    Route::post('logout', 'lib\api\controllers\APILogInController@log_out');
+    Route::get('feed/{id}', 'lib\api\controllers\APIFeedController@loadFeed');
+    Route::get('loadMore/{id}', 'lib\api\controllers\APIFeedController@loadMoreFeed');
+    Route::get('userPhotos/{id}', 'lib\api\controllers\APIFeedController@loadUserPhotos');
+    Route::get('moreUserPhotos/{id}', 'lib\api\controllers\APIFeedController@LoadMoreUserPhotos');
 });

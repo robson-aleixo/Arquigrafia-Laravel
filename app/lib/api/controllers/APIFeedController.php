@@ -3,35 +3,58 @@ namespace lib\api\controllers;
 
 class APIFeedController extends \BaseController {
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+	public function loadFeed($id)
 	{
-		//Seleciona as fotos dos seguidores do usuário ordenados pela ordem de update 
-		return \Response::json(\User::join('friendship as fs', 'fs.following_id', '=', 'users.id')
-			->join('users as f', 'f.id', '=', 'fs.followed_id')
-			->join('photos as p', 'p.user_id', '=', 'f.id')
-			->select('f.id as user_id', 'f.name as user_name', 'f.photo as avatar', 'p.id as photo_id', 'p.name', 'p.nome_arquivo')
-			->where('users.id', '=', $id)
-			->whereNull('p.deleted_at')
-			->orderBy('p.updated_at', 'desc')->take(20)->get());
+		$user = \User::find($id);
+		$following_users = $user->following;
+		$following_institutions = $user->followingInstitution;
+		$users_ids = $following_users->lists('id');
+		$institutions_ids = $following_institutions->lists('id');
+		$users_photos = \DB::table('photos')->whereNull('deleted_at')->whereNull('institution_id')->whereIn('user_id', $users_ids);
+		$institutions_photos = \DB::table('photos')->whereNull('deleted_at')->whereIn('institution_id', $institutions_ids);
+		$all_photos = $institutions_photos->union($users_photos)->orderBy('created_at', 'desc')->take(20)->get();
+		$result = [];
+		foreach ($all_photos as $photo) {
+			if(is_null($photo->institution_id)) {
+				array_push($result, ["photo" => $photo, "sender" => \User::find($photo->user_id)]);
+			}
+			else {
+				array_push($result, ["photo" => $photo, "sender" => \Institution::find($photo->institution_id)]);	
+			}
+		}
+		return \Response::json($result);
 	}
 
-	public function loadMore($id) {
+	public function loadMoreFeed($id) {
 		$input = \Input::all();
 		$max_id = $input["max_id"];
 
-		return \Response::json(\User::join('friendship as fs', 'fs.following_id', '=', 'users.id')
-			->join('users as f', 'f.id', '=', 'fs.followed_id')
-			->join('photos as p', 'p.user_id', '=', 'f.id')
-			->select('f.id as user_id', 'f.name as user_name', 'f.photo as avatar', 'p.id as photo_id', 'p.name', 'p.nome_arquivo')
-			->where('users.id', '=', $id)
-			->where('p.id', '<', $max_id)
-			->whereNull('p.deleted_at')
-			->orderBy('p.updated_at', 'desc')->take(20)->get());
+		$user = \User::find($id);
+		$following_users = $user->following;
+		$following_institutions = $user->followingInstitution;
+		$users_ids = $following_users->lists('id');
+		$institutions_ids = $following_institutions->lists('id');
+		$users_photos = \DB::table('photos')->whereNull('deleted_at')->whereNull('institution_id')->where('id', '<', $max_id)->whereIn('user_id', $users_ids);
+		$institutions_photos = \DB::table('photos')->whereNull('deleted_at')->where('id', '<', $max_id)->whereIn('institution_id', $institutions_ids);
+		$all_photos = $institutions_photos->union($users_photos)->orderBy('created_at', 'desc')->take(20)->get();
+		$result = [];
+		foreach ($all_photos as $photo) {
+			if(is_null($photo->institution_id)) {
+				array_push($result, ["photo" => $photo, "sender" => \User::find($photo->user_id)]);
+			}
+			else {
+				array_push($result, ["photo" => $photo, "sender" => \Institution::find($photo->institution_id)]);	
+			}
+		}
+		return \Response::json($result);
+	}
+
+	public function loadUserPhotos($id) {
+		$user = \User::find($id);
+		return \Response::json($user->photos->take(20));
+	}
+
+	public function loadMoreUserPhotos($id) {
+
 	}
 }
