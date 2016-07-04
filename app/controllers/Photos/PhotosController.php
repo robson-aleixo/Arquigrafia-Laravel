@@ -59,15 +59,12 @@ class PhotosController extends \BaseController {
         $hasInstitution = Institution::belongSomeInstitution($photos->id);
         $institution = Institution::find(Session::get('institutionId')); 
       } else{
-        $hasInstitution = Institution::belongSomeInstitution($photos->id);
-        
-        if(!is_null($photo_institution) && $user->followingInstitution->contains($photo_institution->id)){ 
-         
+        $hasInstitution = Institution::belongSomeInstitution($photos->id);        
+        if(!is_null($photo_institution) && $user->followingInstitution->contains($photo_institution->id)){          
            $followInstitution = false;
         }        
       }
       $evaluations = Evaluation::EspecificEvaluationUserAndPhoto($user,$id);
-      //$evaluations =  Evaluation::where("user_id", $user->id)->where("photo_id", $id)->orderBy("binomial_id", "asc")->get();
       
       if ($user->following->contains($photo_owner->id)) {
         $follow = false;
@@ -404,13 +401,10 @@ class PhotosController extends \BaseController {
 
             if ( !empty($input["new_album-name"]) ) {
                 Album::createAlbum($input["new_album-name"], "", Auth::user(), $photo);                
-                if ( $album->isValid() ) {
-                      //DB::insert('insert into album_elements (album_id, photo_id) 
-                      //values (?, ?)', array($album->id, $photo->id));
+                if ( $album->isValid() ) {                      
                       PhotoAlbum::createAlbumElements($album->id, $photo->id);
                 }
-            } elseif ( !empty($input["photo_album"]) ) {
-                  //DB::insert('insert into album_elements (album_id, photo_id) values (?, ?)', array($input["photo_album"], $photo->id));
+            } elseif ( !empty($input["photo_album"]) ) { 
                   PhotoAlbum::createAlbumElements($input["photo_album"], $photo->id);
             }
             $ext = $file->getClientOriginalExtension();
@@ -460,8 +454,6 @@ class PhotosController extends \BaseController {
             $input['dates'] = true;
             $input['dateImage'] = true;
             
-            
-            
             return Redirect::back()->withInput($input);
 
         } else {
@@ -475,7 +467,7 @@ class PhotosController extends \BaseController {
   {
     if (Auth::check()) {
       $photo = Photo::find($id);
-      if(/*$photo->authorized*/true) {
+      if($photo->authorized) {
         $originalFileExtension = strtolower(substr(strrchr($photo->nome_arquivo, '.'), 1));
         $filename = $id . '_original.' . $originalFileExtension;
         $path = storage_path().'/original-images/'. $filename;
@@ -501,13 +493,6 @@ class PhotosController extends \BaseController {
       return "Você só pode fazer o download se estiver logado, caso tenha usuário e senha, faça novamente o login.";
     }
   }
-
-  // COMMENT
-
-
-  // EVALUATE
-  //saveEvaluation
-  
 
   // BATCH RESIZE
   public function batch()
@@ -705,7 +690,7 @@ class PhotosController extends \BaseController {
         $photo->name = $input["photo_name"];
         $photo->state = $input["photo_state"];
         $photo->street = $input["photo_street"];
-        //$photo->workAuthor = $input["photo_workAuthor"];     
+        
       
         if(!empty($input["workDate"])){             
             $photo->workdate = $input["workDate"];
@@ -799,23 +784,20 @@ class PhotosController extends \BaseController {
         $photo->saveMetadata(strtolower($ext), $metadata);
 
         $source_page = Request::header('referer');
-        ActionUser::printTags($photo->user_id, $id, $tags_copy, $source_page, "user", "Editou");
-
-        /*News feed*/
-        $user = User::find($photo->user_id);
-        
+        ActionUser::printTags($photo->user_id, $id, $tags_copy, $source_page, "user", "Editou");      
 
         return Redirect::to("/photos/{$photo->id}")->with('message', '<strong>Edição de informações da imagem</strong><br>Dados alterados com sucesso');
       }
   }
 
-  public function destroy($id) {
+  public function destroy($id) 
+  {
     $photo = Photo::find($id);
     foreach($photo->tags as $tag) {
       $tag->count = $tag->count - 1;
       $tag->save();
     }
-    DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
+    Tag::deleteTags($photo);
     $all_users = User::all();
     foreach ($all_users as $users) {
       foreach ($users->news as $news) {
@@ -860,88 +842,6 @@ class PhotosController extends \BaseController {
     return Redirect::to('/users/' . $photo->user_id);
   }
 
-//createCommentsMessage
+//createCommentsMessage 
 
-  /*public function evaluate($photoId ) { 
-    if (Session::has('institutionId') ) {
-      return Redirect::to('/');
-    }
-    if(isset($_SERVER['QUERY_STRING'])) parse_str($_SERVER['QUERY_STRING']);
-    $user_id = Auth::user()->id;
-    $source_page = Request::header('referer');
-    if(isset($f)) {
-    if($f == "sb") ActionUser::printEvaluationAccess($user_id, $photoId, $source_page, "user", "pelo botão abaixo da imagem");
-    elseif($f == "c") ActionUser::printEvaluationAccess($user_id, $photoId, $source_page, "user", "pelo botão abaixo do gráfico");
-    elseif($f == "g") ActionUser::printEvaluationAccess($user_id, $photoId, $source_page, "user", "pelo gráfico");
-    }
-    else ActionUser::printEvaluationAccess($user_id, $photoId, $source_page, "user", "diretamente");
-    return static::getEvaluation($photoId, Auth::user()->id, true);
-  } */
-  /*
-  public function viewEvaluation($photoId, $userId ) {
-    
-    return static::getEvaluation($photoId, $userId, false);
-  } */
-
-  /*public function showSimilarAverage($photoId) {
-    $isOwner = false;
-    if (Auth::check()) $userId = Auth::user()->id;     
-    $photo = Photo::find($photoId);     
-    if($photo->user_id == $userId ) $isOwner = true;
-   
-    return static::getEvaluation($photoId, $userId, $isOwner);
-  }*/
-  /*
-  private function getEvaluation($photoId, $userId, $isOwner) {
-    $photo = Photo::find($photoId);
-    $binomials = Binomial::all()->keyBy('id'); 
-    $average = Evaluation::average($photo->id); 
-    $evaluations = null;
-    $averageAndEvaluations = null;
-    $checkedKnowArchitecture = false;
-    $checkedAreArchitecture = false;
-    $user = null;
-    $follow = true;
-    //echo $user_id; die();
-    if ($userId != null) {
-      $user = User::find($userId);
-      if (Auth::check()) {
-        if (Auth::user()->following->contains($user->id))
-          $follow = false;
-        else
-          $follow = true;
-    }
-
-      $averageAndEvaluations= Evaluation::averageAndUserEvaluation($photo->id,$userId);
-      $evaluations =  Evaluation::where("user_id",
-        $user->id)->where("photo_id", $photo->id)->orderBy("binomial_id", "asc")->get();
-      $checkedKnowArchitecture= Evaluation::userKnowsArchitecture($photoId,$userId);
-      $checkedAreArchitecture= Evaluation::userAreArchitecture($photoId,$userId);
-
-    }
-    
-    return View::make('/photos/evaluate',
-      [
-        'photos' => $photo, 
-        'owner' => $user, 
-        'follow' => $follow, 
-        'tags' => $photo->tags, 
-        'commentsCount' => $photo->comments->count(), 
-        'commentsMessage' => static::createCommentsMessage($photo->comments->count()),
-        'average' => $average, 
-        'userEvaluations' => $evaluations,
-        'userEvaluationsChart' => $averageAndEvaluations, 
-        'binomials' => $binomials,
-        'architectureName' => Photo::composeArchitectureName($photo->name),
-        'similarPhotos'=>Photo::photosWithSimilarEvaluation($average,$photo->id),
-        'isOwner' => $isOwner,
-        'checkedKnowArchitecture' => $checkedKnowArchitecture,
-        'checkedAreArchitecture' => $checkedAreArchitecture
-      ]);
-  } */
-
-  //formInstitutional
-  //saveFormInstitutional
-  //editFormInstitutional
-  //updateInstitutional
 }

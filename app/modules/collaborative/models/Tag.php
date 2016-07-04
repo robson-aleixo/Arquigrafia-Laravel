@@ -166,5 +166,10 @@ class Tag extends \Eloquent {
         array_push($tagsTypeList, $value->name);
       }
       return $tagsTypeList;
+  }
+
+  public static function deleteTags($photo)
+  {
+      DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
   } 
 }
