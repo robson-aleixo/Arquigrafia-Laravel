@@ -263,4 +263,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
   		User::where('id', '=', $stoa_acc->id)->delete();
   	}
 
+  	public static function userPhotosSearch($username)
+  	{ 
+  		$query = User::where('id', '>', 0);
+        $query->where('name', 'LIKE', '%'. $username .'%');
+        $userList = $query->get();
+        return $userList->lists('id');
+  	}
+
 }

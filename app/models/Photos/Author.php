@@ -75,4 +75,34 @@ class Author extends Eloquent {
     return array_unique($authors);
   }
   
+  public static function authorSearch($author)
+  {
+      $query = Author::join('photo_author','photo_author.author_id','=','authors.id')
+              ->where('authors.name', 'LIKE', '%'.$author.'%')              
+              ->groupBy('authors.id')
+              ->get();
+      
+      return $query;
+     
+  }
+  public static function approxPhotoAuthorSearch($author,$photos)
+  {
+      $queryAuthor = Author::where('name', 'LIKE', '%' . $author . '%'); 
+      $authors = $queryAuthor->get();
+      foreach ($authors as $author) { 
+          $byAuthor = $author->photos;                
+          $photos = $photos->merge($byAuthor);                
+      } 
+      return $photos;
+  }
+
+  public static function photoAuthorSearch($author,$photos)
+  {     $query = Author::where('name', '=', $author);
+        $author = $query->get();
+        if($author->first()) { 
+            $byAuthor = $author->first()->photos;                
+            $photos = $photos->merge($byAuthor);                
+        } 
+        return $photos;
+  }
 }

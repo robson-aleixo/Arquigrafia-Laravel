@@ -39,17 +39,15 @@ class PagesController extends BaseController {
         if (Auth::check()) {
             $user_id = Auth::user()->id;
             $user_or_visitor = "user";
-        }
-        else { 
+        }else { 
             $user_or_visitor = "visitor";
             session_start();
             $user_id = session_id();
         } 
         if(Session::has('institutionId')){
-            $institution = Institution::find(Session::get('institutionId'));    
-                   
-        }else{ 
-            $institution = null;            
+            $institution = Institution::find(Session::get('institutionId'));
+        }else{
+            $institution = null;
         }
         $source_page = Request::header('referer');
         ActionUser::printHomePage($user_id, $source_page, $user_or_visitor);
@@ -58,92 +56,12 @@ class PagesController extends BaseController {
     }
 
     public function panel()
-    { 
+    {
         $photos = Photo::orderByRaw("RAND()")->take(150)->get();
         return View::make('api.panel', ['photos' => $photos]);
     }
-
-    private static function userPhotosSearch($needle) {
-        $query = User::where('id', '>', 0);
-        $query->where('name', 'LIKE', '%'. $needle .'%');
-        $userList = $query->get();    
-        return $userList->lists('id');
-    }
     
-    private static function streetAndCitySearch(&$needle,&$txtcity) {
-        Log::info("Logging info txtcity <".$txtcity.">");       
-
-        $allowed = "/[^a-z\\.\/\sçáéíóúãàõ]/i";
-        $txtstreet=  preg_replace($allowed,"",$needle);
-        $txtstreet = rtrim($txtstreet);      
-        $needle = $txtstreet;        
-
-        $query = Photo::orderByRaw("RAND()");         
-        $query->where('city', 'LIKE', '%' . $txtcity . '%');
-        $query->where('street', 'LIKE', '%' . $txtstreet . '%');
-        $query->whereNull('deleted_at');
-        $photos = $query->get(); 
-        return $photos;  
-    }
     
-    private static function dateSearch(&$needle,&$type){
-
-        if($type=='work'){
-            Log::info("Logging information of work date<".$needle.">"); 
-            $dateType = 'workdate';
-
-        }elseif ($type=='img') {
-            Log::info("Logging information of image date<".$needle.">"); 
-            $dateType = 'dataCriacao';
-
-        }elseif ($type=='up') {
-            Log::info("Logging information for upload <".$needle.">");
-            $dateType = 'dataUpload';
-            $date = new DateTime($needle);
-            $needle =  $date->format('Y-m-d');  
-            Log::info("Logging information for format upload <".$needle.">");
-        }
-        $query = Photo::orderByRaw("RAND()");         
-        $query->where($dateType, 'LIKE', '%' . $needle . '%');
-        $query->whereNull('deleted_at');
-        $photos = $query->get(); 
-        return $photos;   
-    }
-    
-    public static function yearSearch(&$needle,&$dateFilter,&$date){
-
-        
-
-        $dateFilter = [
-            'di'=>'Data da Imagem',
-            'du'=>'Data de Upload',
-            'do'=>'Data da Obra'
-        ];
-
-
-        if(!empty($date) ){  //&& !isset($date)
-
-            if($date == 'di' ) $dateType = 'dataCriacao';          
-            if ($date == 'du' ) $dateType = 'dataUpload';
-            if ($date == 'do' ) {$dateType = 'workdate'; }                   
-
-            $query = Photo::orderByRaw("RAND()");         
-            $query->where($dateType, 'LIKE', '%' . $needle . '%');
-            $query->whereNull('deleted_at');
-            $photos = $query->get(); 
-            return $photos; 
-
-        }else{
-            $query = Photo::orderByRaw("RAND()");         
-            $query->where('dataCriacao', 'LIKE', '%' . $needle . '%');
-            $query->orWhere('dataUpload', 'LIKE', '%' . $needle . '%');
-            $query->orWhere('workdate', 'LIKE', '%' . $needle . '%');
-            $query->whereNull('deleted_at');
-            $photos = $query->get(); 
-            return $photos; 
-        }
-    }
-
     public function searchBinomial($binomial_id, $option, $value = null) {
         $bin = Binomial::find($binomial_id);
         $bi_opt = $option == 1 ? $bin->firstOption : $bin->secondOption;
@@ -194,64 +112,25 @@ class PagesController extends BaseController {
             }
             $tags = null;
             $allAuthors =  null;
-            $query = Tag::where('name', 'LIKE', '%' . $needle . '%')->where('count', '>', 0);  
-            $tags = $query->get(); 
-            
-            $allAuthors = DB::table('authors')
-            ->join('photo_author', function($join) use ($needle)
-            { $join->on('authors.id', '=', 'photo_author.author_id')
-              ->where('name', 'LIKE', '%' . $needle . '%');
-            })->groupBy('authors.id')->get();
-                                     
+            $tags = Tag::approximateTagSearch($needle);
+            $allAuthors = Author::authorSearch($needle);                                                 
             if ($txtcity != "") {                  
-                $photos = static::streetAndCitySearch($needle,$txtcity);        
-
+                $photos = Photo::streetAndCitySearch($needle,$txtcity); 
             }elseif ((DateTime::createFromFormat('Y-m-d', $needle) !== FALSE || DateTime::createFromFormat('Y-m-d H:i:s', $needle) !== FALSE )&& !empty($type)) {
-                $photos = static::dateSearch($needle,$type);
-
+                $photos = Photo::dateSearch($needle,$type);
             }elseif (DateTime::createFromFormat('Y', $needle) !== FALSE) {
-
-                $photos = static::yearSearch($needle,$dateFilter,$date);      
-
-            } else {                  
-                $idUserList = static::userPhotosSearch($needle);
-
-                $query = Photo::where(function($query) use($needle, $idUserList) {
-                    $query->where('name', 'LIKE', '%'. $needle .'%');  
-                    $query->orWhere('description', 'LIKE', '%'. $needle .'%');  
-                    $query->orWhere('imageAuthor', 'LIKE', '%' . $needle . '%');                    
-                    $query->orWhere('country', 'LIKE', '%'. $needle .'%');  
-                    $query->orWhere('state', 'LIKE', '%'. $needle .'%'); 
-                    $query->orWhere('city', 'LIKE', '%'. $needle .'%'); 
-                    if ($idUserList != null && !empty($idUserList)) {
-                        $query->orWhereIn('user_id', $idUserList);}
-                });
-                $photos =  $query->orderBy('created_at', 'DESC')->get();                 
-            }       
-
-           
+                $photos = Photo::yearSearch($needle,$dateFilter,$date);      
+            } else {         
+                $idUserList = User::userPhotosSearch($needle);
+                $photos = Photo::searchPhoto($needle, $idUserList);                              
+            }           
             // se houver uma tag exatamente como a busca, pegar todas as fotos dessa tag e juntar no painel
-            $query = Tag::where('name', '=', $needle); 
-            $tags = $query->get();
-             foreach ($tags as $tag) { 
-                $byTag = $tag->photos;                
-                $photos = $photos->merge($byTag);
-             }   
-
+            $photos = Tag::tagSearch($needle, $photos);
+            
             if($authorFilter != null){             
-                $query = Author::where('name', '=', $needle);
-                $author = $query->get();
-                if($author->first()) { 
-                    $byAuthor = $author->first()->photos;                
-                    $photos = $photos->merge($byAuthor);                
-                }     
+                $photos = Author::photoAuthorSearch($needle,$photos); 
             }else{
-                $queryAuthor = Author::where('name', 'LIKE', '%' . $needle . '%'); 
-                $authors = $queryAuthor->get();
-                foreach ($authors as $author) { 
-                    $byAuthor = $author->photos;                
-                    $photos = $photos->merge($byAuthor);                
-                }    
+                $photos = Author::approxPhotoAuthorSearch($needle,$photos);                  
             }  
 
             $query = Institution::where(function($query) use($needle) {

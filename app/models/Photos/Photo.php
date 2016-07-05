@@ -740,5 +740,94 @@ class Photo extends Eloquent {
 		Photo::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
 	}
 
+	private static function streetAndCitySearch($needle,$txtcity) 
+	{
+        Log::info("Logging info txtcity <".$txtcity.">");       
+
+        $allowed = "/[^a-z\\.\/\sçáéíóúãàõ]/i";
+        $txtstreet=  preg_replace($allowed,"",$needle);
+        $txtstreet = rtrim($txtstreet);      
+        $needle = $txtstreet;        
+
+        $query = Photo::orderByRaw("RAND()");         
+        $query->where('city', 'LIKE', '%' . $txtcity . '%');
+        $query->where('street', 'LIKE', '%' . $txtstreet . '%');
+        $query->whereNull('deleted_at');
+        $photos = $query->get(); 
+        return $photos;  
+    }
+
+    private static function dateSearch($needle,$type)
+    {
+        if($type=='work'){
+            Log::info("Logging information of work date<".$needle.">"); 
+            $dateType = 'workdate';
+
+        }elseif ($type=='img') {
+            Log::info("Logging information of image date<".$needle.">"); 
+            $dateType = 'dataCriacao';
+
+        }elseif ($type=='up') {
+            Log::info("Logging information for upload <".$needle.">");
+            $dateType = 'dataUpload';
+            $date = new DateTime($needle);
+            $needle =  $date->format('Y-m-d');  
+            Log::info("Logging information for format upload <".$needle.">");
+        }
+        $query = Photo::orderByRaw("RAND()");         
+        $query->where($dateType, 'LIKE', '%' . $needle . '%');
+        $query->whereNull('deleted_at');
+        $photos = $query->get(); 
+        return $photos;   
+    }
+
+
+    public static function yearSearch($needle,$dateFilter,$date)
+    {
+	    $dateFilter = [
+            'di'=>'Data da Imagem',
+            'du'=>'Data de Upload',
+            'do'=>'Data da Obra'
+        ];
+
+
+        if(!empty($date) ){  //&& !isset($date)
+
+            if($date == 'di' ) $dateType = 'dataCriacao';          
+            if ($date == 'du' ) $dateType = 'dataUpload';
+            if ($date == 'do' ) {$dateType = 'workdate'; }                   
+
+            $query = Photo::orderByRaw("RAND()");         
+            $query->where($dateType, 'LIKE', '%' . $needle . '%');
+            $query->whereNull('deleted_at');
+            $photos = $query->get(); 
+            return $photos; 
+
+        }else{
+            $query = Photo::orderByRaw("RAND()");         
+            $query->where('dataCriacao', 'LIKE', '%' . $needle . '%');
+            $query->orWhere('dataUpload', 'LIKE', '%' . $needle . '%');
+            $query->orWhere('workdate', 'LIKE', '%' . $needle . '%');
+            $query->whereNull('deleted_at');
+            $photos = $query->get(); 
+            return $photos; 
+        }
+    }
+
+    public static function searchPhoto($needle, $idUserList)
+    {
+        $query = Photo::where(function($query) use($needle, $idUserList) {
+            $query->where('name', 'LIKE', '%'. $needle .'%');  
+            $query->orWhere('description', 'LIKE', '%'. $needle .'%');  
+            $query->orWhere('imageAuthor', 'LIKE', '%' . $needle . '%');                    
+            $query->orWhere('country', 'LIKE', '%'. $needle .'%');  
+            $query->orWhere('state', 'LIKE', '%'. $needle .'%'); 
+            $query->orWhere('city', 'LIKE', '%'. $needle .'%'); 
+            if ($idUserList != null && !empty($idUserList)) {
+                $query->orWhereIn('user_id', $idUserList);}
+        });
+        return $query->orderBy('created_at', 'DESC')->get();  
+        
+    }            
 
 }

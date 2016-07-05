@@ -171,5 +171,24 @@ class Tag extends \Eloquent {
   public static function deleteTags($photo)
   {
       DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
-  } 
+  }
+  public static function approximateTagSearch($tag)
+  {
+      $query = Tag::where('name', 'LIKE', '%' . $tag . '%')
+                ->where('count', '>', 0);  
+      return $query->get(); 
+  }
+
+  public static function tagSearch($tag,$photos)
+  {
+      $query = Tag::where('name', '=', $tag); 
+      $tags = $query->get();
+      foreach ($tags as $tag) { 
+                $byTag = $tag->photos;                
+                $photos = $photos->merge($byTag);
+      }
+      return $photos;
+
+  }    
+
 }
