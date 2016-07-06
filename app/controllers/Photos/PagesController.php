@@ -22,7 +22,6 @@ class PagesController extends BaseController {
     public function __construct(Date $date = null)
     {
         $this->date = $date ?: new Date;
-        
     }
 
 
@@ -36,22 +35,13 @@ class PagesController extends BaseController {
 
         $photos = Photo::orderByRaw("RAND()")->take(150)->get();
 
-        if (Auth::check()) {
-            $user_id = Auth::user()->id;
-            $user_or_visitor = "user";
-        }else { 
-            $user_or_visitor = "visitor";
-            session_start();
-            $user_id = session_id();
-        } 
+         
         if(Session::has('institutionId')){
             $institution = Institution::find(Session::get('institutionId'));
         }else{
             $institution = null;
-        }
-        $source_page = Request::header('referer');
-        ActionUser::printHomePage($user_id, $source_page, $user_or_visitor);
-        
+        }                      
+        $this->LogActionUserHome();
         return View::make('index', ['photos' => $photos, 'institution' => $institution ]);
     }
 
@@ -132,38 +122,19 @@ class PagesController extends BaseController {
             }else{
                 $photos = Author::approxPhotoAuthorSearch($needle,$photos);                  
             }  
-
-            $query = Institution::where(function($query) use($needle) {
-                    $query->where('name', 'LIKE', '%'. $needle .'%');                      
-                    $query->orWhere('acronym', '=',  $needle);
-                });
-            $institutions =  $query->get(); 
-            
-            foreach ($institutions as $institution) { 
-                $byInstitution = $institution->photos;
-                $photos = $photos->merge($byInstitution);
-            }  
-           
+            $institutions = Institution::institutionAcronymSearch($needle);
+            $photos = Static::takePhotosInstitutions($institutions,$photos);            
             $photosAll = $photos->count();
-
-            if (Auth::check()) {
-                $user_id = Auth::user()->id;
-                $user_or_visitor = "user";
-            }else { 
-                $user_or_visitor = "visitor";
-                session_start();
-                $user_id = session_id();
-            }
-            $source_page = Request::header('referer');
-            ActionUser::printSearch($user_id, $source_page, $needle, $user_or_visitor);
+            
+            $this->LogActionUserSearch($needle);
             
             if(Session::has('CurrPage') && Session::get('CurrPage')!= 1){ 
                 $pageRetrieved = Session::get('CurrPage');  
                 $haveSession = 1;   
             }
     
-            if($photos->count() != 0){           
-                $photosPages = Photo::paginatePhotosSearch($photos); 
+            if($photos->count() != 0)
+            {   $photosPages = Photo::paginatePhotosSearch($photos); 
                 $photosTotal = $photosPages->getTotal();
                 $maxPage = $photosPages->getLastPage();
                 
@@ -374,6 +345,41 @@ class PagesController extends BaseController {
        
 
         return Response::json($response);
+    }
+
+    public static function takePhotosInstitutions($institutions,$photos)
+    {   
+        foreach ($institutions as $institution) { 
+            $byInstitution = $institution->photos;            
+            $photos = $photos->merge($byInstitution);
+        } 
+        return $photos;
+    }
+
+    public function actionUserVisitor()
+    {
+        if (Auth::check()) {
+                $user_id = Auth::user()->id;
+                $user_or_visitor = "user";
+        }else { 
+            $user_or_visitor = "visitor";
+            session_start();
+            $user_id = session_id();
+        }  
+        return array('user_id' => $user_id , 'user_or_visitor' => $user_or_visitor);            
+    }
+
+    public function LogActionUserSearch($text)
+    {  
+        $source_page = Request::header('referer');
+        $userType = $this->actionUserVisitor();
+        ActionUser::printSearch($userType['user_id'], $source_page, $text, $userType['user_or_visitor']);
+    }
+
+    public function LogActionUserHome()
+    {   $source_page = Request::header('referer');
+        $userType = $this->actionUserVisitor();
+        ActionUser::printHomePage($userType['user_id'], $source_page, $userType['user_or_visitor']);
     }
 
     
