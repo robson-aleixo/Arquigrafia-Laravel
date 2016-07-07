@@ -48,13 +48,4 @@ class APIFeedController extends \BaseController {
 		}
 		return \Response::json($result);
 	}
-
-	public function loadUserPhotos($id) {
-		$user = \User::find($id);
-		return \Response::json($user->photos->take(20));
-	}
-
-	public function loadMoreUserPhotos($id) {
-
-	}
 }

@@ -139,13 +139,18 @@ Route::get('/search/more/paginate/other/photos', 'PagesController@paginatePhotos
 /* REST API */
 Route::group(array('prefix' => 'api/'), function()
 {
+    /* Controlador de fotos e usuários */
     Route::resource('photos', 'lib\api\controllers\APIPhotosController');
     Route::resource('users', 'lib\api\controllers\APIUsersController');
+    /* Controlador de autenticação */
     Route::post('login', 'lib\api\controllers\APILogInController@verify_credentials');
     Route::post('auth', 'lib\api\controllers\APILogInController@validate_mobile_token');
     Route::post('logout', 'lib\api\controllers\APILogInController@log_out');
+    /* Controlador de feed */
     Route::get('feed/{id}', 'lib\api\controllers\APIFeedController@loadFeed');
     Route::get('loadMore/{id}', 'lib\api\controllers\APIFeedController@loadMoreFeed');
-    Route::get('userPhotos/{id}', 'lib\api\controllers\APIFeedController@loadUserPhotos');
-    Route::get('moreUserPhotos/{id}', 'lib\api\controllers\APIFeedController@LoadMoreUserPhotos');
+    /* Controlador de perfis */
+    Route::get('profile/{id}', 'lib\api\controllers\APIProfilesController@getProfile');
+    Route::get('userPhotos/{id}', 'lib\api\controllers\APIProfilesController@getUserPhotos');
+    Route::get('moreUserPhotos/{id}', 'lib\api\controllers\APIProfilesController@getMoreUserPhotos');
 });
