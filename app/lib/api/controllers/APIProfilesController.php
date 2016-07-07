@@ -1,7 +1,7 @@
 <?php 
 namespace lib\api\controllers;
 
-class APIFeedController extends \BaseController {
+class APIProfilesController extends \BaseController {
 
 	public function getProfile($id) {
 		$user = \User::find($id);
