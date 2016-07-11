@@ -88,7 +88,12 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return \Response::json(\Photo::find($id)->toArray());
+		$photo = \Photo::find($id);
+		$sender = \User::find($photo->user_id);
+		if (!is_null($photo->institution_id)) {
+			$sender = \Institution::find($photo->institution_id);
+		}
+		return \Response::json(["photo" => $photo, "sender" => $sender]);
 	}
 
 
