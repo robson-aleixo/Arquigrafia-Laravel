@@ -967,6 +967,7 @@ class PhotosController extends \BaseController {
 
       if ( !empty($input["photo_aditionalImageComments"]) )
         $photo->aditionalImageComments = $input["photo_aditionalImageComments"];
+      $photo->authorized = $input["authorized"];
       $photo->allowCommercialUses = $input["photo_allowCommercialUses"];
       $photo->allowModifications = $input["photo_allowModifications"];
       $photo->city = $input["photo_city"];
