@@ -19,7 +19,9 @@ return array(
 		__DIR__.'/../modules/institutions/views',
 		__DIR__.'/../modules/collaborative/views',
 		__DIR__.'/../modules/evaluations/views',
-		__DIR__.'/../modules/gamification/views'
+		__DIR__.'/../modules/gamification/views',
+		__DIR__.'/../modules/news/views',
+		__DIR__.'/../modules/news/views/includes'
 	),
 
 	/*

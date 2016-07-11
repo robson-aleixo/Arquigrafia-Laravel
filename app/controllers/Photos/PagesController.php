@@ -27,6 +27,8 @@ class PagesController extends BaseController {
 
     public function home()
     { 
+        
+        $newView = null;
         if(Session::has('last_search'))
             Session::forget('last_search');
 
@@ -35,14 +37,14 @@ class PagesController extends BaseController {
 
         $photos = Photo::orderByRaw("RAND()")->take(150)->get();
 
-         
         if(Session::has('institutionId')){
             $institution = Institution::find(Session::get('institutionId'));
         }else{
             $institution = null;
-        }                      
+        }             
         $this->LogActionUserHome();
-        return View::make('index', ['photos' => $photos, 'institution' => $institution ]);
+        if (Auth::check()) $newView = View::make('./news');                
+        return View::make('index', ['photos' => $photos, 'institution' => $institution, 'newView' => $newView ]);
     }
 
     public function panel()
