@@ -1,5 +1,4 @@
 <?php
-//add
 use lib\utils\ActionUser;
 use Carbon\Carbon;
 use lib\date\Date;
@@ -42,7 +41,7 @@ class PhotosController extends \BaseController {
     
     $tags = $photos->tags;
     $binomials = Binomial::all()->keyBy('id');
-    $average = Evaluation::average($photos->id); //dd($average);
+    $average = Evaluation::average($photos->id); 
     $evaluations = null;
     $photoliked = null;
     $follow = true;
@@ -159,7 +158,6 @@ class PhotosController extends \BaseController {
 
     if ( Session::has('centuryInput') ) {
        $centuryInput = Session::pull('centuryInput');
-      //dd($century);
        $dates = true;
       }
     if ( Session::has('decadeInput') ){
@@ -169,7 +167,6 @@ class PhotosController extends \BaseController {
 
      if ( Session::has('centuryImageInput') ) {
        $centuryImageInput = Session::pull('centuryImageInput');
-      //dd($century);
        $dateImage = true;
       }
     if ( Session::has('decadeImageInput') ){
@@ -299,10 +296,7 @@ class PhotosController extends \BaseController {
     }
     return Response::json(false);
   }
-
-
-
-    
+   
 
   public function store() 
   {
