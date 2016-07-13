@@ -40,7 +40,7 @@ class APIPhotosController extends \BaseController {
 	        'photo_imageAuthor' => 'required',
 	        'tags' => 'required',
 	        'photo_country' => 'required',  
-	        'photo_authorization_checkbox' => 'required',
+	        'authorized' => 'required',
 	        //'photo' => 'max:10240|required|mimes:jpeg,jpg,png,gif',
 	        'photo_imageDate' => 'date_format:d/m/Y|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/'
       	);
@@ -48,10 +48,9 @@ class APIPhotosController extends \BaseController {
 		if ($validator->fails()) {
 			return $validator->messages();
 		}
-
-		if (Input::hasFile('photo') and Input::file('photo')->isValid()) {
-        	$file = Input::file('photo');
-
+		return $input["photo"];
+		if (\Input::hasFile('photo') and \Input::file('photo')->isValid()) {
+        	$file = \Input::file('photo');
 
 			/* Armazenamento */
 			$photo = new Photo;
@@ -73,8 +72,29 @@ class APIPhotosController extends \BaseController {
 	        $photo->state = $input["photo_state"];
 	        if ( !empty($input["photo_street"]) )
 	          $photo->street = $input["photo_street"];
+	      	$photo->user_id = $input["user_id"];
+	      	$photo->dataUpload = date('Y-m-d H:i:s');
+	      	$photo->nome_arquivo = $file->getClientOriginalName();
 
 			$photo->save();
+			//Photo e salva para gerar ID automatico
+
+			$ext = $file->getClientOriginalExtension();
+      		$photo->nome_arquivo = $photo->id.".".$ext;
+
+      		$photo->save();
+
+      		$metadata       = Image::make(\Input::file('photo'))->exif();
+  	        $public_image   = Image::make(\Input::file('photo'))->rotate($angle)->encode('jpg', 80);
+  	        $original_image = Image::make(\Input::file('photo'))->rotate($angle);
+  
+  	        $public_image->widen(600)->save(public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg');
+	        $public_image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
+	        $public_image->fit(186, 124)->encode('jpg', 70)->save(public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg');
+	        $public_image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
+	        $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
+
+	        return "success";
 
 		}
 	}
