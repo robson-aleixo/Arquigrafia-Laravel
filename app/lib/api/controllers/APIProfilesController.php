@@ -20,4 +20,14 @@ class APIProfilesController extends \BaseController {
 		$user_photos = \DB::table('photos')->whereNull('deleted_at')->whereNull('institution_id')->where('user_id', '=', $id)->where('id', '<', $max_id)->orderBy('created_at', 'desc')->take(20)->get();
 		return \Response::json($user_photos);
 	}
+
+	public function getFollowers($id) {
+		$user = \User::find($id);
+		return \Response::json($user->followers);
+	}
+
+	public function getFollowing($id) {
+		$user = \User::find($id);
+		return \Response::json(["users" => $user->following, "institutions" => $user->followingInstitution]);
+	}
 }
