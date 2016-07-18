@@ -157,4 +157,6 @@ Route::group(array('prefix' => 'api/'), function()
     Route::get('moreUserPhotos/{id}', 'lib\api\controllers\APIProfilesController@getMoreUserPhotos');
     Route::get('profile/{id}/followers', 'lib\api\controllers\APIProfilesController@getFollowers');
     Route::get('profile/{id}/following', 'lib\api\controllers\APIProfilesController@getFollowing');
+    Route::get('profile/{id}/evaluatedPhotos', 'lib\api\controllers\APIProfilesController@getUserEvaluations');
+    Route::get('profile/{id}/moreEvaluatedPhotos', 'lib\api\controllers\APIProfilesController@getMoreUserEvaluations');
 });

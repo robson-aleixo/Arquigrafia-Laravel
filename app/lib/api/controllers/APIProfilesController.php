@@ -21,6 +21,19 @@ class APIProfilesController extends \BaseController {
 		return \Response::json($user_photos);
 	}
 
+	public function getUserEvaluations($id) {
+		$evaluations = \Evaluation::where("user_id", $id)->groupBy('photo_id')->distinct()->orderBy('id', 'desc')->take(20)->get();
+		return \Response::json(["photos" => \Photo::whereIn('id', $evaluations->lists('photo_id'))->get(), "max_id" => $evaluations[count($evaluations)-1]->id]);
+	}
+
+	public function getMoreUserEvaluations($id) {
+		$input = \Input::all();
+		$max_id = $input["max_id"];
+
+		$evaluations = \Evaluation::where("user_id", $id)->where("id", "<", $max_id)->groupBy('photo_id')->distinct()->orderBy('id', 'desc')->take(20)->get();
+		return \Response::json(["photos" => \Photo::whereIn('id', $evaluations->lists('photo_id'))->get(), "max_id" => $evaluations[count($evaluations)-1]->id]);
+	}
+
 	public function getFollowers($id) {
 		$user = \User::find($id);
 		return \Response::json($user->followers);
