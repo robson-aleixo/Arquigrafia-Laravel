@@ -60,7 +60,8 @@ class APIPhotosController extends \BaseController {
 	      	$photo->allowCommercialUses = $input["photo_allowCommercialUses"];
 	        $photo->authorized = $input["authorized"];
 	        $photo->allowModifications = $input["photo_allowModifications"];
-	        $photo->city = $input["photo_city"];
+	        if( !empty($input["photo_city"]) )
+	          $photo->city = $input["photo_city"];
 	        $photo->country = $input["photo_country"];
 	        if ( !empty($input["photo_description"]) )
 	          $photo->description = $input["photo_description"];
@@ -69,7 +70,8 @@ class APIPhotosController extends \BaseController {
 	        if ( !empty($input["photo_imageAuthor"]) )
 	          $photo->imageAuthor = $input["photo_imageAuthor"];
 	        $photo->name = $input["photo_name"];
-	        $photo->state = $input["photo_state"];
+	        if ( !empty($input["photo_state"]) )
+	          $photo->state = $input["photo_state"];
 	        if ( !empty($input["photo_street"]) )
 	          $photo->street = $input["photo_street"];
 	      	$photo->user_id = $input["user_id"];
@@ -97,6 +99,7 @@ class APIPhotosController extends \BaseController {
 	        return "success";
 
 		}
+
 	}
 
 
