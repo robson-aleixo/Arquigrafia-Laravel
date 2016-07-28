@@ -52,7 +52,7 @@ class APIPhotosController extends \BaseController {
 		
 		if (\Input::hasFile('photo') and \Input::file('photo')->isValid()) {
         	$file = \Input::file('photo');
-
+        	return "Has File";
 			/* Armazenamento */
 			$photo = new Photo;
 
@@ -87,9 +87,9 @@ class APIPhotosController extends \BaseController {
 
       		$photo->save();
 
-      		$metadata       = Image::make(\Input::file('photo'))->exif();
-  	        $public_image   = Image::make(\Input::file('photo'))->rotate($angle)->encode('jpg', 80);
-  	        $original_image = Image::make(\Input::file('photo'))->rotate($angle);
+      		$metadata       = \Image::make(\Input::file('photo'))->exif();
+  	        $public_image   = \Image::make(\Input::file('photo'))->rotate($angle)->encode('jpg', 80);
+  	        $original_image = \Image::make(\Input::file('photo'))->rotate($angle);
   
   	        $public_image->widen(600)->save(public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg');
 	        $public_image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
@@ -100,7 +100,7 @@ class APIPhotosController extends \BaseController {
 	        return "success";
 
 		}
-		return $input["photo"];
+		return \Response::json($input["photo"]);
 	}
 
 
