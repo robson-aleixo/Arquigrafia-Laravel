@@ -35,6 +35,7 @@ class APIPhotosController extends \BaseController {
 	{
 		/* Validação do input */
 		$input = \Input::all();
+		return Responde::json($input);
 		$rules = array( 
 			'photo_name' => 'required',
 	        'photo_imageAuthor' => 'required',
@@ -100,6 +101,11 @@ class APIPhotosController extends \BaseController {
 
 		}
 
+	}
+
+	public function testInput(){
+		$input = \Input::all();
+		return $input;
 	}
 
 
