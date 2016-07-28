@@ -34,7 +34,7 @@ class APIPhotosController extends \BaseController {
 	public function store()
 	{
 		/* Validação do input */
-		$input = \Input::file('file');
+		$input = \Input::all();
 		return Response::json($input);
 		$rules = array( 
 			'photo_name' => 'required',
