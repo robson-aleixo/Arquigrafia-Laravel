@@ -35,7 +35,7 @@ class APIPhotosController extends \BaseController {
 	{
 		/* Validação do input */
 		$input = \Input::all();
-		return \Response::json($input);
+		
 		$rules = array( 
 			'photo_name' => 'required',
 	        'photo_imageAuthor' => 'required',
@@ -49,7 +49,7 @@ class APIPhotosController extends \BaseController {
 		if ($validator->fails()) {
 			return $validator->messages();
 		}
-		return $input["photo"];
+		
 		if (\Input::hasFile('photo') and \Input::file('photo')->isValid()) {
         	$file = \Input::file('photo');
 
@@ -100,7 +100,7 @@ class APIPhotosController extends \BaseController {
 	        return "success";
 
 		}
-
+		return $input["photo"];
 	}
 
 
