@@ -42,7 +42,7 @@ class APIPhotosController extends \BaseController {
 	        'tags' => 'required',
 	        'photo_country' => 'required',  
 	        'authorized' => 'required',
-	        //'photo' => 'max:10240|required|mimes:jpeg,jpg,png,gif',
+	        'photo' => 'max:10240|required|mimes:jpeg,jpg,png,gif',
 	        'photo_imageDate' => 'date_format:d/m/Y|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/'
       	);
 		$validator = \Validator::make($input, $rules);
@@ -52,7 +52,7 @@ class APIPhotosController extends \BaseController {
 		
 		if (\Input::hasFile('photo') and \Input::file('photo')->isValid()) {
         	$file = \Input::file('photo');
-        	return "Has File";
+        
 			/* Armazenamento */
 			$photo = new Photo;
 
@@ -80,6 +80,15 @@ class APIPhotosController extends \BaseController {
 	      	$photo->nome_arquivo = $file->getClientOriginalName();
 
 			$photo->save();
+
+			$tags = $input["tags"];
+			$tagsSaved = \PhotosController::saveTags($tags,$photo);
+              
+            if(!$tagsSaved){ 
+                  $photo->forceDelete();
+                  $messages = array('tags'=>array('Inserir pelo menos uma tag'));                  
+                  return "Tags error";                  
+            }
 			//Photo e salva para gerar ID automatico
 
 			$ext = $file->getClientOriginalExtension();
@@ -97,10 +106,10 @@ class APIPhotosController extends \BaseController {
 	        $public_image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
 	        $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
 
-	        return "success";
+	        return $photo->id;
 
 		}
-		return \Response::json($input["photo"]);
+		return "No image sent";
 	}
 
 
