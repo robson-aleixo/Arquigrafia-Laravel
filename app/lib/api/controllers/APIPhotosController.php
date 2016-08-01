@@ -35,23 +35,24 @@ class APIPhotosController extends \BaseController {
 	{
 		/* Validação do input */
 		$input = \Input::all();
+		
 		$rules = array( 
 			'photo_name' => 'required',
 	        'photo_imageAuthor' => 'required',
 	        'tags' => 'required',
 	        'photo_country' => 'required',  
 	        'authorized' => 'required',
-	        //'photo' => 'max:10240|required|mimes:jpeg,jpg,png,gif',
+	        'photo' => 'max:10240|required|mimes:jpeg,jpg,png,gif',
 	        'photo_imageDate' => 'date_format:d/m/Y|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/'
       	);
 		$validator = \Validator::make($input, $rules);
 		if ($validator->fails()) {
 			return $validator->messages();
 		}
-		return $input["photo"];
+		
 		if (\Input::hasFile('photo') and \Input::file('photo')->isValid()) {
         	$file = \Input::file('photo');
-
+        
 			/* Armazenamento */
 			$photo = new Photo;
 
@@ -79,6 +80,17 @@ class APIPhotosController extends \BaseController {
 	      	$photo->nome_arquivo = $file->getClientOriginalName();
 
 			$photo->save();
+
+			$tags = $input["tags"];
+			return "Tags: ". $tags . " Type: " . gettype($tags);
+			$tags = \PhotosController::formatTags($tags);
+			$tagsSaved = \PhotosController::saveTags($tags,$photo);
+              
+            if(!$tagsSaved){ 
+                  $photo->forceDelete();
+                  $messages = array('tags'=>array('Inserir pelo menos uma tag'));                  
+                  return "Tags error";                  
+            }
 			//Photo e salva para gerar ID automatico
 
 			$ext = $file->getClientOriginalExtension();
@@ -86,9 +98,9 @@ class APIPhotosController extends \BaseController {
 
       		$photo->save();
 
-      		$metadata       = Image::make(\Input::file('photo'))->exif();
-  	        $public_image   = Image::make(\Input::file('photo'))->rotate($angle)->encode('jpg', 80);
-  	        $original_image = Image::make(\Input::file('photo'))->rotate($angle);
+      		$metadata       = \Image::make(\Input::file('photo'))->exif();
+  	        $public_image   = \Image::make(\Input::file('photo'))->rotate($angle)->encode('jpg', 80);
+  	        $original_image = \Image::make(\Input::file('photo'))->rotate($angle);
   
   	        $public_image->widen(600)->save(public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg');
 	        $public_image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
@@ -96,10 +108,10 @@ class APIPhotosController extends \BaseController {
 	        $public_image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
 	        $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
 
-	        return "success";
+	        return $photo->id;
 
 		}
-
+		return "No image sent";
 	}
 
 
