@@ -116,7 +116,9 @@ class APIPhotosController extends \BaseController {
 		if (!is_null($photo->institution_id)) {
 			$sender = \Institution::find($photo->institution_id);
 		}
-		return \Response::json(["photo" => $photo, "sender" => $sender]);
+		$license = \Photo::licensePhoto($photo);
+		$authorsList = $photo->authors->lists('name');
+		return \Response::json(["photo" => $photo, "sender" => $sender, "license" => $license, "authors" => $authorsList]);
 	}
 
 
