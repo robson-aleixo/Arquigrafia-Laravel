@@ -82,6 +82,7 @@ class APIPhotosController extends \BaseController {
 			$photo->save();
 
 			$tags = $input["tags"];
+			return $tags;
 			$tagsSaved = \PhotosController::saveTags($tags,$photo);
               
             if(!$tagsSaved){ 
