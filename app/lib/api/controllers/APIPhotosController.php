@@ -82,6 +82,7 @@ class APIPhotosController extends \BaseController {
 			$photo->save();
 
 			$tags = $input["tags"];
+			return gettype($tags);
 			$tags = \PhotosController::formatTags($tags);
 			$tagsSaved = \PhotosController::saveTags($tags,$photo);
 			//return $tags;
