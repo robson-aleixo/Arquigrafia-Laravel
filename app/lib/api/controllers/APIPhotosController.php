@@ -85,10 +85,10 @@ class APIPhotosController extends \BaseController {
 			$tags = str_replace("[", "", $tags);
 			$tags = str_replace("]", "", $tags);
 
-			return $tags;
-			//return "Tags: ". $tags . " Type: " . gettype($tags);
-			$tags = \PhotosController::formatTags($tags);
-			$tagsSaved = \PhotosController::saveTags($tags,$photo);
+			$finalTags = explode(",", $tags);
+
+			$tags = \PhotosController::formatTags($finalTags);
+			$tagsSaved = \PhotosController::saveTags($finalTags,$photo);
               
             if(!$tagsSaved){ 
                   $photo->forceDelete();
