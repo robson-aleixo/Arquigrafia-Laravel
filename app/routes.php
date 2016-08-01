@@ -159,4 +159,7 @@ Route::group(array('prefix' => 'api/'), function()
     Route::get('profile/{id}/following', 'lib\api\controllers\APIProfilesController@getFollowing');
     Route::get('profile/{id}/evaluatedPhotos', 'lib\api\controllers\APIProfilesController@getUserEvaluations');
     Route::get('profile/{id}/moreEvaluatedPhotos', 'lib\api\controllers\APIProfilesController@getMoreUserEvaluations');
+    /* Controlador de avaliações */
+    Route::get('photos/{photoId}/evaluation/{userId}', 'lib\api\controllers\APIEvaluationController@retrieveEvaluation');
+    Route::post('photos/{photoId}/evaluation/{userId}', 'lib\api\controllers\APIEvaluationController@storeEvaluation');
 });
