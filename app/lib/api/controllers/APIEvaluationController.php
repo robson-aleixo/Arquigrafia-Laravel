@@ -3,8 +3,7 @@ namespace lib\api\controllers;
 
 class APIEvaluationController extends \BaseController {
 
-	public function retrieveEvaluation($photoId, $userId)
-	{
+	public function retrieveEvaluation($photoId, $userId) {
 		$binomials = \Binomial::all()->keyBy('id');
 		$evaluations =  \Evaluation::where("user_id",
         $userId)->where("photo_id", $photoId)->orderBy("binomial_id", "asc")->get();
@@ -48,6 +47,16 @@ class APIEvaluationController extends \BaseController {
           		$evaluation->save();
         	}
         }
-		\Response::json(var_dump($input));
+		\Response::json($input);
 	}
+
+    public function averageEvaluationValues($photoId, $userId) {
+        $result["binomials"] = \Binomial::all()->keyBy('id');
+        $result["average"] = \Evaluation::average($photoId);
+        $evaluations =  \Evaluation::where("user_id",
+        $userId)->where("photo_id", $photoId)->orderBy("binomial_id", "asc")->get();
+        $evaluations = $evaluations->keyBy('binomial_id');
+        $result["user_evaluation"] = $evaluations;
+        return \Response::json($result);
+    }
 }
