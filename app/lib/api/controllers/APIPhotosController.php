@@ -81,10 +81,14 @@ class APIPhotosController extends \BaseController {
 
 			$photo->save();
 
-			$tags = $input["tags"];
-			return "Tags: ". $tags . " Type: " . gettype($tags);
-			$tags = \PhotosController::formatTags($tags);
-			$tagsSaved = \PhotosController::saveTags($tags,$photo);
+			$tags = str_replace("\"", "", $input["tags"]);
+			$tags = str_replace("[", "", $tags);
+			$tags = str_replace("]", "", $tags);
+
+			$finalTags = explode(",", $tags);
+
+			$tags = \PhotosController::formatTags($finalTags);
+			$tagsSaved = \PhotosController::saveTags($finalTags,$photo);
               
             if(!$tagsSaved){ 
                   $photo->forceDelete();
@@ -99,8 +103,10 @@ class APIPhotosController extends \BaseController {
       		$photo->save();
 
       		$metadata       = \Image::make(\Input::file('photo'))->exif();
-  	        $public_image   = \Image::make(\Input::file('photo'))->rotate($angle)->encode('jpg', 80);
-  	        $original_image = \Image::make(\Input::file('photo'))->rotate($angle);
+  	        // $public_image   = \Image::make(\Input::file('photo'))->rotate($angle)->encode('jpg', 80);
+  	        // $original_image = \Image::make(\Input::file('photo'))->rotate($angle);
+  	        $public_image   = \Image::make(\Input::file('photo'))->encode('jpg', 80);
+  	        $original_image = \Image::make(\Input::file('photo'));
   
   	        $public_image->widen(600)->save(public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg');
 	        $public_image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
