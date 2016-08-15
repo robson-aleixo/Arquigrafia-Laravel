@@ -160,7 +160,7 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$photo = \Photo::find();
+		$photo = \Photo::find($id);
 
 		$input = \Input::all();
 		
