@@ -260,7 +260,7 @@ class APIPhotosController extends \BaseController {
 	      $tag->count = $tag->count - 1;
 	      $tag->save();
 	    }
-	    DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
+	    \DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
 	    $photo->delete();
 	}
 
