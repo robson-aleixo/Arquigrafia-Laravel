@@ -48,4 +48,15 @@ class APIFeedController extends \BaseController {
 		}
 		return \Response::json($result);
 	}
+
+	public function loadRecentPhotos() {
+		return \Response::json(\Photo::all()->sortByDesc('created_at')->take(20));
+	}
+
+	public function loadMoreRecentPhotos() {
+		$input = \Input::all();
+		$max_id = $input["max_id"];
+
+		return \Response::json(\Photo::where('id', '<', $max_id)->orderBy('created_at', 'desc')->take(20)->get());
+	}
 }

@@ -163,4 +163,7 @@ Route::group(array('prefix' => 'api/'), function()
     Route::get('photos/{photoId}/evaluation/{userId}', 'lib\api\controllers\APIEvaluationController@retrieveEvaluation');
     Route::post('photos/{photoId}/evaluation/{userId}', 'lib\api\controllers\APIEvaluationController@storeEvaluation');
     Route::get('photos/{photoId}/averageEvaluation/{userId}', 'lib\api\controllers\APIEvaluationController@averageEvaluationValues');
+    /* Busca */
+    Route::get('recent', 'lib\api\controllers\APIFeedController@loadRecentPhotos');
+    Route::get('moreRecent', 'lib\api\controllers\APIFeedController@loadMoreRecentPhotos');
 });
