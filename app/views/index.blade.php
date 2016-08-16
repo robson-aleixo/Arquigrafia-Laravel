@@ -32,8 +32,12 @@
 	      <h3><img src="{{ asset("img/logo-mini.png") }}" width="16" height="16"/>
 	        Atualizações:
 	      </h3>
-	    </hgroup>
-	    @include('includes.news')
+	    </hgroup>      
+      <!--include('app.modules.news.includes.news')-->
+	    <!--include('includes.news1')-->
+
+      <?php echo $newView;  //View::make('./news') ?>
+      <!--include('app/modules/news/views/includes/news')-->
 	  </div>
        </div>
      </div>

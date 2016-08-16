@@ -60,14 +60,13 @@ class PhotosController extends \BaseController {
         $hasInstitution = Institution::belongSomeInstitution($photos->id);
         $institution = Institution::find(Session::get('institutionId')); 
       } else{
-        $hasInstitution = Institution::belongSomeInstitution($photos->id);
-        //dd($hasInstitution);
-        if(!is_null($photo_institution) && $user->followingInstitution->contains($photo_institution->id)){ 
-         
+        $hasInstitution = Institution::belongSomeInstitution($photos->id);        
+        if(!is_null($photo_institution) && $user->followingInstitution->contains($photo_institution->id)){          
+
            $followInstitution = false;
         }        
       }
-      $evaluations =  Evaluation::where("user_id", $user->id)->where("photo_id", $id)->orderBy("binomial_id", "asc")->get();
+      $evaluations = Evaluation::EspecificEvaluationUserAndPhoto($user,$id);
       
       if ($user->following->contains($photo_owner->id)) {
         $follow = false;
@@ -289,17 +288,12 @@ class PhotosController extends \BaseController {
       
 
             if ( !empty($input["new_album-name"]) ) {
-                $album = Album::create([
-                'title' => $input["new_album-name"],
-                'description' => "",
-                'user' => Auth::user(),
-                'cover' => $photo,
-                ]);
-                if ( $album->isValid() ) {
-                  DB::insert('insert into album_elements (album_id, photo_id) values (?, ?)', array($album->id, $photo->id));
+                Album::createAlbum($input["new_album-name"], "", Auth::user(), $photo);                
+                if ( $album->isValid() ) {                      
+                      PhotoAlbum::createAlbumElements($album->id, $photo->id);
                 }
-            } elseif ( !empty($input["photo_album"]) ) {
-                DB::insert('insert into album_elements (album_id, photo_id) values (?, ?)', array($input["photo_album"], $photo->id));
+            } elseif ( !empty($input["photo_album"]) ) { 
+                  PhotoAlbum::createAlbumElements($input["photo_album"], $photo->id);
             }
             $ext = $file->getClientOriginalExtension();  
             Photo::fileNamePhoto($photo, $ext);    
@@ -359,7 +353,7 @@ class PhotosController extends \BaseController {
   {
     if (Auth::check()) {
       $photo = Photo::find($id);
-      if(/*$photo->authorized*/true) {
+      if($photo->authorized) {
         $originalFileExtension = strtolower(substr(strrchr($photo->nome_arquivo, '.'), 1));
         $filename = $id . '_original.' . $originalFileExtension;
         $path = storage_path().'/original-images/'. $filename;
@@ -564,7 +558,7 @@ class PhotosController extends \BaseController {
         $photo->name = $input["photo_name"];
         $photo->state = $input["photo_state"];
         $photo->street = $input["photo_street"];
-    
+
       
         if(!empty($input["workDate"])){             
             $photo->workdate = $input["workDate"];
@@ -658,10 +652,9 @@ class PhotosController extends \BaseController {
         $photo->saveMetadata(strtolower($ext), $metadata);
 
         $source_page = Request::header('referer');
-        ActionUser::printTags($photo->user_id, $id, $tags_copy, $source_page, "user", "Editou");
 
-        $user = User::find($photo->user_id);
-        
+        ActionUser::printTags($photo->user_id, $id, $tags_copy, $source_page, "user", "Editou");      
+
         return Redirect::to("/photos/{$photo->id}")->with('message', '<strong>Edição de informações da imagem</strong><br>Dados alterados com sucesso');
       }
   }
@@ -673,9 +666,11 @@ class PhotosController extends \BaseController {
       $tag->count = $tag->count - 1;
       $tag->save();
     }
+
     DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
 
     $photo->delete();
     return Redirect::to('/users/' . $photo->user_id);
   }
+
 }

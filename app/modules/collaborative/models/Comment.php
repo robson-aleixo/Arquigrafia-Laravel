@@ -38,4 +38,10 @@ class Comment extends \Eloquent {
     return $this->morphTo();
   }
 
+  public static function updateUserIdInComment($accountFrom, $accountTo)
+  { //DB::table('comments')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));    
+      Comment::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+  } 
+
+
 }

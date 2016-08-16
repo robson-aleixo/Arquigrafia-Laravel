@@ -95,9 +95,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->belongsToMany('Role', 'users_roles');
 	}
 
-
-
 	protected $hidden = array('password', 'remember_token');
+
+	public static function createUser($name,$email,$password,$login,$verification)
+	{ //create user with a verify code      
+      $user = User::create([
+      'name' => $name,
+      'email' => $email,
+      'password' => $password,
+      'login' => $login,
+      'verify_code' => $verification       
+      ]);
+      return $user;
+	}
 
 	public static function checkOldAccount( $user, $password)
 	{
@@ -154,27 +164,63 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		}
 	}
 
-	public static function userInformation($login){
-		
+	public static function userInformation($login)
+	{	
 		$user = User::whereRaw('((login = ?) or (email = ?)) and (id_stoa is NULL or id_stoa != login) and (id_facebook is NULL or id_facebook != login)', array($login, $login))->first();
-          return $user;
+		//$testuser = User::whereRaw('((login = ?) or (email = ?)) and (id_stoa is NULL or id_stoa != login)', array($login, $login))->first();
+        return $user;
 	}
 	
 
 	public static function userInformationObtain($email){
-		$user = User::where('email','=',$email)->whereRaw('(id_stoa is NULL or id_stoa != login) and (id_facebook is NULL or id_facebook != login)')->first();
+		$user = User::where('email','=',$email)->whereRaw('(id_stoa is NULL or id_stoa != login) and
+		 (id_facebook is NULL or id_facebook != login)')->first();
+		//$testuser = User::where('email','=',$email)->whereRaw('(id_stoa is NULL or id_stoa != login)')->first();
           return $user;
 	}
+
+	public static function userAccountsByEmail($email){
+		$user = User::where('email','=',$email)->get();
+		return $user;
+	}
+
+	public static function userAccountInFacebook($email){
+		//$fb_acc = User::whereRaw('(email = ?) and (id_facebook = login)', array($email))->first();  
+		$user = User::whereRaw('(email = ?) and (id_facebook = login)', array($email))->first();
+		return $user;
+	}
+
+	public static function userAccountInStoa($email){
+		//$stoa_acc = User::whereRaw('(email = ?) and (id_stoa = login)', array($email))->first();
+		$user = User::whereRaw('(email = ?) and (id_stoa = login)', array($email))->first();
+		return $user;
+	}
+
+	public static function updateAccountFacebook($arqAccount,$faceAccount){		
+		DB::table('users')->where('id', '=', $arqAccount->id)->update(array('id_facebook' => $faceAccount->id));
+	}
+
+	public static function oldUserWhitFacebookIdOrLogin($fbid){
+		$user = User::where('id_facebook', '=', $fbid)
+		->orWhere('login', '=', $fbid)->first();
+		return $user;
+	}
+
+	public static function borrar($email){ 
+		$arq_acc =  User::whereRaw('(email = ?) and (id_stoa is NULL or id_stoa != login) and 
+		(id_facebook is NULL or id_facebook != login)', array($email))->first();
+		return $arq_acc;
+	}
+
 
 	public static function userVerifyCode($verify_code){
 		$newUser = User::where('verify_code','=',$verify_code)->first();			
         return $newUser;
 	}
 
-	public static function userBelongInstitution($login,$institution){
-
+	public static function userBelongInstitution($login,$institution)
+	{
 		Log::info("Begining userBelongInstitution with input params login=".$login.", institution=".$institution);
-
 		$employees = DB::table('employees')
     			->join('users','employees.user_id','=','users.id')
     			->join('institutions','employees.institution_id','=','institutions.id')
@@ -189,9 +235,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      			}else{
      				return false;
      			}
-     			
-
-	}
+    }
 
 	public function setBirthdayAttribute($birthday) {
 		$this->attributes['birthday'] = $this->date->formatDate($birthday);
@@ -202,5 +246,29 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$this->password = Hash::make($password);
 		$this->save();
 	}
+
+	public static function updateUserToFriendship($accountFrom, $accountTo)
+	{
+      	DB::table('friendship')->where('following_id', '=', $accountFrom->id)->update(array('following_id' => $accountTo->id));
+    	DB::table('friendship')->where('followed_id', '=', $accountFrom->id)->update(array('followed_id' => $accountTo->id));      
+  	} 
+
+  	public static function DeleteParallelAccountsFacebook($fb_acc)
+  	{	
+  		User::where('id', '=', $fb_acc->id)->delete();
+  	}
+
+  	public static function DeleteParallelAccountsStoa($stoa_acc)
+  	{	
+  		User::where('id', '=', $stoa_acc->id)->delete();
+  	}
+
+  	public static function userPhotosSearch($username)
+  	{ 
+  		$query = User::where('id', '>', 0);
+        $query->where('name', 'LIKE', '%'. $username .'%');
+        $userList = $query->get();
+        return $userList->lists('id');
+  	}
 
 }

@@ -26,4 +26,9 @@ class Occupation extends Eloquent {
 		}	
 
 	}
+
+	public static function updateUserIdInOccupation($accountFrom, $accountTo){
+      //DB::table('occupations')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+      Occupation::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+  	}  
 }

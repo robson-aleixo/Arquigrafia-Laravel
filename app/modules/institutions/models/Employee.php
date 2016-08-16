@@ -26,5 +26,9 @@ class Employee extends \Eloquent {
 		return $this->belongsTo('Role');
 	}
 
+	public static function updateUserIdInEvaluation($accountFrom, $accountTo)
+	{ //DB::table('employees')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+    	Employee::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+  	} 
 
 }

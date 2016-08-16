@@ -64,4 +64,11 @@ class Badge extends \Eloquent {
       ->wherePivot('element_id', $el->id);
   }
 
+  public static function updateUserIdInBadges($accountFrom, $accountTo)
+  { 
+    \DB::table('user_badges')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));      
+  } 
+
+
+
 }

@@ -106,4 +106,21 @@ class Album extends \BaseModel {
 		return $query->whereNull('institution_id');
 	}
 
+	public static function updateUserIdInAlbum($accountFrom, $accountTo){
+      //DB::table('albums')->where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+      Album::where('user_id', '=', $accountFrom->id)->update(array('user_id' => $accountTo->id));
+  	}  
+
+  	public static function createAlbum($title, $description, $user, $cover, $institution )
+  	{	
+		$album = new Album;
+		$album->title = $title ;
+		$album->description = $description;
+		$album->user_id = $user;
+		$album->cover_id = $cover;
+		$album->institution_id = $institution;
+		$album->save();	
+		return $album;	
+  	}
+  	
 }

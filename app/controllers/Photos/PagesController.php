@@ -22,12 +22,13 @@ class PagesController extends BaseController {
     public function __construct(Date $date = null)
     {
         $this->date = $date ?: new Date;
-        
     }
 
 
     public function home()
     { 
+        
+        $newView = null;
         if(Session::has('last_search'))
             Session::forget('last_search');
 
@@ -36,114 +37,23 @@ class PagesController extends BaseController {
 
         $photos = Photo::orderByRaw("RAND()")->take(150)->get();
 
-        if (Auth::check()) {
-            $user_id = Auth::user()->id;
-            $user_or_visitor = "user";
-        }
-        else { 
-            $user_or_visitor = "visitor";
-            session_start();
-            $user_id = session_id();
-        } 
         if(Session::has('institutionId')){
-            $institution = Institution::find(Session::get('institutionId'));    
-                   
-        }else{ 
-            $institution = null;            
-        }
-        $source_page = Request::header('referer');
-        ActionUser::printHomePage($user_id, $source_page, $user_or_visitor);
-        
-        return View::make('index', ['photos' => $photos, 'institution' => $institution ]);
+            $institution = Institution::find(Session::get('institutionId'));
+        }else{
+            $institution = null;
+        }             
+        $this->LogActionUserHome();
+        if (Auth::check()) $newView = View::make('./news');                
+        return View::make('index', ['photos' => $photos, 'institution' => $institution, 'newView' => $newView ]);
     }
 
     public function panel()
-    { 
+    {
         $photos = Photo::orderByRaw("RAND()")->take(150)->get();
         return View::make('api.panel', ['photos' => $photos]);
     }
-
-    private static function userPhotosSearch($needle) {
-        $query = User::where('id', '>', 0);
-        $query->where('name', 'LIKE', '%'. $needle .'%');
-        $userList = $query->get();    
-        return $userList->lists('id');
-    }
     
-    private static function streetAndCitySearch(&$needle,&$txtcity) {
-        Log::info("Logging info txtcity <".$txtcity.">");       
-
-        $allowed = "/[^a-z\\.\/\sçáéíóúãàõ]/i";
-        $txtstreet=  preg_replace($allowed,"",$needle);
-        $txtstreet = rtrim($txtstreet);      
-        $needle = $txtstreet;        
-
-        $query = Photo::orderByRaw("RAND()");         
-        $query->where('city', 'LIKE', '%' . $txtcity . '%');
-        $query->where('street', 'LIKE', '%' . $txtstreet . '%');
-        $query->whereNull('deleted_at');
-        $photos = $query->get(); 
-        return $photos;  
-    }
     
-    private static function dateSearch(&$needle,&$type){
-
-        if($type=='work'){
-            Log::info("Logging information of work date<".$needle.">"); 
-            $dateType = 'workdate';
-
-        }elseif ($type=='img') {
-            Log::info("Logging information of image date<".$needle.">"); 
-            $dateType = 'dataCriacao';
-
-        }elseif ($type=='up') {
-            Log::info("Logging information for upload <".$needle.">");
-            $dateType = 'dataUpload';
-            $date = new DateTime($needle);
-            $needle =  $date->format('Y-m-d');  
-            Log::info("Logging information for format upload <".$needle.">");
-        }
-        $query = Photo::orderByRaw("RAND()");         
-        $query->where($dateType, 'LIKE', '%' . $needle . '%');
-        $query->whereNull('deleted_at');
-        $photos = $query->get(); 
-        return $photos;   
-    }
-    
-    public static function yearSearch(&$needle,&$dateFilter,&$date){
-
-        
-
-        $dateFilter = [
-            'di'=>'Data da Imagem',
-            'du'=>'Data de Upload',
-            'do'=>'Data da Obra'
-        ];
-
-
-        if(!empty($date) ){ 
-
-            if($date == 'di' ) $dateType = 'dataCriacao';          
-            if ($date == 'du' ) $dateType = 'dataUpload';
-            if ($date == 'do' ) {$dateType = 'workdate'; }                   
-
-            $query = Photo::orderByRaw("RAND()");         
-            $query->where($dateType, 'LIKE', '%' . $needle . '%');
-            $query->whereNull('deleted_at');
-            $photos = $query->get(); 
-            return $photos; 
-
-        }else{
-            $query = Photo::orderByRaw("RAND()");         
-            $query->where('dataCriacao', 'LIKE', '%' . $needle . '%');
-            $query->orWhere('dataUpload', 'LIKE', '%' . $needle . '%');
-            $query->orWhere('workdate', 'LIKE', '%' . $needle . '%');
-            $query->whereNull('deleted_at');
-            $photos = $query->get(); 
-            return $photos; 
-        }
-    }
-
     public function searchBinomial($binomial_id, $option, $value = null) {
         $bin = Binomial::find($binomial_id);
         $bi_opt = $option == 1 ? $bin->firstOption : $bin->secondOption;
@@ -156,8 +66,6 @@ class PagesController extends BaseController {
                 'value' => $value
             ]);
     }
-
-    
 
     public function search()
     {   
@@ -194,97 +102,39 @@ class PagesController extends BaseController {
             }
             $tags = null;
             $allAuthors =  null;
-            $query = Tag::where('name', 'LIKE', '%' . $needle . '%')->where('count', '>', 0);  
-            $tags = $query->get(); 
-            
-            $allAuthors = DB::table('authors')
-            ->join('photo_author', function($join) use ($needle)
-            { $join->on('authors.id', '=', 'photo_author.author_id')
-              ->where('name', 'LIKE', '%' . $needle . '%');
-            })->groupBy('authors.id')->get();
-                                     
+            $tags = Tag::approximateTagSearch($needle);
+            $allAuthors = Author::authorSearch($needle);                                                 
             if ($txtcity != "") {                  
-                $photos = static::streetAndCitySearch($needle,$txtcity);        
-
+                $photos = Photo::streetAndCitySearch($needle,$txtcity); 
             }elseif ((DateTime::createFromFormat('Y-m-d', $needle) !== FALSE || DateTime::createFromFormat('Y-m-d H:i:s', $needle) !== FALSE )&& !empty($type)) {
-                $photos = static::dateSearch($needle,$type);
-
+                $photos = Photo::dateSearch($needle,$type);
             }elseif (DateTime::createFromFormat('Y', $needle) !== FALSE) {
-
-                $photos = static::yearSearch($needle,$dateFilter,$date);      
-
-            } else {                  
-                $idUserList = static::userPhotosSearch($needle);
-
-                $query = Photo::where(function($query) use($needle, $idUserList) {
-                    $query->where('name', 'LIKE', '%'. $needle .'%');  
-                    $query->orWhere('description', 'LIKE', '%'. $needle .'%');  
-                    $query->orWhere('imageAuthor', 'LIKE', '%' . $needle . '%');                    
-                    $query->orWhere('country', 'LIKE', '%'. $needle .'%');  
-                    $query->orWhere('state', 'LIKE', '%'. $needle .'%'); 
-                    $query->orWhere('city', 'LIKE', '%'. $needle .'%'); 
-                    if ($idUserList != null && !empty($idUserList)) {
-                        $query->orWhereIn('user_id', $idUserList);}
-                });
-                $photos =  $query->orderBy('created_at', 'DESC')->get();                 
-            }       
-
-           
+                $photos = Photo::yearSearch($needle,$dateFilter,$date);      
+            } else {         
+                $idUserList = User::userPhotosSearch($needle);
+                $photos = Photo::searchPhoto($needle, $idUserList);                              
+            }           
             // se houver uma tag exatamente como a busca, pegar todas as fotos dessa tag e juntar no painel
-            $query = Tag::where('name', '=', $needle); 
-            $tags = $query->get();
-             foreach ($tags as $tag) { 
-                $byTag = $tag->photos;                
-                $photos = $photos->merge($byTag);
-             }   
-
-            if($authorFilter != null){             
-                $query = Author::where('name', '=', $needle);
-                $author = $query->get();
-                if($author->first()) { 
-                    $byAuthor = $author->first()->photos;                
-                    $photos = $photos->merge($byAuthor);                
-                }     
-            }else{
-                $queryAuthor = Author::where('name', 'LIKE', '%' . $needle . '%'); 
-                $authors = $queryAuthor->get();
-                foreach ($authors as $author) { 
-                    $byAuthor = $author->photos;                
-                    $photos = $photos->merge($byAuthor);                
-                }    
-            }  
-
-            $query = Institution::where(function($query) use($needle) {
-                    $query->where('name', 'LIKE', '%'. $needle .'%');                      
-                    $query->orWhere('acronym', '=',  $needle);
-                });
-            $institutions =  $query->get(); 
+            $photos = Tag::tagSearch($needle, $photos);
             
-            foreach ($institutions as $institution) { 
-                $byInstitution = $institution->photos;
-                $photos = $photos->merge($byInstitution);
+            if($authorFilter != null){             
+                $photos = Author::photoAuthorSearch($needle,$photos); 
+            }else{
+                $photos = Author::approxPhotoAuthorSearch($needle,$photos);                  
             }  
-           
+            $institutions = Institution::institutionAcronymSearch($needle);
+            $photos = Static::takePhotosInstitutions($institutions,$photos);            
             $photosAll = $photos->count();
-
-            if (Auth::check()) {
-                $user_id = Auth::user()->id;
-                $user_or_visitor = "user";
-            }else { 
-                $user_or_visitor = "visitor";
-                session_start();
-                $user_id = session_id();
-            }
-            $source_page = Request::header('referer');
-            ActionUser::printSearch($user_id, $source_page, $needle, $user_or_visitor);
+            
+            $this->LogActionUserSearch($needle);
             
             if(Session::has('CurrPage') && Session::get('CurrPage')!= 1){ 
                 $pageRetrieved = Session::get('CurrPage');  
                 $haveSession = 1;   
             }
     
-            if($photos->count() != 0){           
-                $photosPages = Photo::paginatePhotosSearch($photos); 
+            if($photos->count() != 0)
+            {   $photosPages = Photo::paginatePhotosSearch($photos); 
                 $photosTotal = $photosPages->getTotal();
                 $maxPage = $photosPages->getLastPage();
                 
@@ -488,6 +338,41 @@ class PagesController extends BaseController {
        
 
         return Response::json($response);
+    }
+
+    public static function takePhotosInstitutions($institutions,$photos)
+    {   
+        foreach ($institutions as $institution) { 
+            $byInstitution = $institution->photos;            
+            $photos = $photos->merge($byInstitution);
+        } 
+        return $photos;
+    }
+
+    public function actionUserVisitor()
+    {
+        if (Auth::check()) {
+                $user_id = Auth::user()->id;
+                $user_or_visitor = "user";
+        }else { 
+            $user_or_visitor = "visitor";
+            session_start();
+            $user_id = session_id();
+        }  
+        return array('user_id' => $user_id , 'user_or_visitor' => $user_or_visitor);            
+    }
+
+    public function LogActionUserSearch($text)
+    {  
+        $source_page = Request::header('referer');
+        $userType = $this->actionUserVisitor();
+        ActionUser::printSearch($userType['user_id'], $source_page, $text, $userType['user_or_visitor']);
+    }
+
+    public function LogActionUserHome()
+    {   $source_page = Request::header('referer');
+        $userType = $this->actionUserVisitor();
+        ActionUser::printHomePage($userType['user_id'], $source_page, $userType['user_or_visitor']);
     }
 
     

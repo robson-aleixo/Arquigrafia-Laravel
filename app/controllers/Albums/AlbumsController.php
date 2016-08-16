@@ -19,6 +19,8 @@ class AlbumsController extends \BaseController {
 
 	public function index() {
 		if(Session::has('institutionId')) {
+			//$albums_with_photo = Photo::find(107)->albums;
+			//dd($albums_with_photo);
 			$albums = Album::withInstitution(Session::get('institutionId'))->get();
 		} else {
 			$albums = Album::withUser(Auth::user())->withoutInstitutions()->get();
@@ -72,7 +74,8 @@ class AlbumsController extends \BaseController {
 			]);
 	}
 
-	public function store() {
+	public function store() 
+	{
 		$photos = (array) Input::get('photos_add');
 		$cover = Photo::find((empty($photos) ? null : array_values($photos)[0]));
 		$user = Auth::user();
@@ -82,13 +85,8 @@ class AlbumsController extends \BaseController {
 		} else {
 			$institution = NULL;
 		}
-		$album = Album::create([
-			'title' => Input::get('title'),
-			'description' => Input::get('description'),
-			'user' => $user,
-			'cover' => $cover,
-			'institution' => $institution
-		]);
+		$album = Album::createAlbum(Input::get('title'),Input::get('description'), $user, $cover,$institution);
+	
 		if ( $album->isValid() ) {
 			if ( !empty($photos) ) {
 				$album->attachPhotos($photos);
@@ -212,11 +210,13 @@ class AlbumsController extends \BaseController {
 		foreach ($photos as $photo) {
 			$photos_ids[] = $photo->id;
 		}
-		return $photos_ids;		
+
+		return $photos_ids;
+
 	}
 
-	public function getList($id) {
-		//
+	public function getList($id) 
+	{		
 		$albums_with_photo = Photo::find($id)->albums; // albums que já têm essa foto
 		
 		if(Session::has('institutionId')) { 
