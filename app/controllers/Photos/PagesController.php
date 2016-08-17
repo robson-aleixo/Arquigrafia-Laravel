@@ -26,8 +26,7 @@ class PagesController extends BaseController {
 
 
     public function home()
-    { 
-        
+    {         
         $newView = null;
         if(Session::has('last_search'))
             Session::forget('last_search');
@@ -41,7 +40,7 @@ class PagesController extends BaseController {
             $institution = Institution::find(Session::get('institutionId'));
         }else{
             $institution = null;
-        }             
+        }    
         $this->LogActionUserHome();
         if (Auth::check()) $newView = View::make('./news');                
         return View::make('index', ['photos' => $photos, 'institution' => $institution, 'newView' => $newView ]);
@@ -372,6 +371,7 @@ class PagesController extends BaseController {
     public function LogActionUserHome()
     {   $source_page = Request::header('referer');
         $userType = $this->actionUserVisitor();
+        //dd($userType);
         ActionUser::printHomePage($userType['user_id'], $source_page, $userType['user_or_visitor']);
     }
 

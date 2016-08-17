@@ -238,7 +238,7 @@ class PhotosController extends \BaseController {
             $photo = new Photo();
 
             if ( !empty($input["photo_aditionalImageComments"]) )
-              $photo->aditionalImageComments = $input["photo_aditionalImageComments"];
+                $photo->aditionalImageComments = $input["photo_aditionalImageComments"];
             $photo->allowCommercialUses = $input["photo_allowCommercialUses"];
             $photo->allowModifications = $input["photo_allowModifications"];
             $photo->city = $input["photo_city"];
@@ -399,10 +399,10 @@ class PhotosController extends \BaseController {
     $photos = Photo::all();
     foreach ($photos as $photo) {
       $path = public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg';
-    $image = Image::make($path);
-    $image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
-    $image->fit(186, 124)->encode('jpg', 70)->save(public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg');
-    $image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
+      $image = Image::make($path);
+      $image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
+      $image->fit(186, 124)->encode('jpg', 70)->save(public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg');
+      $image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
     }
     return "OK.";
   }
@@ -415,8 +415,7 @@ class PhotosController extends \BaseController {
     $logged_user = Auth::User();
     if ($logged_user == null) {
       return Redirect::action('PagesController@home');
-    }
-    elseif ($logged_user->id == $photo->user_id) {
+    }elseif ($logged_user->id == $photo->user_id) {
       if (Session::has('tags'))
       {
         $tags = Session::pull('tags');
@@ -483,7 +482,8 @@ class PhotosController extends \BaseController {
     return Redirect::action('PagesController@home');
   }
 
-  public function update($id) {
+  public function update($id) 
+  {
       $photo = Photo::find($id);
       Input::flashExcept('tags', 'photo');
       $input = Input::all();
@@ -514,7 +514,7 @@ class PhotosController extends \BaseController {
       }
 
       if(Input::has('workDate')){        
-        $workDate = $input["workDate"];
+         $workDate = $input["workDate"];
       }elseif(Input::has('decade_select')){ 
          $decadeInput = $input["decade_select"];
       }elseif(Input::has('century')){

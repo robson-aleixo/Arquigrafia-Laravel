@@ -102,7 +102,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
       $user = User::create([
       'name' => $name,
       'email' => $email,
-      'password' => $password,
+      'password' => Hash::make($password),
       'login' => $login,
       'verify_code' => $verification       
       ]);

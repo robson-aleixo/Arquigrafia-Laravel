@@ -20,8 +20,6 @@ class UsersController extends \BaseController {
   
   public function index()
   {    
-    //$request = new FacebookRequest(true, 'GET', '/me');
-    //dd($request);
     $users = User::all();
     return View::make('/users/index',['users' => $users]);
   }
@@ -89,26 +87,18 @@ class UsersController extends \BaseController {
     );     
     $validator = Validator::make($input, $rules);   
     if ($validator->fails()) {
-      $messages = $validator->messages();
-      return Redirect::to('/users/account')->withErrors($messages);
-    } else {
-          
-       $name = $input["name"];
-       $email =$input["email"];
-       $login =$input["login"];
-       $verify_code = str_random(30);
-      //create user with a verify code      
-      $user = User::create([
-      'name' => $name,
-      'email' => $email,
-      'password' => Hash::make($input["password"]),
-      'login' => $login,
-      'verify_code' => $verify_code       
-      ]);
-
-      
-      $source_page = Request::header('referer');
-      ActionUser::printNewAccount($user->id, $source_page, "arquigrafia", "user"); 
+        $messages = $validator->messages();
+        return Redirect::to('/users/account')->withErrors($messages);
+    }else {          
+        $name = $input["name"];
+        $email =$input["email"];
+        $login =$input["login"];
+        $verify_code = str_random(30);
+        //create user with a verify code
+        $user = User::createUser($name,$email,$input["password"],$login,$verify_code);
+            
+        $source_page = Request::header('referer');
+        ActionUser::printNewAccount($user->id, $source_page, "arquigrafia", "user"); 
        
         //send email to user created
         Mail::send('emails.users.verify', array('name' => $name, 'email' => $email, 'login' => $login ,'verifyCode' => $verify_code), 
@@ -116,9 +106,7 @@ class UsersController extends \BaseController {
             $msg->to($email)
                 ->subject('[Arquigrafia]- Cadastro de Usuário');
           }); 
-
         return Redirect::to("/users/register"); 
-
     }
   }
 
@@ -134,12 +122,12 @@ class UsersController extends \BaseController {
   {    
     if(!empty($verify_code)){
       $newUser= User::userVerifyCode($verify_code);
-  }
+    }
     
     if (!$newUser){   
             //error
             return Redirect::to('users/verify');
-      }else{
+    }else{
           //update data of new user registered 
           $newUser->active = 'yes';
           $newUser->verify_code = null;
@@ -147,11 +135,11 @@ class UsersController extends \BaseController {
 
           return Redirect::to('/users/login')->with('msgRegister', "<strong>Conta ativada com sucesso!.</strong>");
 
-      }
+    }
   }
 
-  public function verifyError(){ 
-
+  public function verifyError()
+  { 
       $msgType = "verify";
       return View::make('/modal/register')->with(['msgType'=>$msgType]); 
   }  
@@ -612,8 +600,7 @@ class UsersController extends \BaseController {
 
           $file = Input::file('photo');
           $ext = $file->getClientOriginalExtension();
-          $user->photo = "/arquigrafia-avatars/".$user->id.".jpg";
-          //$user->save();
+          $user->photo = "/arquigrafia-avatars/".$user->id.".jpg";          
           $image = Image::make(Input::file('photo'))->encode('jpg', 80);         
           $image->save(public_path().'/arquigrafia-avatars/'.$user->id.'.jpg');
           $file->move(public_path().'/arquigrafia-avatars', $user->id."_original.".strtolower($ext));
