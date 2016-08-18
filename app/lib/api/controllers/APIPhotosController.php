@@ -56,7 +56,7 @@ class APIPhotosController extends \BaseController {
 			/* Armazenamento */
 			$photo = new Photo;
 
-			if ( !empty($input["photo_aditionalImageComments"]) )
+			//if ( !empty($input["photo_aditionalImageComments"]) )
 	        //$photo->aditionalImageComments = $input["photo_aditionalImageComments"];
 	      	$photo->allowCommercialUses = $input["photo_allowCommercialUses"];
 	        $photo->authorized = $input["authorized"];
@@ -164,13 +164,8 @@ class APIPhotosController extends \BaseController {
 
 		$input = \Input::all();
 		
-		$rules = array( 
-			'photo_name' => 'required',
-	        'photo_imageAuthor' => 'required',
-	        'tags' => 'required',
-	        'photo_country' => 'required',  
-	        'authorized' => 'required',
-	        'photo' => 'max:10240|required|mimes:jpeg,jpg,png,gif',
+		$rules = array(
+	        'photo' => 'max:10240|mimes:jpeg,jpg,png,gif',
 	        'photo_imageDate' => 'date_format:d/m/Y|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/'
       	);
 		$validator = \Validator::make($input, $rules);
@@ -178,7 +173,7 @@ class APIPhotosController extends \BaseController {
 			return $validator->messages();
 		}			
 
-		if ( !empty($input["photo_aditionalImageComments"]) )
+		//if ( !empty($input["photo_aditionalImageComments"]) )
         //$photo->aditionalImageComments = $input["photo_aditionalImageComments"];
       	$photo->allowCommercialUses = $input["photo_allowCommercialUses"];
         $photo->authorized = $input["authorized"];
