@@ -194,7 +194,6 @@ class APIPhotosController extends \BaseController {
           $photo->street = $input["photo_street"];
       	$photo->user_id = $input["user_id"];
       	$photo->dataUpload = date('Y-m-d H:i:s');
-      	$photo->nome_arquivo = $file->getClientOriginalName();
 
       	$photo->touch();
 		$photo->save();
