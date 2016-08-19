@@ -1,7 +1,6 @@
 <?php
 
-
-class PhotoAlbum extends \Eloquent {
+class PhotoAlbum extends \BaseModel {
 	
 	protected $fillable = ['album_id','photo_id'];
 
@@ -25,6 +24,7 @@ class PhotoAlbum extends \Eloquent {
 		$photoAlbum = new PhotoAlbum;
 		$photoAlbum->album_id = $albumId;
 		$photoAlbum->photo_id = $photoId;
+		$photoAlbum->timestamps = false;
 		$photoAlbum->save();
   	}
 

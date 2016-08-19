@@ -278,49 +278,26 @@ class PhotosController extends \BaseController {
                 $photo->imageDateType = "century";
             }else{ 
                 $photo->dataCriacao = NULL;
-            }      
-      
+            }            
             $photo->nome_arquivo = $file->getClientOriginalName();
-
             $photo->user_id = Auth::user()->id;
             $photo->dataUpload = date('Y-m-d H:i:s');
-            $photo->save();
-      
-
-            if ( !empty($input["new_album-name"]) ) {
-                Album::createAlbum($input["new_album-name"], "", Auth::user(), $photo);                
-                if ( $album->isValid() ) {                      
-                      PhotoAlbum::createAlbumElements($album->id, $photo->id);
-                }
-            } elseif ( !empty($input["photo_album"]) ) { 
-                  PhotoAlbum::createAlbumElements($input["photo_album"], $photo->id);
-            }
-            $ext = $file->getClientOriginalExtension();  
-            Photo::fileNamePhoto($photo, $ext);    
-
-            $tags_copy = $input['tags'];
-            $tags = explode(',', $input['tags']);
-          
-            if (!empty($tags)) {           
-                $tags = Tag::formatTags($tags);              
-                $tagsSaved = Tag::saveTags($tags,$photo);
-              
-                if(!$tagsSaved){ 
-                  $photo->forceDelete();
-                  $messages = array('tags'=>array('Inserir pelo menos uma tag'));                  
-                  return Redirect::to('/photos/upload')->with(['tags' => $input['tags']])->withErrors($messages);                  
-                }
-            }
-
-            $author = new Author();
-            if (!empty($input["work_authors"])) {
-                $author->saveAuthors($input["work_authors"],$photo);
-            }
-            $input['autoOpenModal'] = 'true';  
+            $photo->save();      
+            //Album  
+            $this->addAlbum($input["new_album-name"],$input["photo_album"],$photo); 
+            //Tags    
+            $this->addTagsPhoto($input['tags'],$photo);
+            //Author
+            $this->addAuthors($input["work_authors"],$photo);           
+            //Logs Action User
             $source_page = $input["pageSource"]; //get url of the source page through form
             ActionUser::printUploadOrDownloadLog($photo->user_id, $photo->id, $source_page, "Upload", "user");
-            ActionUser::printTags($photo->user_id, $photo->id, $tags_copy, $source_page, "user", "Inseriu");
-
+            ActionUser::printTags($photo->user_id, $photo->id, $input['tags'], $source_page, "user", "Inseriu");
+            $input['autoOpenModal'] = 'true'; 
+            //Imagem name
+            $ext = $file->getClientOriginalExtension();  
+            Photo::fileNamePhoto($photo, $ext);    
+            //Image and Rotate
             if(array_key_exists('rotate', $input))
               $angle = (float)$input['rotate'];
             else
@@ -336,6 +313,7 @@ class PhotosController extends \BaseController {
             $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
 
             $photo->saveMetadata(strtolower($ext), $metadata);
+
             $input['photoId'] = $photo->id;
             $input['dates'] = true;
             $input['dateImage'] = true;
@@ -672,5 +650,41 @@ class PhotosController extends \BaseController {
     $photo->delete();
     return Redirect::to('/users/' . $photo->user_id);
   }
+
+  public function addAlbum($newAlbumName,$albumSelect,$photo)
+  {
+      if (!empty($newAlbumName)) {
+            $album = Album::createAlbum($newAlbumName,"", Auth::user()->id, $photo->id,NULL);                          
+            if ($album->isValid()) {                    
+                PhotoAlbum::createAlbumElements($album->id, $photo->id);
+            }
+      } elseif ($albumSelect) { 
+            PhotoAlbum::createAlbumElements($albumSelect, $photo->id);
+      }
+  }
+
+  public function addTagsPhoto($inputTags,$photo)
+  {       
+      $tags = explode(',', $inputTags);
+      if (!empty($tags)) {           
+          $tags = Tag::formatTags($tags);              
+          $tagsSaved = Tag::saveTags($tags,$photo);        
+          if(!$tagsSaved){ 
+            $photo->forceDelete();
+            $messages = array('tags'=>array('Inserir pelo menos uma tag'));                  
+            return Redirect::to('/photos/upload')->with(['tags' => $inputTags])->withErrors($messages);                  
+          }
+      }
+  }
+
+  public function addAuthors($inputWorkAuthors,$photo)
+  {
+      $author = new Author();
+      if (!empty($inputWorkAuthors)) {
+            $author->saveAuthors($inputWorkAuthors,$photo);
+      }
+  }
+
+           
 
 }
