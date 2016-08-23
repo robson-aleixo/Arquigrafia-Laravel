@@ -146,7 +146,7 @@ Route::group(array('prefix' => 'api/'), function()
     Route::resource('authors'  , 'lib\api\controlles\APIAuthorsControllers');
     /* Controlador de autenticação */
     Route::post('login', 'lib\api\controllers\APILogInController@verify_credentials');
-    Route::post('auth', 'lib\api\controllers\APILogInController@validate_mobile_token');
+    Route::get('auth', 'lib\api\controllers\APILogInController@validate_mobile_token');
     Route::post('logout', 'lib\api\controllers\APILogInController@log_out');
     /* Controlador de feed */
     Route::get('feed/{id}', 'lib\api\controllers\APIFeedController@loadFeed');
@@ -163,7 +163,7 @@ Route::group(array('prefix' => 'api/'), function()
     Route::get('photos/{photoId}/evaluation/{userId}', 'lib\api\controllers\APIEvaluationController@retrieveEvaluation');
     Route::post('photos/{photoId}/evaluation/{userId}', 'lib\api\controllers\APIEvaluationController@storeEvaluation');
     Route::get('photos/{photoId}/averageEvaluation/{userId}', 'lib\api\controllers\APIEvaluationController@averageEvaluationValues');
-    /* Busca */
+    /* Controlador de busca */
     Route::get('recent', 'lib\api\controllers\APIFeedController@loadRecentPhotos');
     Route::get('moreRecent', 'lib\api\controllers\APIFeedController@loadMoreRecentPhotos');
     Route::post('search', 'lib\api\controllers\APISearchController@search');

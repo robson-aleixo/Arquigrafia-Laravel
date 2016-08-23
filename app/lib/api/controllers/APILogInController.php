@@ -18,11 +18,11 @@ class APILogInController extends \BaseController {
 		$input = \Input::all();
 		$user = \User::where('login', '=', $input["login"])->first();
 		if(!is_null($user)) {
-			if($input["token"] == $user->mobile_token) {
-				return \Response::json(['auth' => 'true']);
+			if($input["token"] == $user->mobile_token && $input["id"] == $user->id) {
+				return \Response::json(['auth' => true]);
 			}
 		}
-		return \Response::json(['auth' => 'false']);
+		return \Response::json(['auth' => false]);
 	}
 
 	public function log_out() {
