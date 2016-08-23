@@ -165,6 +165,12 @@ class APIPhotosController extends \BaseController {
 		$photo = \Photo::find($id);
 
 		$input = \Input::all();
+
+		if($photo->user_id != $input["user_id"]) {
+			return \Response::json(array(
+				'code' => 403,
+				'message' => 'Usuario nao tem permissao para esta operacao'));
+		}
 		
 		$rules = array(
 	        'photo' => 'max:10240|mimes:jpeg,jpg,png,gif',
@@ -247,13 +253,25 @@ class APIPhotosController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$photo = Photo::find($id);
+		$photo = \Photo::find($id);
+		$user = \User::find($input["user_id"]);
+
+		if($photo->user_id != $input["user_id"] || $user->mobile_token != $input["token"]) {
+			return \Response::json(array(
+				'code' => 403,
+				'message' => 'Usuario nao possui autorizacao para esta operacao.'));
+		}
+
 	    foreach($photo->tags as $tag) {
 	      $tag->count = $tag->count - 1;
 	      $tag->save();
 	    }
 	    \DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
 	    $photo->delete();
+
+	    return \Response::json(array(
+				'code' => 200,
+				'message' => 'Operacao realizada com sucesso'));
 	}
 
 
