@@ -146,7 +146,7 @@ Route::group(array('prefix' => 'api/'), function()
     Route::resource('authors'  , 'lib\api\controlles\APIAuthorsControllers');
     /* Controlador de autenticação */
     Route::post('login', 'lib\api\controllers\APILogInController@verify_credentials');
-    Route::get('auth', 'lib\api\controllers\APILogInController@validate_mobile_token');
+    Route::post('auth', 'lib\api\controllers\APILogInController@validate_mobile_token');
     Route::post('logout', 'lib\api\controllers\APILogInController@log_out');
     /* Controlador de feed */
     Route::get('feed/{id}', 'lib\api\controllers\APIFeedController@loadFeed');
