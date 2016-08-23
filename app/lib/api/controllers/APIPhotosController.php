@@ -131,12 +131,14 @@ class APIPhotosController extends \BaseController {
 	{
 		$photo = \Photo::find($id);
 		$sender = \User::find($photo->user_id);
+		$tags = $photo->tags->lists('name');
 		if (!is_null($photo->institution_id)) {
 			$sender = \Institution::find($photo->institution_id);
 		}
 		$license = \Photo::licensePhoto($photo);
 		$authorsList = $photo->authors->lists('name');
-		return \Response::json(["photo" => $photo, "sender" => $sender, "license" => $license, "authors" => $authorsList]);
+		return \Response::json(["photo" => $photo, "sender" => $sender, "license" => $license, 
+			"authors" => $authorsList, "tags" => $tags]);
 	}
 
 
@@ -198,20 +200,16 @@ class APIPhotosController extends \BaseController {
       	$photo->touch();
 		$photo->save();
 
-		$tags = str_replace("\"", "", $input["tags"]);
-		$tags = str_replace("[", "", $tags);
-		$tags = str_replace("]", "", $tags);
-
-		$finalTags = explode(",", $tags);
-
-		$tags = \PhotosController::formatTags($finalTags);
-		$tagsSaved = \PhotosController::saveTags($finalTags,$photo);
-          
-        if(!$tagsSaved){ 
-              $photo->forceDelete();
-              $messages = array('tags'=>array('Inserir pelo menos uma tag'));                  
-              return "Tags error";                  
-        }
+		if( !empty($input["tags"])){
+			$tags = \PhotosController::formatTags($input["tags"]);
+			$tagsSaved = \PhotosController::updateTags($tags,$photo);
+	          
+	        if(!$tagsSaved){ 
+	              $photo->forceDelete();
+	              $messages = array('tags'=>array('Inserir pelo menos uma tag'));                  
+	              return "Tags error";                  
+	        }
+	    }
 		//Photo e salva para gerar ID automatico
 
         if (\Input::hasFile('photo') and \Input::file('photo')->isValid()) {
