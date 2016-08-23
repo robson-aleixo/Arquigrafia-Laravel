@@ -166,4 +166,6 @@ Route::group(array('prefix' => 'api/'), function()
     /* Busca */
     Route::get('recent', 'lib\api\controllers\APIFeedController@loadRecentPhotos');
     Route::get('moreRecent', 'lib\api\controllers\APIFeedController@loadMoreRecentPhotos');
+    Route::post('search', 'lib\api\controllers\APISearchController@search');
+    Route::get('moreSearch', 'lib\api\controllers\APISearchController@moreSearch');
 });
