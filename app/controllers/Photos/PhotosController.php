@@ -10,6 +10,7 @@ use modules\collaborative\models\Comment as Comment;
 use modules\collaborative\models\Like as Like;
 use modules\evaluations\models\Evaluation as Evaluation;
 use modules\evaluations\models\Binomial as Binomial;
+use lib\factory\FactoryPhoto;
 
 class PhotosController extends \BaseController {
 
@@ -215,12 +216,12 @@ class PhotosController extends \BaseController {
         'tags' => 'required',
         'photo_country' => 'required',  
         'photo_authorization_checkbox' => 'required',
-        'photo' => 'max:10240|required|mimes:jpeg,jpg,png,gif',    
+        'photo' => 'max:1048576000|required|mimes:jpeg,jpg,png,gif,JPEG',  
         'photo_imageDate' => 'date_format:d/m/Y|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/'
       );
 
       $validator = Validator::make($input, $rules);
-
+      //dd(Input::file('photo'));
       if ($validator->fails()) {
           $messages = $validator->messages();
 
@@ -234,54 +235,8 @@ class PhotosController extends \BaseController {
       } else {
 
         if (Input::hasFile('photo') and Input::file('photo')->isValid()) {
-            $file = Input::file('photo');
-            $photo = new Photo();
-
-            if ( !empty($input["photo_aditionalImageComments"]) )
-                $photo->aditionalImageComments = $input["photo_aditionalImageComments"];
-            $photo->allowCommercialUses = $input["photo_allowCommercialUses"];
-            $photo->allowModifications = $input["photo_allowModifications"];
-            $photo->city = $input["photo_city"];
-            $photo->country = $input["photo_country"];
-            if ( !empty($input["photo_description"]) )
-                $photo->description = $input["photo_description"];
-            if ( !empty($input["photo_district"]) )
-                $photo->district = $input["photo_district"];
-            if ( !empty($input["photo_imageAuthor"]) )
-                $photo->imageAuthor = $input["photo_imageAuthor"];
-            $photo->name = $input["photo_name"];
-            $photo->state = $input["photo_state"];
-            if ( !empty($input["photo_street"]) )
-                $photo->street = $input["photo_street"];
-      
-            if(!empty($input["workDate"])){             
-               $photo->workdate = $input["workDate"];
-               $photo->workDateType = "year";
-            }elseif(!empty($input["decade_select"])){             
-               $photo->workdate = $input["decade_select"];
-               $photo->workDateType = "decade";
-            }elseif (!empty($input["century"]) && $input["century"]!="NS") { 
-               $photo->workdate = $input["century"];
-               $photo->workDateType = "century";
-            }else{ 
-               $photo->workdate = NULL;
-            }
-
-            if(!empty($input["photo_imageDate"])){             
-                $photo->dataCriacao = $this->date->formatDate($input["photo_imageDate"]);
-                $photo->imageDateType = "date";
-            }elseif(!empty($input["decade_select_image"])){             
-                $photo->dataCriacao = $input["decade_select_image"];
-                $photo->imageDateType = "decade";
-            }elseif (!empty($input["century_image"]) && $input["century_image"]!="NS") { 
-                $photo->dataCriacao = $input["century_image"];
-                $photo->imageDateType = "century";
-            }else{ 
-                $photo->dataCriacao = NULL;
-            }            
-            $photo->nome_arquivo = $file->getClientOriginalName();
-            $photo->user_id = Auth::user()->id;
-            $photo->dataUpload = date('Y-m-d H:i:s');
+            $file = Input::file('photo'); 
+            $photo = FactoryPhoto::createPhoto($input,$file);
             $photo->save();      
             //Album  
             $this->addAlbum($input["new_album-name"],$input["photo_album"],$photo); 
@@ -294,25 +249,9 @@ class PhotosController extends \BaseController {
             ActionUser::printUploadOrDownloadLog($photo->user_id, $photo->id, $source_page, "Upload", "user");
             ActionUser::printTags($photo->user_id, $photo->id, $input['tags'], $source_page, "user", "Inseriu");
             $input['autoOpenModal'] = 'true'; 
-            //Imagem name
-            $ext = $file->getClientOriginalExtension();  
-            Photo::fileNamePhoto($photo, $ext);    
+               
             //Image and Rotate
-            if(array_key_exists('rotate', $input))
-              $angle = (float)$input['rotate'];
-            else
-              $angle = 0;
-            $metadata       = Image::make(Input::file('photo'))->exif();
-            $public_image   = Image::make(Input::file('photo'))->rotate($angle)->encode('jpg', 80);
-            $original_image = Image::make(Input::file('photo'))->rotate($angle);
-
-            $public_image->widen(600)->save(public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg');
-            $public_image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
-            $public_image->fit(186, 124)->encode('jpg', 70)->save(public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg');
-            $public_image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
-            $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
-
-            $photo->saveMetadata(strtolower($ext), $metadata);
+            $this->addPhotoAndRotate(Input::file('photo'),$photo,$input);
 
             $input['photoId'] = $photo->id;
             $input['dates'] = true;
@@ -663,8 +602,8 @@ class PhotosController extends \BaseController {
       }
   }
 
-  public function addTagsPhoto($inputTags,$photo)
-  {       
+public function addTagsPhoto($inputTags,$photo)
+{       
       $tags = explode(',', $inputTags);
       if (!empty($tags)) {           
           $tags = Tag::formatTags($tags);              
@@ -675,15 +614,37 @@ class PhotosController extends \BaseController {
             return Redirect::to('/photos/upload')->with(['tags' => $inputTags])->withErrors($messages);                  
           }
       }
-  }
+}
 
-  public function addAuthors($inputWorkAuthors,$photo)
-  {
-      $author = new Author();
-      if (!empty($inputWorkAuthors)) {
-            $author->saveAuthors($inputWorkAuthors,$photo);
-      }
-  }
+public function addAuthors($inputWorkAuthors,$photo)
+{
+    $author = new Author();
+    if (!empty($inputWorkAuthors)) {
+          $author->saveAuthors($inputWorkAuthors,$photo);
+    }
+}
+
+public function addPhotoAndRotate($inputPhoto,$photo,$input)
+{
+  //Imagem name
+  $ext = $inputPhoto->getClientOriginalExtension();  
+  Photo::fileNamePhoto($photo, $ext); 
+  if(array_key_exists('rotate', $input))
+    $angle = (float)$input['rotate'];
+  else
+    $angle = 0;
+  $metadata       = Image::make($inputPhoto)->exif();
+  $public_image   = Image::make($inputPhoto)->rotate($angle)->encode('jpg', 80);
+  $original_image = Image::make($inputPhoto)->rotate($angle);
+
+  $public_image->widen(600)->save(public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg');
+  $public_image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
+  $public_image->fit(186, 124)->encode('jpg', 70)->save(public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg');
+  $public_image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
+  $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
+
+  $photo->saveMetadata(strtolower($ext), $metadata);
+}
 
            
 
