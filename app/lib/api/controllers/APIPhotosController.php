@@ -115,8 +115,8 @@ class APIPhotosController extends \BaseController {
 	        $public_image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
 	        $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
 
-	        \ActionUser::printUploadOrDownloadLog($photo->user_id, $photo->id, 'mobile', 'Upload', 'user');
-	        \ActionUser::printTags($photo->user_id, $photo->id, $tags_copy, $source_page, "user", "Inseriu");
+	        ActionUser::printUploadOrDownloadLog($photo->user_id, $photo->id, 'mobile', 'Upload', 'user');
+	        ActionUser::printTags($photo->user_id, $photo->id, $tags_copy, $source_page, "user", "Inseriu");
 	        return $photo->id;
 
 		}
@@ -255,8 +255,8 @@ class APIPhotosController extends \BaseController {
 	        $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
 	    }
 
-	    \ActionUser::printEditOrDeletePhotoLog($photo->user_id, $photo->id, 'mobile', 'Editou', 'user');
-	    \ActionUser::printTags($photo->user_id, $photo->id, $tags_copy, 'mobile', "user", "Editou");
+	    ActionUser::printEditOrDeletePhotoLog($photo->user_id, $photo->id, 'mobile', 'Editou', 'user');
+	    ActionUser::printTags($photo->user_id, $photo->id, $tags_copy, 'mobile', "user", "Editou");
         return $photo->id;
 
 		
@@ -287,7 +287,7 @@ class APIPhotosController extends \BaseController {
 	    \DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
 	    $photo->delete();
 
-	    \ActionUser::printEditOrDeletePhotoLog($photo->user_id, $photo->id, 'mobile', 'Deletou', 'user');
+	    ActionUser::printEditOrDeletePhotoLog($photo->user_id, $photo->id, 'mobile', 'Deletou', 'user');
 	    return \Response::json(array(
 				'code' => 200,
 				'message' => 'Operacao realizada com sucesso'));
