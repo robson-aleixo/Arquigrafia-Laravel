@@ -134,12 +134,17 @@ class APIPhotosController extends \BaseController {
 	{
 		$photo = \Photo::find($id);
 		$sender = \User::find($photo->user_id);
+		$user_id = \Input::get("user_id");
 		$tags = $photo->tags->lists('name');
 		if (!is_null($photo->institution_id)) {
 			$sender = \Institution::find($photo->institution_id);
 		}
 		$license = \Photo::licensePhoto($photo);
 		$authorsList = $photo->authors->lists('name');
+
+		/* Registro de logs */
+		ActionUser::printSelectPhoto($user_id, $id, "mobile", "user");
+
 		return \Response::json(["photo" => $photo, "sender" => $sender, "license" => $license, 
 			"authors" => $authorsList, "tags" => $tags]);
 	}

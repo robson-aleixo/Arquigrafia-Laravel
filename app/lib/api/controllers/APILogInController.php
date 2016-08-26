@@ -1,5 +1,6 @@
 <?php
 namespace lib\api\controllers;
+use lib\utils\ActionUser;
 
 class APILogInController extends \BaseController {
 
@@ -9,6 +10,10 @@ class APILogInController extends \BaseController {
 			$user = \User::where('login', '=', $input["login"])->first();
 			$user->mobile_token = \Hash::make(str_random(10));
 			$user->save();
+
+			/* Registro de logs */
+			ActionUser::printLoginOrLogout($user->id, 'mobile', 'login', 'arquigrafia', 'user');
+
 			return \Response::json(['login' => $input["login"], 'token' => $user->mobile_token, 'id' => $user->id, 'valid' => 'true', 'msg' => 'Login efetuado com sucesso.']);
 		}
 		return \Response::json(['login' => $input["login"], 'token' => '', 'id' => '', 'valid' => 'false', 'msg' => 'Usuário ou senha inválidos.']);
@@ -32,6 +37,10 @@ class APILogInController extends \BaseController {
 			if($input["token"] == $user->mobile_token) {
 				$user->mobile_token = null;
 				$user->save();
+
+				/* Registro de logs */
+				ActionUser::printLoginOrLogout($user->id, 'mobile', 'logout', 'arquigrafia', 'user');
+
 				return \Response::json(['logged_out' => 'true']);
 			}
 		}
