@@ -1,5 +1,6 @@
 <?php 
 namespace lib\api\controllers;
+use lib\utils\ActionUser;
 
 class APIEvaluationController extends \BaseController {
 
@@ -27,6 +28,7 @@ class APIEvaluationController extends \BaseController {
 		$evaluations =  \Evaluation::where("user_id",
         $userId)->where("photo_id", $photoId)->orderBy("binomial_id", "asc")->get();
         $binomials = \Binomial::all();
+        $evaluation_sentence = "";
         if ($evaluations->isEmpty()) {
         	foreach ($binomials as $binomial) {
         		$newEvaluation = \Evaluation::create([
@@ -37,7 +39,11 @@ class APIEvaluationController extends \BaseController {
             		'knownArchitecture'=>$input["knownArchitecture"],
             		'areArchitecture'=>$input["areArchitecture"]
           		]);
-        	}
+                $evaluation_sentence = $evaluation_sentence . $binomial->firstOption . "-" . $binomial->secondOption . ": " . $input[$binomial->id] . ", ";
+         	}
+
+            /* Registro de logs */
+            ActionUser::printEvaluation($userId, $photoId, 'mobile', 'user', 'Inseriu', $evaluation_sentence);
         }
         else {
         	foreach ($evaluations as $evaluation) {
@@ -45,7 +51,11 @@ class APIEvaluationController extends \BaseController {
           		$evaluation->areArchitecture = $input["areArchitecture"];
           		$evaluation->evaluationPosition = $input[$evaluation->binomial_id];
           		$evaluation->save();
+                $evaluation_sentence = $evaluation_sentence . \Binomial::find($evaluation->binomial_id)->firstOption . "-" . \Binomial::find($evaluation->binomial_id)->secondOption . ": " . $input[$evaluation->binomial_id] . ", ";
         	}
+
+            /* Registro de logs */
+            ActionUser::printEvaluation($userId, $photoId, 'mobile', 'user', 'Editou', $evaluation_sentence);
         }
 		\Response::json($input);
 	}
