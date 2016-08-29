@@ -85,6 +85,7 @@ class APIPhotosController extends \BaseController {
 			$tags = str_replace("\"", "", $input["tags"]);
 			$tags = str_replace("[", "", $tags);
 			$tags = str_replace("]", "", $tags);
+			$tags_copy = $tags;
 
 			$finalTags = explode(",", $tags);
 
