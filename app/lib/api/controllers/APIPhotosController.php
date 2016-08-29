@@ -117,7 +117,7 @@ class APIPhotosController extends \BaseController {
 	        $original_image->save(storage_path().'/original-images/'.$photo->id."_original.".strtolower($ext));
 
 	        ActionUser::printUploadOrDownloadLog($photo->user_id, $photo->id, 'mobile', 'Upload', 'user');
-	        ActionUser::printTags($photo->user_id, $photo->id, $tags_copy, $source_page, "user", "Inseriu");
+	        ActionUser::printTags($photo->user_id, $photo->id, $tags_copy, 'mobile', "user", "Inseriu");
 	        return $photo->id;
 
 		}
