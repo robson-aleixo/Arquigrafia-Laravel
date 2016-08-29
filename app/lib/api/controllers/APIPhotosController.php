@@ -214,16 +214,21 @@ class APIPhotosController extends \BaseController {
       	$photo->touch();
 		$photo->save();
 
-		$tags_copy = $input["tags"];
+		$tags = $input["tags"];
+		$tags_copy = "";
 		if( !empty($input["tags"])){
-			if(is_string($tags_copy)){
-				$tags_copy = str_replace("\"", "", $tags_copy);
-				$tags_copy = str_replace("[", "", $tags_copy);
-				$tags_copy = str_replace("]", "", $tags_copy);
+			if(is_string($tags)){
+				$tags = str_replace("\"", "", $tags);
+				$tags = str_replace("[", "", $tags);
+				$tags = str_replace("]", "", $tags);
+				$tags_copy = $tags;
 
-				$tags_copy = explode(",", $tags_copy);
+				$tags = explode(",", $tags);
+			} 
+			else { 
+				$tags_copy = implode(",", $tags); 
 			}
-			$tags = \PhotosController::formatTags($tags_copy);
+			$tags = \PhotosController::formatTags($tags);
 			$tagsSaved = \PhotosController::updateTags($tags,$photo);
 	          
 	        if(!$tagsSaved){ 
