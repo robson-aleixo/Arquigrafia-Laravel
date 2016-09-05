@@ -101,6 +101,10 @@ Route::get('/photos/{photo_id}/showSimilarAverage/', 'PhotosController@showSimil
 /* PHOTOS */
 Route::get('/photos/{id}/like', 'lib\gamification\controllers\LikesController@photolike');
 Route::get('/photos/{id}/dislike', 'lib\gamification\controllers\LikesController@photodislike');
+
+Route::get('/photos/showModalReport/{id}', 'ReportController@showModalReportPhoto');
+Route::post('/photos/reportPhoto','ReportController@reportPhoto');
+
 Route::resource('/groups','GroupsController');
 Route::get('/photos/batch','PhotosController@batch');
 Route::get('/photos/upload','PhotosController@form');
