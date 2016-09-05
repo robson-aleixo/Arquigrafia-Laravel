@@ -126,7 +126,8 @@ return array(
     'Tricki\Notification\NotificationServiceProvider',
     'Maatwebsite\Excel\ExcelServiceProvider',
     'lib\image\ImageManagerServiceProvider',
-    'lib\metadata\Exiv2ServiceProvider',
+    'lib\metadata\Exiv2ServiceProvider', 
+    'Barryvdh\Cors\CorsServiceProvider',
 	),
 
 	/*

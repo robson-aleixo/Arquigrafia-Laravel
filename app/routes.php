@@ -137,7 +137,7 @@ Route::get('/search/paginate/other/photos', 'PagesController@paginatePhotosResul
 Route::get('/search/more/paginate/other/photos', 'PagesController@paginatePhotosResultAdvance');
 
 /* REST API */
-Route::group(array('prefix' => 'api/'), function()
+Route::group(array('middleware' => 'cors', 'prefix' => 'api/'), function()
 {
     /* Controlador de fotos, usuários e adjacentes */
     Route::resource('photos', 'lib\api\controllers\APIPhotosController');
