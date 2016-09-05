@@ -278,9 +278,9 @@ class APIPhotosController extends \BaseController {
 	public function destroy($id)
 	{
 		$photo = \Photo::find($id);
-		$user = \User::find($input["user_id"]);
+		$user = \User::find(\Request::input('user_id'));
 
-		if($photo->user_id != $input["user_id"] || $user->mobile_token != $input["token"]) {
+		if($photo->user_id != \Request::input('user_id') || $user->mobile_token != \Request::input('token')) {
 			return \Response::json(array(
 				'code' => 403,
 				'message' => 'Usuario nao possui autorizacao para esta operacao.'));
