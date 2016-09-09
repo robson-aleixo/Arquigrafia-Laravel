@@ -5,14 +5,18 @@
    {{ Form::open(array( 'url' => '/photos/reportPhoto')) }}
    {{ Form::hidden('_photo', $photo_id) }}
 
-   <div class="four columns"><p>{{ Form::label('reportType', 'Tipo de denuncia') }}</p></div>
+   <div class="four columns"><p>{{ Form::label('DataType', 'Fotos/Dados') }}</p></div>
    <div class="four columns row">
-      <p>{{ Form::checkbox('reportTypes[]', 'tipo1' ) }} <label>Conteúdo inapropiado</label></p>
-      <p>{{ Form::checkbox('reportTypes[]', 'tipo2' ) }} <label>É spam</label></p>
-      <p>{{ Form::checkbox('reportTypes[]', 'tipo3' ) }} <label>Penso que não tem relação com Arquitetura</label></p>
-      <p>{{ Form::checkbox('reportTypes[]', 'tipo4' ) }} <label>Imagem não tem relação com o título</label></p>
-      <p>{{ Form::checkbox('reportTypes[]', 'tipo5' ) }} <label>Imagem com dados incorretos</label></p>
+      <p>{{ Form::checkbox('reportTypeData[]', 'Image' ) }} <label>Imagem</label></p>
+      <p>{{ Form::checkbox('reportTypeData[]', 'Title' ) }} <label>Titulo</label></p>
+      <p>{{ Form::checkbox('reportTypeData[]', 'Author' ) }} <label>Autor</label></p>
+      <p>{{ Form::checkbox('reportTypeData[]', 'Description' ) }} <label>Descrição</label></p>
+      <p>{{ Form::checkbox('reportTypeData[]', 'Adress' ) }} <label>Endereço</label></p>      
       <div class="error"></div>   
+   </div>
+   <div class="four columns row"> 
+   <p>Tipo de denuncia:</p> 
+    {{Form::select('reportType', array('inapropriado' => 'Conteúdo inapropriado', 'repetido' => 'Conteúdo repetido'))}}          
    </div>
    
    <div class="four columns"><p>{{ Form::label('reportComment', 'Observação') }}</p></div>
@@ -31,11 +35,11 @@
 });
  formModal.submit( function(e) {
 
-   var reportTypes = formModal.find("input[name='reportTypes[]']:checked");
+   var reportTypeData = formModal.find("input[name='reportTypeData[]']:checked");
    var div_error = formModal.find('.error');
    div_error.empty();
-   if ( reportTypes.length == 0 ) {
-     div_error.text('Deve-se selecionar ao menos 1 tipo de denuncia');
+   if ( reportTypeData.length == 0 ) {
+     div_error.text('Deve-se selecionar ao menos 1 tipo de dado.');
      e.preventDefault();
   }
 });

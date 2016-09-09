@@ -2,10 +2,10 @@
 
 class Report extends Eloquent {
 
-  public $timestamps = false;
+  public $timestamps = true;
 
   protected $table = "reports";
-  protected $fillable = [ 'photo_id', 'type', 'user_id', 'observation' ];
+  protected $fillable = [ 'photo_id', 'report_type_data', 'user_id', 'observation','report_type' ];
   
   public function user()
   {
@@ -17,12 +17,14 @@ class Report extends Eloquent {
     return $this->belongsTo('Photo');
   }
   
-  public static function getFirstOrCreate($user, $photo, $type, $observation) {
+  public static function getFirstOrCreate($user, $photo, $dataType, $observation,$reportType) {
     return self::firstOrCreate([
         'user_id' => $user->id,
         'photo_id' => $photo->id,
-        'type' => $type,
-        'observation' => $observation
+        'report_type_data' => $dataType,
+        'observation' => $observation,
+        'report_type'=>$reportType,
+
       ]);
   }
 
