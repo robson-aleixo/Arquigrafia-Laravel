@@ -242,6 +242,21 @@ input.search_bar_button { background: url(../img/sprite.png) -330px 0; height: 2
 #form_window input.submit:hover { background-position: -222px -216px; }
 #creative_commons { background: url(../img/sprite.png) no-repeat 110px -240px; width: 130px; display: inline-block; }
 
+/* lightbox - notificar */
+#form_window_notify { width: 400px; min-height: 200px; background: #fff; position: fixed; top: 40%; left: 50%; margin: -240px 0 0 -340px; padding: 25px; -moz-border-radius: 2px; border-radius: 2px; display: none; z-index: 1001; } /* position: absolute; */
+/*#form_window label { width: 100px; display: inline-block; color: #777; text-align: left; vertical-align: top; line-height: 27px; }*/
+#form_window_notify textarea { border: solid 1px #EEEEEE; padding: 3px; margin: 2px 0 2px 5px; font-size: 11px; }
+#form_window_notify input { border: solid 1px #eee; padding: 3px; margin: 2px 0 2px 5px; }
+#form_window_notify select { margin: 3px; }
+#form_window_notify input.text { width: 123px; }
+#form_window_notify .date { width: 29px; }
+
+/*#form_window_notify a.close { float: right; text-align: center; margin-bottom: 10px; }
+#form_window_notify a.close:hover { background-position: -160px -216px; text-decoration: underline; }
+*/#form_window_notify .email, #form_window_notify .website { width: 123px; }
+#form_window_notify input.submit { background: url(../img/sprite.png) -222px -195px; height: 20px; width: 54px; padding: 0; margin: 0; border: none; float: right; }
+#form_window_notify input.submit:hover { background-position: -222px -216px; }
+
 /* lightbox - boas vindas */
 #form_window_welcome { width: 600px; background: #fff; position: fixed; top: 50%; left: 50%; margin: -240px 0 0 -340px; padding: 35px; -moz-border-radius: 7px; border-radius: 7px; display: none; }
 #form_window_welcome label { width: 110px; display: inline-block; color: #777; text-align: right; vertical-align: top; line-height: 27px; }
@@ -690,6 +705,8 @@ z-index:7;
 #like_button { display: block; width: 20px; height: 20px; margin-left: 4px; background-image: url('../img/like.png'); }
 #like_button.dislike { background-image: url('../img/dislike.png'); }
 i#likes {  background: url("../img/dislikeNB.png"); padding : 2px 10px 0px;   }
+
+#denounce_photo { display: block; width: 20px; height: 20px; margin-left: 4px; background-image: url('../img/i-denounce.png'); }
 
 /* Notifications area */
 #notification-icon-container { position: relative; }
