@@ -5,7 +5,7 @@
    {{ Form::open(array( 'url' => '/photos/reportPhoto')) }}
    {{ Form::hidden('_photo', $photo_id) }}
 
-   <div class="four columns"><p>{{ Form::label('DataType', 'Fotos/Dados') }}</p></div>
+   <div class="four columns"><p>{{ Form::label('DataType', 'Fotos / Dados') }}</p></div>
    <div class="four columns row">
       <p>{{ Form::checkbox('reportTypeData[]', 'Image' ) }} <label>Imagem</label></p>
       <p>{{ Form::checkbox('reportTypeData[]', 'Title' ) }} <label>Titulo</label></p>
@@ -16,7 +16,8 @@
    </div>
    <div class="four columns row"> 
    <p>Tipo de denuncia:</p> 
-    {{Form::select('reportType', array('inapropriado' => 'Conteúdo inapropriado', 'repetido' => 'Conteúdo repetido'))}}          
+    {{Form::select('reportType', array('default' => 'Selecione uma opção') + array('inapropriado' => 'Conteúdo inapropriado', 'repetido' => 'Conteúdo repetido'), 'default')}}          
+    <div class="errorReportType"></div>   
    </div>
    
    <div class="four columns"><p>{{ Form::label('reportComment', 'Observação') }}</p></div>
@@ -39,9 +40,20 @@
    var div_error = formModal.find('.error');
    div_error.empty();
    if ( reportTypeData.length == 0 ) {
-     div_error.text('Deve-se selecionar ao menos 1 tipo de dado.');
-     e.preventDefault();
-  }
+      div_error.text('Deve-se selecionar ao menos 1 tipo de dado.');
+      e.preventDefault();
+   }
+
+   var reportType = formModal.find("select[name='reportType']").val();
+   var div_errorReportType = formModal.find('.errorReportType');
+   div_errorReportType.empty();
+   if ( reportType == null || reportType == 'default') {
+      div_errorReportType.text('Deve-se selecionar o tipo de denuncia.');
+      e.preventDefault();  
+   }
+   
+
+
 });
 </script>
 
@@ -52,7 +64,7 @@
  #reportPhoto input, #reportPhoto textarea { border-color: #aaa; }
  #reportPhoto .img_container { width: 220px; border-radius: 3px; -moz-border-radius: 3px;
   -webkit-border-radius: 3px; position: relative; margin-top: 10px; min-height: 200px; }
-  #reportPhoto .img_container img { width: 100%; }
-
+ #reportPhoto .img_container img { width: 100%; }
+ #reportPhoto .errorReportType { color: #C52D30; }
 </style>
 

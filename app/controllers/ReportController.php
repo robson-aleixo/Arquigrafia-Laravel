@@ -15,6 +15,7 @@ class ReportController extends \BaseController {
     
 	$rules = array(
         'reportTypeData' => 'required',
+        'reportType' => 'required',
         '_photo' => 'required'
     ); 
     $validator = Validator::make($input, $rules);   
