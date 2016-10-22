@@ -192,6 +192,7 @@ class PhotosController extends \BaseController {
   {
       Input::flashExcept('tags', 'photo','work_authors');
       $input = Input::all();
+	  $this->batch();
 
       if (Input::has('tags'))
         $input["tags"] = str_replace(array('\'', '"', '[', ']'), '', $input["tags"]);
@@ -341,7 +342,6 @@ class PhotosController extends \BaseController {
             $input['dateImage'] = true;
 
             return Redirect::back()->withInput($input);
-
         } else {
             $messages = $validator->messages();
             return Redirect::to('/photos/upload')->withErrors($messages);
@@ -382,10 +382,21 @@ class PhotosController extends \BaseController {
   {
     $photos = Photo::all();
     foreach ($photos as $photo) {
-      $path = public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg';
-      // novo tamanho para home, o micro, para pré carregamento.
-    $new = public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg';
-      if (is_file($path) && !is_file($new)) $image = Image::make($path)->fit(32,20)->save($new);
+      $originalFileExtension = strtolower(substr(strrchr($photo->nome_arquivo, '.'), 1));
+	  $original_image = storage_path().'/original-images/'.$photo->id."_original.".strtolower($originalFileExtension);
+	  $view = public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg';	  
+	  $twohundred = public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg';	  
+	  $home = public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg';	  
+      $micro = public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg';
+	  
+	  if (!file_exists ($original_image)) {}
+	  elseif (!file_exists($micro) || !file_exists($home) || !file_exists($twohundred) || !file_exists($view)) {
+	  $public_image = Image::make($original_image);
+      $public_image->widen(600)->save($view);
+      $public_image->heighten(220)->save($twohundred); 
+      $public_image->fit(186, 124)->encode('jpg', 70)->save($home);
+      $public_image->fit(32,20)->save($micro);
+	  }
     }
     return "OK.";
   }
@@ -650,8 +661,8 @@ class PhotosController extends \BaseController {
         EventLogger::printEventLogs($id, 'edit_tags', $eventContent, 'Web');
 
         $photo->saveMetadata(strtolower($ext), $metadata);
-
-        
+        $this->batch();
+		
         return Redirect::to("/photos/{$photo->id}")->with('message', '<strong>Edição de informações da imagem</strong><br>Dados alterados com sucesso');
       }
   }
