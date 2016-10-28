@@ -389,7 +389,9 @@ class PhotosController extends \BaseController {
 	  $home = public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg';	  
       $micro = public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg';
 	  
-	  if (!file_exists ($original_image)) {}
+	  if (!file_exists ($original_image)) {
+	    $photo->delete();
+	  }
 	  elseif (!file_exists($micro) || !file_exists($home) || !file_exists($twohundred) || !file_exists($view)) {
 	  $public_image = Image::make($original_image);
       $public_image->widen(600)->save($view);
