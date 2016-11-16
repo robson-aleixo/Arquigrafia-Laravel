@@ -192,7 +192,6 @@ class PhotosController extends \BaseController {
   {
       Input::flashExcept('tags', 'photo','work_authors');
       $input = Input::all();
-	  $this->batch();
 
       if (Input::has('tags'))
         $input["tags"] = str_replace(array('\'', '"', '[', ']'), '', $input["tags"]);
@@ -375,46 +374,6 @@ class PhotosController extends \BaseController {
     } else {
       return "Você só pode fazer o download se estiver logado, caso tenha usuário e senha, faça novamente o login.";
     }
-  }
-
-  // BATCH RESIZE
-  public function batch()
-  {
-    $photos = Photo::all();
-    foreach ($photos as $photo) {
-      $originalFileExtension = strtolower(substr(strrchr($photo->nome_arquivo, '.'), 1));
-	  $original_image = storage_path().'/original-images/'.$photo->id."_original.".strtolower($originalFileExtension);
-	  $view = public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg';	  
-	  $twohundred = public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg';	  
-	  $home = public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg';	  
-      $micro = public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg';
-	  
-	  if (!file_exists ($original_image)) {
-	    $photo->delete();
-	  }
-	  elseif (!file_exists($micro) || !file_exists($home) || !file_exists($twohundred) || !file_exists($view)) {
-	  $public_image = Image::make($original_image);
-      $public_image->widen(600)->save($view);
-      $public_image->heighten(220)->save($twohundred); 
-      $public_image->fit(186, 124)->encode('jpg', 70)->save($home);
-      $public_image->fit(32,20)->save($micro);
-	  }
-    }
-    return "OK.";
-  }
-  
-  // BATCH REGENERATE
-  public function batchRegenerate()
-  {
-    $photos = Photo::all();
-    foreach ($photos as $photo) {
-      $path = public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg';
-    $image = Image::make($path);
-    $image->heighten(220)->save(public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg');
-    $image->fit(186, 124)->encode('jpg', 70)->save(public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg');
-    $image->fit(32,20)->save(public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg');
-    }
-    return "OK.";
   }
 
   public function edit($id) {
@@ -663,7 +622,6 @@ class PhotosController extends \BaseController {
         EventLogger::printEventLogs($id, 'edit_tags', $eventContent, 'Web');
 
         $photo->saveMetadata(strtolower($ext), $metadata);
-        $this->batch();
 		
         return Redirect::to("/photos/{$photo->id}")->with('message', '<strong>Edição de informações da imagem</strong><br>Dados alterados com sucesso');
       }
