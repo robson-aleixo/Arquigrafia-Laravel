@@ -44,9 +44,20 @@ class PagesController extends BaseController {
 		foreach ($photos as $photo) {
 			$originalFileExtension = strtolower(substr(strrchr($photo->nome_arquivo, '.'), 1));
 			$original_image = storage_path().'/original-images/'.$photo->id."_original.".strtolower($originalFileExtension);
-		
+			$view = public_path().'/arquigrafia-images/'.$photo->id.'_view.jpg';	  
+			$twohundred = public_path().'/arquigrafia-images/'.$photo->id.'_200h.jpg';	  
+			$home = public_path().'/arquigrafia-images/'.$photo->id.'_home.jpg';	  
+			$micro = public_path().'/arquigrafia-images/'.$photo->id.'_micro.jpg';
+	  
 			if (!file_exists ($original_image)) {
 				$photo->delete();
+			}
+			elseif (!file_exists($micro) || !file_exists($home) || !file_exists($twohundred) || !file_exists($view)) {
+				$public_image = Image::make($original_image);
+				$public_image->widen(600)->save($view);
+				$public_image->heighten(220)->save($twohundred); 
+				$public_image->fit(186, 124)->encode('jpg', 70)->save($home);
+				$public_image->fit(32,20)->save($micro);
 			}
 		}
 		
