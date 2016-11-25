@@ -25,13 +25,13 @@ class CreativeCommons_3_0 {
 				break;
 		}
 		switch ($this->allowModifications) {
-			case 'YES':
+			case 'yes':
 				// Nothing
 				break;
-			case 'YES_SA':
+			case 'yes_sa':
 				$result .= '-SA';
 				break;
-			case 'NO':
+			case 'no':
 				$result .= '-ND';
 				break;
 		}

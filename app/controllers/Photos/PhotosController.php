@@ -440,7 +440,17 @@ class PhotosController extends \BaseController {
          $centuryImageInput = $photo->dataCriacao;
       }
       
+	  if ($photo->allowModifications == 'YES') {
+		  $photo->allowModifications = 'yes';
+	  }
+	  if ($photo->allowModifications == 'YES_SA') {
+		  $photo->allowModifications = 'yes_sa';
+	  }
 
+	  if ($photo->allowModifications == 'NO') {
+		  $photo->allowModifications = 'no';
+	  }
+	  
       return View::make('photos.edit')
         ->with(['photo' => $photo, 'tags' => $tags,
             'dateYear' => $dateYear,

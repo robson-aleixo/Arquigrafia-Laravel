@@ -45,9 +45,9 @@ class Photo extends Eloquent {
 	];
 
 	static $allowModificationsList = [
-		'YES' => ['Sim', ''],
-		'YES_SA' => ['Sim, contanto que os outros compartilhem de forma semelhante', '-sa'],
-		'NO' => ['Não', '-nd']
+		'yes' => ['Sim', ''],
+		'yes_sa' => ['Sim, contanto que os outros compartilhem de forma semelhante', '-sa'],
+		'no' => ['Não', '-nd']
 	];
 
 	static $allowCommercialUsesList = [

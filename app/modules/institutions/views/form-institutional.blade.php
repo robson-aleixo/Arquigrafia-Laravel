@@ -509,15 +509,15 @@
 						Permitir modificações em sua imagem?
 						<br>
 						<div class="form-row">
-							<input type="radio" onclick="authorization()" name="allowModifications" value="YES" id="allowModificationsYES" checked="checked">
+							<input type="radio" onclick="authorization()" name="allowModifications" value="yes" id="allowModificationsYES" checked="checked">
 							<label for="allowModificationsYES">Sim</label><br class="clear">
 						</div>
 						<div class="form-row">
-							<input type="radio" onclick="authorization()" name="allowModifications" value="YES_SA" id="allowModificationsYES_SA">
+							<input type="radio" onclick="authorization()" name="allowModifications" value="yes_sa" id="allowModificationsYES_SA">
 							<label for="allowModificationsYES_SA">Sim, contanto que os outros compartilhem de forma semelhante</label><br class="clear">
 						</div>
 						<div class="form-row">
-							<input type="radio" onclick="authorization()" name="allowModifications" value="NO" id="allowModificationsNO">
+							<input type="radio" onclick="authorization()" name="allowModifications" value="no" id="allowModificationsNO">
 							<label for="allowModificationsNO">Não</label><br class="clear">
 						</div>
 					</div>
