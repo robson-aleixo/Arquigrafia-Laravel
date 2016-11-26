@@ -440,15 +440,17 @@ class PhotosController extends \BaseController {
          $centuryImageInput = $photo->dataCriacao;
       }
       
-	  if ($photo->allowModifications == 'YES') {
-		  $photo->allowModifications = 'yes';
+	  $allowMod = $photo->allowModifications;
+	  
+	  if ($photo->allowModifications == 'yes') {
+		  $allowMod = 'YES';
 	  }
-	  if ($photo->allowModifications == 'YES_SA') {
-		  $photo->allowModifications = 'yes_sa';
+	  if ($photo->allowModifications == 'yes_sa') {
+		  $allowMod = 'YES_SA';
 	  }
 
-	  if ($photo->allowModifications == 'NO') {
-		  $photo->allowModifications = 'no';
+	  if ($photo->allowModifications == 'no') {
+		  $allowMod = 'NO';
 	  }
 	  
       return View::make('photos.edit')
@@ -458,7 +460,8 @@ class PhotosController extends \BaseController {
             'decadeInput' =>  $decadeInput,
             'centuryImageInput'=> $centuryImageInput,
             'decadeImageInput' =>  $decadeImageInput,
-            'work_authors' => $work_authors
+            'work_authors' => $work_authors,
+			'allowMod' => $allowMod
           ] );
     }
     return Redirect::action('PagesController@home');

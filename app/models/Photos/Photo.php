@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 use modules\draft\traits\DraftingTrait;
 use lib\date\Date;
@@ -45,9 +45,9 @@ class Photo extends Eloquent {
 	];
 
 	static $allowModificationsList = [
-		'yes' => ['Sim', ''],
-		'yes_sa' => ['Sim, contanto que os outros compartilhem de forma semelhante', '-sa'],
-		'no' => ['Não', '-nd']
+		'YES' => ['Sim', ''],
+		'YES_SA' => ['Sim, contanto que os outros compartilhem de forma semelhante', '-sa'],
+		'NO' => ['Não', '-nd']
 	];
 
 	static $allowCommercialUsesList = [

@@ -387,15 +387,15 @@
             Permitir modificações em sua imagem?
             <br>
             <div class="form-row">
-              <input type="radio" onclick="authorization()" name="allowModifications" value="yes" id="allowModificationsYES" {{$photo->allowModifications == 'yes' ? "checked" : ""}}>
+              <input type="radio" onclick="authorization()" name="allowModifications" value="YES" id="allowModificationsYES" {{$photo->allowModifications == 'yes' ? "checked" : ""}}>
               <label for="allowModificationsYES">Sim</label><br class="clear">
             </div>
             <div class="form-row">
-              <input type="radio" onclick="authorization()" name="allowModifications" value="yes_sa" id="allowModificationsYES_SA" {{$photo->allowModifications == 'yes_sa' ? "checked" : ""}}>
+              <input type="radio" onclick="authorization()" name="allowModifications" value="YES_SA" id="allowModificationsYES_SA" {{$photo->allowModifications == 'yes_sa' ? "checked" : ""}}>
               <label for="allowModificationsYES_SA">Sim, contanto que os outros compartilhem de forma semelhante</label><br class="clear">
              </div>
             <div class="form-row">
-              <input type="radio" onclick="authorization()" name="allowModifications" value="no" id="allowModificationsNO" {{$photo->allowModifications == 'no' ? "checked" : ""}}>
+              <input type="radio" onclick="authorization()" name="allowModifications" value="NO" id="allowModificationsNO" {{$photo->allowModifications == 'no' ? "checked" : ""}}>
               <label for="allowModificationsNO">Não</label><br class="clear">
             </div>
           </div>

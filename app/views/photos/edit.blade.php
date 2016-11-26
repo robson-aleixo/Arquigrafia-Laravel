@@ -288,18 +288,18 @@
             Permitir modificações em sua imagem?
             <br>
             <div class="form-row">
-              <input type="radio" name="photo_allowModifications" value="yes" id="photo_allowModificationsYES" {{$photo->allowModifications == 'yes' ? "checked" : ""}}>
+              <input type="radio" name="photo_allowModifications" value="YES" id="photo_allowModificationsYES" {{$allowMod == 'YES' ? "checked" : ""}}>
               <label for="photo_allowModificationsYES">Sim</label><br class="clear">
             </div>
            	<div class="form-row">
-              <input type="radio" name="photo_allowModifications" value="yes_sa" id="photo_allowModificationsYES_SA" {{$photo->allowModifications == 'yes_sa' ? "checked" : ""}}>
+              <input type="radio" name="photo_allowModifications" value="YES_SA" id="photo_allowModificationsYES_SA" {{$allowMod == 'YES_SA' ? "checked" : ""}}>
               <label for="photo_allowModificationsYES_SA">Sim, contanto que os outros compartilhem de forma semelhante</label><br class="clear">
              </div>
            	<div class="form-row">
-              <input type="radio" name="photo_allowModifications" value="no" id="photo_allowModificationsNO" {{$photo->allowModifications == 'no' ? "checked" : ""}}>
+              <input type="radio" name="photo_allowModifications" value="NO" id="photo_allowModificationsNO" {{$allowMod == 'NO' ? "checked" : ""}}>
               <label for="photo_allowModificationsNO">Não</label><br class="clear">
-            </div>
-            
+			
+            </div>			
           </div>
         
           <div class="twelve columns">
