@@ -52,6 +52,7 @@ class PhotosController extends \BaseController {
     $institution = null;
     $currentPage = null;
     $urlBack = URL::previous();
+    $urlVimeo = null;
 
     if (Auth::check()) {
       if(Session::has('institutionId')){
@@ -101,6 +102,13 @@ class PhotosController extends \BaseController {
       }
     }
 
+    if(!is_null($photos->videoVimeo)){
+        $urlVimeo= $photos->videoVimeo;
+        if(!strpos($photos->videoVimeo,"player")){
+            $urlVimeo=str_replace('vimeo.com', 'player.vimeo.com/video', $photos->videoVimeo);
+        }            
+    }  
+
     return View::make('/photos/show',
       ['photos' => $photos, 'owner' => $photo_owner, 'follow' => $follow, 'tags' => $tags,
       'commentsCount' => $photos->comments->count(),
@@ -120,7 +128,8 @@ class PhotosController extends \BaseController {
       'currentPage' => $currentPage,
       'typeSearch' => $typeSearch,
       'urlBack' => $urlBack,
-      'institutionId' => $photos->institution_id
+      'institutionId' => $photos->institution_id,
+      'urlVimeo' => $urlVimeo
     ]);
   }
 
@@ -182,7 +191,9 @@ class PhotosController extends \BaseController {
       'autoOpenModal'=>$input['autoOpenModal'],
       'dates' => $dates,
       'dateImage' => $dateImage,
-      'work_authors'=>$work_authors   
+      'work_authors'=>$work_authors,
+      'videoYoutube' => null,
+      'videoVimeo' => null  
       ]);
 
   }
@@ -203,7 +214,9 @@ class PhotosController extends \BaseController {
           $input["work_authors"] = str_replace(array( '"','[', ']'), '', $input["work_authors"]);    
       }else $input["work_authors"] = '';
  
-  
+      $regexYoutube = '/^https:\/\/www\.youtube\.com\/(embed\/|watch\?v=)\S+$/';
+      $regexVimeo = '/^https:\/\/(vimeo\.com|player\.vimeo\.com\/video)\/[0-9]{4,9}$/';
+
       $rules = array(
         'photo_name' => 'required',
         'photo_imageAuthor' => 'required',
@@ -211,13 +224,15 @@ class PhotosController extends \BaseController {
         'photo_country' => 'required',  
         'photo_authorization_checkbox' => 'required',
         'photo' => 'max:10240|required|mimes:jpeg,jpg,png,gif',    
-        'photo_imageDate' => 'date_format:d/m/Y|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/'
+        'photo_imageDate' => 'date_format:d/m/Y|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',//,
+        'video_youtube' => array('regex:'.$regexYoutube),
+        'video_vimeo' => array('regex:'.$regexVimeo)
       );
 
       $validator = Validator::make($input, $rules);
-
+     
       if ($validator->fails()) {
-          $messages = $validator->messages();
+          $messages = $validator->messages(); 
 
           return Redirect::to('/photos/upload')->with(['tags' => $input['tags'],
           'decadeInput'=>$input["decade_select"],
@@ -226,8 +241,7 @@ class PhotosController extends \BaseController {
           'centuryImageInput'=>$input["century_image"] ,
           'work_authors'=>$input["work_authors"]     
           ])->withErrors($messages);
-      } else {
-
+      } else {  
         if (Input::hasFile('photo') and Input::file('photo')->isValid()) {
             $file = Input::file('photo');
             $photo = new Photo();
@@ -276,6 +290,19 @@ class PhotosController extends \BaseController {
             }      
       
             $photo->nome_arquivo = $file->getClientOriginalName();
+
+            if (!empty($input["video_youtube"]) || trim($input["video_youtube"])!="" ){
+                $photo->videoYoutube = trim($input["video_youtube"]);
+            }else{
+                $photo->videoYoutube = NULL;
+            }
+                 
+
+            if (!empty($input["video_vimeo"]) || trim($input["video_vimeo"])!=""){
+                $photo->videoVimeo = trim($input["video_vimeo"]);
+            }else{
+                $photo->videoVimeo = NULL;
+            }
 
             $photo->user_id = Auth::user()->id;
             $photo->dataUpload = date('Y-m-d H:i:s');
@@ -440,6 +467,16 @@ class PhotosController extends \BaseController {
          $centuryImageInput = $photo->dataCriacao;
       }
       
+      $allowMod = $photo->allowModifications;
+      if ($photo->allowModifications == 'yes') {
+          $allowMod = 'YES';
+      }
+      if ($photo->allowModifications == 'yes_sa') {
+          $allowMod = 'YES_SA';
+      }
+      if ($photo->allowModifications == 'no') {
+          $allowMod = 'NO';
+      }      
 
       return View::make('photos.edit')
         ->with(['photo' => $photo, 'tags' => $tags,
@@ -448,7 +485,10 @@ class PhotosController extends \BaseController {
             'decadeInput' =>  $decadeInput,
             'centuryImageInput'=> $centuryImageInput,
             'decadeImageInput' =>  $decadeImageInput,
-            'work_authors' => $work_authors
+            'work_authors' => $work_authors,
+            'allowMod' => $allowMod,
+            'videoYoutube' => $photo->videoYoutube,
+            'videoVimeo' => $photo->videoVimeo
           ] );
     }
     return Redirect::action('PagesController@home');
@@ -492,13 +532,18 @@ class PhotosController extends \BaseController {
          $centuryInput = $input["century"];
       }
 
+      $regexYoutube = '/^https:\/\/www\.youtube\.com\/(embed\/|watch\?v=)\S+$/';
+      $regexVimeo = '/^https:\/\/(vimeo\.com|player\.vimeo\.com\/video)\/[0-9]{4,9}$/';
+
       $rules = array(
         'photo_name' => 'required',
         'photo_imageAuthor' => 'required',
         'tags' => 'required',
         'photo_country' => 'required',
         'photo_imageDate' => 'date_format:d/m/Y|regex:/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/',
-        'photo' => 'max:10240|mimes:jpeg,jpg,png,gif'
+        'photo' => 'max:10240|mimes:jpeg,jpg,png,gif',
+        'video_youtube' => array('regex:'.$regexYoutube),
+        'video_vimeo' => array('regex:'.$regexVimeo)
 
           );
 
@@ -558,6 +603,18 @@ class PhotosController extends \BaseController {
             $photo->dataCriacao = NULL;
         }  
 
+        if (!empty($input["video_youtube"]) || trim($input["video_youtube"])!="" ){
+            $photo->videoYoutube = trim($input["video_youtube"]);
+        }else{
+            $photo->videoYoutube = NULL;
+        }
+             
+
+        if (!empty($input["video_vimeo"]) || trim($input["video_vimeo"])!=""){
+            $photo->videoVimeo = trim($input["video_vimeo"]);
+        }else{
+            $photo->videoVimeo = NULL;
+        }
 
         if (Input::hasFile('photo') and Input::file('photo')->isValid()) {
           $file = Input::file('photo');
