@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '127.0.0.1',
 			'database'  => 'arquigrafia',
 			'username'  => 'root',
-			'password'  => 'senha', // trocar para o seu caso
+			'password'  => '102938', // trocar para o seu caso
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

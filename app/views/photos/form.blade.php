@@ -88,24 +88,27 @@
     <div>
     {{ Form::open(array('url'=>'photos', 'files'=> true)) }}
     <div class="twelve columns row step-1">
-    <h1><span class="step-text">Upload</span></h1>
-    <div class="four columns alpha">
-    <img src="" id="preview_photo">
-    <div id="image_rotate" style="display:none;">
-    <br></br>
-    <a class="btn left" onclick="Rotate(document.getElementById('preview_photo'), -Math.PI/2);">Girar 90° para esquerda</a>
-    <a class="btn right" onclick="Rotate(document.getElementById('preview_photo'), Math.PI/2);">Girar 90° para direita</a>
+        <h1><span class="step-text">Upload</span></h1>
+        <div class="four columns alpha">
+            <img src="" id="preview_photo">
+            <div id="image_rotate" style="display:none;">
+                <br></br>
+                <a class="btn left" onclick="Rotate(document.getElementById('preview_photo'), -Math.PI/2);">Girar 90° para esquerda</a>
+                <a class="btn right" onclick="Rotate(document.getElementById('preview_photo'), Math.PI/2);">Girar 90° para direita</a>
+            </div>
+            <br></br>
+            <p>
+                {{ Form::label('photo','Imagem:') }}
+                {{ Form::file('photo', array('id'=>'imageUpload', 'onchange' => 'readURL(this);')) }}
+                <br></br>
+                <div class="error">{{ $errors->first('photo') }}</div>
+            </p>
+        </div>
+        <br>
     </div>
-    <br></br>
-    <p>
-    {{ Form::label('photo','Imagem:') }}
-    {{ Form::file('photo', array('id'=>'imageUpload', 'onchange' => 'readURL(this);')) }}
-    <br></br>
-    <div class="error">{{ $errors->first('photo') }}</div>
-    </p>
-    </div>
-    <br>
-    </div>
+
+    @include('photos.includes.associatedVideos');
+
     <div id="registration" class="twelve columns row step-2">
     <h1><span class="step-text">Dados da imagem</span></h1>
     </br>

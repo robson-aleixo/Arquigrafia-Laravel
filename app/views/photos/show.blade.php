@@ -237,6 +237,39 @@
         </p>
       </div>
 
+      <!-- d -->
+      <div id="videos_block" class="eight columns row alpha omega">
+        <!--<hgroup class="profile_block_title">-->
+        <h3>Vídeos associados</h3>
+        <br>
+        <!-- </hgroup>-->        
+        @if(!is_null($photos->videoYoutube)) 
+        <div class="four columns alpha row">
+          <iframe width="280" height="157" src="{{str_replace('watch?v=', 'embed/', $photos->videoYoutube)}}" frameborder="0" allowfullscreen></iframe>
+        </div>  
+        @endif 
+
+        @if(!is_null($photos->videoVimeo))
+        <div class="four columns alpha row">
+          <iframe width="280" height="157" src="{{$urlVimeo}}" frameborder="0" allowfullscreen></iframe>
+        </div>  
+        @endif 
+
+        <!--<iframe width="280" height="157" src="http://player.vimeo.com/video/155696373" frameborder="0" allowfullscreen></iframe>-->
+        
+        <!--<iframe src="https://player.vimeo.com/video/21080006" width="280" height="157" frameborder="0" webkitallowfullscreen mozallowfullscreen ></iframe>-->
+        
+
+<!--<iframe src="https://player.vimeo.com/video/21080006" width="280" height="157" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/21080006">ARQUITECTURA</a> from <a href="https://vimeo.com/tryoutcedim">Try-out! CEDIM</a> </p> -->
+        
+
+      
+<!--?api=1&player_id=video  ?portrait=0&color=333&controls=0&buttons.share=false &embed.buttons.like=false-->
+
+      </div>  
+
+      <!-- /d -->
       <!--   BOX DE COMENTARIOS   -->
       <div id="comments_block" class="eight columns row alpha omega">
         <h3>Comentários</h3>
@@ -313,7 +346,7 @@
         @endif
       </div>
       <!-- FIM DO BOX DE COMENTARIOS -->
-      <!-- msy Avaliação similar-->
+      <!-- Avaliação similar-->
       @if (count($similarPhotos) > 0)
         <div id="comments_block" class="eight columns row alpha omega">
           <hgroup class="profile_block_title">

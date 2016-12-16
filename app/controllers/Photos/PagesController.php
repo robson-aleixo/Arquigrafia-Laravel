@@ -59,6 +59,7 @@ class PagesController extends BaseController {
             }
         }*/
 
+
         $photos = Photo::orderByRaw("RAND()")->take(150)->get();
  
         if(Session::has('institutionId')){

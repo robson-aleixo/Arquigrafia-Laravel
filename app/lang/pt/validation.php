@@ -215,6 +215,12 @@ return array(
         'site' => array(
             'url' => 'O site deve ter o formato do URL.',
         ),
+        'video_youtube' => array(
+            'regex' => 'O link de Youtube não tem o formato adequado.',
+        ),
+        'video_vimeo' => array(
+            'regex' => 'O link de Vimeo não tem o formato adequado.',
+        ),
         
     ), 
 
