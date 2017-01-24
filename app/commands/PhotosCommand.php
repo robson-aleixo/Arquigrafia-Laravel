@@ -37,9 +37,26 @@ class PhotosCommand extends Command {
 	 */
 	public function fire()
 	{
-		$photos = Photo::all();
+		$date = $this->option('date');
+		if($date == null)
+			$photos = Photo::all();
+		else {
+			try {
+				$date = strtotime($date);				
+				$date = date('Y-m-d', $date);				
+				$photos = Photo::where('created_at', '>=', $date)->get();
+			} catch (Exception $e){
+				$this->error($e);
+				return;
+			}
+		}
+		$this->info('Verifying ' . count($photos) . ' photos...');
+			
 		foreach ($photos as $photo) {
 			$original_image = '';
+			//checks if it's video
+			if($photo->type == 'video')
+				continue;
 			//checks if original files exists
 			if(\File::exists('app/storage/original-images/' . $photo->id . '_original.jpg'))  
 				$original_image = 'app/storage/original-images/' . $photo->id . '_original.jpg';
@@ -106,6 +123,7 @@ class PhotosCommand extends Command {
 	{
 		return array(
 			array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
+			array('date', 'd', InputOption::VALUE_OPTIONAL, 'Defines the date to start regenerating photos (DD-MM-YYYY).', null),
 		);
 	}
 
