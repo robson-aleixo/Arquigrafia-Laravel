@@ -647,7 +647,7 @@
 					<div class="botao-refsite">
 							<a href="{{ URL::to("/home") }}" style="color:white;">{{ trans('landing.siteBtn')}}</a>
 					</div>
-					<div class="playstore">{{trans('landing.txtSoon')}}<img src="{{ asset('img/playstore.png')}}"></div>
+					<div class="playstore"><img src="{{ asset('img/playstore.png')}}"></div>
 					</div>
 					
 				</div>	

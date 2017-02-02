@@ -5,8 +5,7 @@ return array(
     'textPage1' => 'How can your pictures join the Arquigrafia collection?',
 	'titlePage2' => "It's easy: create an account, choose your most interesting architectural images and 
 					share in Arquigrafia!",
-	'paragraphPage2' => 'Become part of an architects community, architecture students, 
-						photographers and people  interested in architecture.<br/>
+	'paragraphPage2' => 'Become part of a community of architects, students, photographers and people interested in architecture.<br/>
 						<br/>
 						Do you like any picture in Arquigrafia?<br/>
 						Comment and download it!<br/>
@@ -24,8 +23,7 @@ return array(
 	'titlePage5' =>'What connects architectures from different times<br/> and places? ',			
 	'paragraphPage5' =>'Architecture can be understood as the relationship between opposite aspects such as: how 
 						open and how close, symmetry and asymmetry, vertical and horizontal, etc.</br><br/>
-						What characteristics predominate in this architecture?<br/>
-						Save your impressions in Arquigrafia!',
+						What characteristics predominate in this architecture? Save your impressions in Arquigrafia!',						
 	'AverageInterpretation' => 'Average interpretations of FAU-USP',
 	'txtPag5Open' => 'Open',	
 	'txtPag5Close' => 'Close',	
