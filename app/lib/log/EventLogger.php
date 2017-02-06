@@ -94,7 +94,20 @@ class EventLogger {
 
         $filePath = EventLogger::createDirectoryAndFile($date_only, $userId, $sourcePage, $userType);
         EventLogger::verifyTimeout($filePath, $userId, $sourcePage, $userType);
+        
+        if($photoId != null){
+            $photos = \Photo::find($photoId); 
 
+            if($photos->type == "video"){
+                if($eventType == "insert_tags" || $eventType == "edit_tags"){
+                    $textVideoFoto = "ao vídeo";
+                }else{
+                    $textVideoFoto = "o vídeo";
+                }
+            }else{
+                $textVideoFoto = "a foto";
+            }
+        }
         
         switch ($eventType) {
         	case "home":
@@ -106,20 +119,20 @@ class EventLogger {
             					$date_and_time, $eventContent['origin'], $userId);
                 break;
             case "upload":  
-                $info = sprintf('[%s] Upload da foto de ID nº: %d, pela página %s, via %s', 
-                	$date_and_time, $photoId, $sourcePage, $device);
+                $info = sprintf('[%s] Upload d%s de ID nº: %d, pela página %s, via %s', 
+                	$date_and_time, $textVideoFoto, $photoId, $sourcePage, $device);
                 break;
             case "download":
             	$info = sprintf('[%s] Download da foto de ID nº: %d, pela página %s, via %s', 
                 	$date_and_time, $photoId, $sourcePage, $device);
                 break;
             case "edit":
-            	$info = sprintf('[%s] Edição da foto de ID nº: %d, pela página %s, via %s', 
-                				$date_and_time, $photoId, $sourcePage, $device);
+            	$info = sprintf('[%s] Edição d%s de ID nº: %d, pela página %s, via %s', 
+                				$date_and_time, $textVideoFoto, $photoId, $sourcePage, $device);
                 break;
-            case "delete":
-            	$info = sprintf('[%s] Deleção da foto de ID nº: %d, pela página %s, via %s', 
-                				$date_and_time, $photoId, $sourcePage, $device);
+            case "delete":                
+            	$info = sprintf('[%s] Deleção d%s de ID nº: %d, pela página %s, via %s', 
+                				$date_and_time, $textVideoFoto, $photoId, $sourcePage, $device);
                 break;
             case "follow":
             	$info = sprintf('[%s] Usuário de ID nº: %d passou a seguir o usuário de ID nº: %d, pela página %s, via %s', 
@@ -130,20 +143,20 @@ class EventLogger {
                 				$date_and_time, $userId, $eventContent['target_userId'], $sourcePage, $device);
                 break;
             case "select_photo":
-            	$info = sprintf('[%s] Selecionou a foto de ID nº: %d, pela página %s, via %s', 
-            					$date_and_time, $photoId, $sourcePage, $device);
+            	$info = sprintf('[%s] Selecionou %s de ID nº: %d, pela página %s, via %s', 
+            					$date_and_time, $textVideoFoto, $photoId, $sourcePage, $device);
                 break;
             case "edit_photo":
-                $info = sprintf('[%s] Editou a foto de ID nº: %d, pela página %s, via %s', 
-                                $date_and_time, $photoId, $sourcePage, $device);
+                $info = sprintf('[%s] Editou %s de ID nº: %d, pela página %s, via %s', 
+                                $date_and_time, $textVideoFoto, $photoId, $sourcePage, $device);                
                 break;
             case "insert_tags":                       
-                $info = sprintf('[%s] Inseriu as tags: %s. Pertencentes a foto de ID nº: %d, via %s', 
-                				$date_and_time, $eventContent['tags'], $photoId, $device);                  
+                $info = sprintf('[%s] Inseriu as tags: %s. Pertencentes %s de ID nº: %d, via %s', 
+                				$date_and_time, $eventContent['tags'], $textVideoFoto, $photoId, $device);                  
                 break;
             case "edit_tags":                       
-                $info = sprintf('[%s] Editou as tags: %s. Pertencentes a foto de ID nº: %d, via %s', 
-                				$date_and_time, $eventContent['tags'], $photoId, $device);                  
+                $info = sprintf('[%s] Editou as tags: %s. Pertencentes %s de ID nº: %d, via %s', 
+                				$date_and_time, $eventContent['tags'], $textVideoFoto, $photoId, $device);                  
                 break;
             case "login":
             	$info = sprintf('[%s] Login através do %s, pela página %s, via %s', 
@@ -158,12 +171,12 @@ class EventLogger {
             		            $date_and_time, $eventContent['target_userId'], $sourcePage, $device);
                 break;
             case "insert_comment":
-             	$info = sprintf('[%s] Inseriu o comentário de ID nº: %d, na foto de ID nº: %d, pela página %s, via %s', 
-             					$date_and_time, $eventContent['comment_id'], $photoId, $sourcePage, $device);
+             	$info = sprintf('[%s] Inseriu o comentário de ID nº: %d, n%s de ID nº: %d, pela página %s, via %s', 
+             					$date_and_time, $eventContent['comment_id'], $textVideoFoto, $photoId, $sourcePage, $device);
                 break;
             case "edit_comment":
-             	$info = sprintf('[%s] Editou o comentário de ID nº: %d, na foto de ID nº: %d, pela página %s, via %s', 
-             					$date_and_time, $eventContent['comment_id'], $photoId, $sourcePage, $device);
+             	$info = sprintf('[%s] Editou o comentário de ID nº: %d, n%s de ID nº: %d, pela página %s, via %s', 
+             					$date_and_time, $eventContent['comment_id'], $textVideoFoto, $photoId, $sourcePage, $device);
                 break;
             case "delete_comment":
              	$info = sprintf('[%s] Deletou o comentário de ID nº: %d, na foto de ID nº: %d, pela página %s, via %s', 

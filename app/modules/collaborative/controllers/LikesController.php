@@ -22,7 +22,11 @@ class LikesController extends \BaseController {
 
     \Event::fire('photo.like', array($user, $photo));
 
-    EventLogger::printEventLogs(null, 'like', ['target_type' => 'foto', 'target_id' => $id], 'Web');
+    if ($photo->type == "video") {
+      EventLogger::printEventLogs(null, 'like', ['target_type' => 'video', 'target_id' => $id], 'Web');
+    }else{
+      EventLogger::printEventLogs(null, 'like', ['target_type' => 'foto', 'target_id' => $id], 'Web');
+    }
 
     if ($user->id != $photo->user_id) {
       $user_note = \User::find($photo->user_id);      
@@ -41,7 +45,11 @@ class LikesController extends \BaseController {
     $user = \Auth::user();
     $eventContent['target_type'] = 'foto';
 
-    EventLogger::printEventLogs(null, 'dislike', ['target_type' => 'foto', 'target_id' => $id], 'Web');
+    if ($photo->type == "video") {
+      EventLogger::printEventLogs(null, 'dislike', ['target_type' => 'vídeo', 'target_id' => $id], 'Web');
+    }else{
+      EventLogger::printEventLogs(null, 'dislike', ['target_type' => 'foto', 'target_id' => $id], 'Web');
+    }  
 
     /* */
     try {

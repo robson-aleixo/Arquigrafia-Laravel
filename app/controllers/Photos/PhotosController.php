@@ -331,6 +331,7 @@ class PhotosController extends \BaseController {
 
             $input['autoOpenModal'] = 'true'; 
             $eventContent['tags'] = $input['tags'];
+
             EventLogger::printEventLogs($photo->id, 'upload', NULL,'Web');
             EventLogger::printEventLogs($photo->id, 'insert_tags', $eventContent,'Web');
 
@@ -693,10 +694,10 @@ class PhotosController extends \BaseController {
       $tag->save();
     }
     DB::table('tag_assignments')->where('photo_id', '=', $photo->id)->delete();
-
+    EventLogger::printEventLogs($id, "delete", null, "Web");
     $photo->delete();
     
-    EventLogger::printEventLogs($id, "delete", null, "Web");
+    
     return Redirect::to('/users/' . $photo->user_id);
   }
 }
