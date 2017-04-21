@@ -45,6 +45,7 @@
 <div class="header-page" id="header-pagina">
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<a href="{{ URL::to("/home") }}" >
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="260px" height="45px" viewBox="0 0 260 45" enable-background="new 0 0 260 45" xml:space="preserve">
 <g>
@@ -54,9 +55,10 @@
 		11.769,15.737 11.769,30.641 23.954,30.641 23.954,12.544 8.448,12.544 8.448,33.833 27.275,33.833 27.275,24.254 27.275,9.349 
 		5.124,9.349 5.124,37.029 30.599,37.029 30.599,6.153 1.804,6.153 1.804,40.224 34.665,40.224 	"/>
 </g>
-<text transform="matrix(1.0338 0 0 1 42.2119 27.9512)" fill="#010101" font-family="'Roboto'" font-size="24.453"><a href="{{ URL::to("/home") }}" >ARQUIGRAFIA</a></text>
+<text transform="matrix(1.0338 0 0 1 42.2119 27.9512)" fill="#010101" font-family="'Roboto'" font-size="24.453">ARQUIGRAFIA</text>
 <text transform="matrix(1.0338 0 0 1 41.708 39.5527)" fill="#010101" font-family="'Roboto'" font-size="8.7682">Seu universo de imagens de arquitetura </text>
 </svg>
+</a>
 
 <div class="buttons">
 <!--   BOTÃO DA BARRA DE BUSCA   -->
@@ -94,17 +96,35 @@
 
 <!-- PÁGINA 1 --> 
 
+
 <div class="fullscreen_post_bg">
 
-	<div id="page1" class="wrapper">
+<!-- HEADER PAGINA INICIAL -->
+	<div class="header-main">
+		<a href="{{ URL::to("/home") }}" ><img src="{{ asset('img/logoarq-header.png')}}" /></a>
+		<div class="cadastro-button"><a href="{{ URL::to("/home") }}" >Ir para o site >></a></div>
+		<div class="lang-button"><a href="{{ URL::to("/landing/en") }}">en</a></div>
+		<div class="lang-button"><a href="{{ URL::to("/landing/pt") }}">pt</a></div>
+		<div class="search-field">
+			<form id="tfnewsearch" action="{{ URL::to("/") }}/search" method="post" accept-charset="UTF-8" target="_blank">	
+				<input type="text" class="tftextinput" style="color:#000" name="q" size="21" maxlength="120" value="">
+				<input type="submit" value="search" class="tfbutton" style="background:none;" />
+				<input type="hidden" value="8" name="perPage" />
+			</form>
+		</div>
+	</div>
+<!-- END HEADER PAGINA INICIAL -->
 
+	<div id="page1" class="wrapper">
 		<div class="row">
 
 		<div style="display:flex;justify-content:center;align-items:center;text-align:center;height:100vh;">
+
 			<div class="column-4" style="padding: 0; width: 42%;">
 
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<a href="{{ URL::to("/home") }}" >
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="540px" height="90px" viewBox="0 0 540 90" enable-background="new 0 0 540 90" xml:space="preserve">
 <g>
@@ -117,6 +137,7 @@
 <text transform="matrix(1.0338 0 0 1 83.8008 56.7783)" fill="#010101" font-family="'Roboto'" font-size="67.2074">ARQUIGRAFIA</text>
 <text transform="matrix(1.0338 0 0 1 82.7573 79.3887)" fill="#010101" font-family="'Roboto'" font-size="18.1581">{{trans('landing.titleLogo')}} </text>
 </svg>
+</a>
 
 <div class="buttons-inicio">
 
@@ -149,12 +170,16 @@
 
 		</div>
 
-
 	</div>
+
+	<div class="seta">
+			<img src="{{ asset('img/arrow-landing.png')}}" />
+	</div>
+
 
 	<div id="bottom-page">
 				<a href="#page2">{{trans('landing.textPage1')}}</a>
-		</div>
+	</div>
 
 </div>
 
