@@ -3,7 +3,6 @@ namespace modules\gamification\models;
 use Carbon\Carbon;
 
 class Badge extends \Eloquent {
-
 	protected $fillable = ['name', 'image', 'description'];
 
 	public function users()
@@ -63,5 +62,4 @@ class Badge extends \Eloquent {
       ->wherePivot('element_type', get_class($el))
       ->wherePivot('element_id', $el->id);
   }
-
 }

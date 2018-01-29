@@ -1,5 +1,4 @@
 <?php
-
 namespace modules\moderation\controllers;
 
 use lib\log\EventLogger;
@@ -29,7 +28,7 @@ class SuggestionsController extends \BaseController {
 		);
 
 		$validator = \Validator::make($input, $rules);
-		if($validator->fails()){
+		if($validator->fails()) {
 			return \Response::make($validator->messages(), 400);
 		}
 
@@ -121,14 +120,14 @@ class SuggestionsController extends \BaseController {
 		}
 	}
 
-	public function edit(){
+	public function edit() {
 		$user = \Auth::user();
 		$photos = $user->photos->lists('id');
 		//$photos = [1];
 		$suggestions = Suggestion::whereNull('accepted')->whereIn('photo_id', $photos)->get();
 		//dd($suggestions);
 		$final = [];
-		foreach ($suggestions as $suggestion){
+		foreach ($suggestions as $suggestion) {
 			$field = PhotoAttributeType::find($suggestion->attribute_type)->attribute_type;
 			$field_name = Photo::$fields_data[$field]['name'];
 			$photo = Photo::find($suggestion->photo->id);
@@ -140,7 +139,7 @@ class SuggestionsController extends \BaseController {
 		return \View::make('show-suggestions', ['suggestions' => $final]);
 	}
 
-	public function update(){
+	public function update() {
 		$input = \Input::all();
 		$id_self = \Auth::user()->id;
 		$suggestion = Suggestion::find($input['suggestion_id']);

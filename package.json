@@ -8,7 +8,9 @@
     "test": "jest javascript",
     "test:watch": "jest --watch javascript",
     "lint": "eslint ./javascript/",
-    "php": "./start-php-server.sh"
+    "php": "./start-php-server.sh",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -33,7 +35,12 @@
     "vue-loader": "^13.4.0",
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1",
-    "webpack-merge": "^4.1.1"
+    "webpack-merge": "^4.1.1",
+    "@storybook/vue": "^3.3.11",
+    "@storybook/addon-actions": "^3.3.11",
+    "@storybook/addon-links": "^3.3.11",
+    "@storybook/addons": "^3.3.11",
+    "babel-preset-vue": "^2.0.0"
   },
   "dependencies": {
     "@panter/vue-i18next": "^0.8.1",

@@ -8,11 +8,11 @@ class Suggestion extends \Eloquent {
 		return $this->belongsTo('PhotoAttributeType', 'attribute_type');
 	}
 
-	public function user(){
+	public function user() {
 		return $this->belongsTo('User');
 	}
 
-	public function photo(){
+	public function photo() {
 		return $this->belongsTo('Photo');
 	}
 
@@ -25,3 +25,4 @@ class Suggestion extends \Eloquent {
 		return 5;
 	}
 }
+
