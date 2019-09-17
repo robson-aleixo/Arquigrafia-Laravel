@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+    web:
+        container_name: arquigrafia_web
+        restart: always
+        build: .
+        command: php -S 0.0.0.0:9000 /app/index.php
+        ports:
+            - '9000:80'
+        volumes:
+            - .:/var/www/app
+        links:
+            - mysql
+
+    mysql:
+        container_name: mysql
+        image: mysql
+        command: --init-file /data/application/init.sql
+        volumes:
+            - ./init.sql:/data/application/init.sql
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+            MYSQL_DATABASE: 'arquigrafia'
+            MYSQL_ROOT_USER: 'root'
+            MYSQL_ROOT_PASSWORD: ''
+        ports:
+            - '32769:3306'
+
+    composer:
+        restart: 'no'
+        image: composer/composer
+        command: install
+        volumes:
+            - .:/app
