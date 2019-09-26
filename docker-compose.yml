@@ -1,35 +1,95 @@
+# version: '3'
+#
+# services:
+#     web:
+#         container_name: arquigrafia_web
+#         restart: always
+#         build: .
+#         command: bash -c 'php artisan migrate && php artisan serve --host 0.0.0.0'
+#         ports:
+#             - '9000:80'
+#         volumes:
+#             - .:/var/www/app
+#         depends_on:
+#             - mysql
+#         links:
+#             - mysql
+#
+#     mysql:
+#         container_name: mysql
+#         image: mysql
+#         command: --init-file /data/application/init.sql
+#         volumes:
+#             - ./init.sql:/data/application/init.sql
+#         environment:
+#             MYSQL_ALLOW_EMPTY_PASSWORD: 1
+#             MYSQL_DATABASE: 'arquigrafia'
+#             MYSQL_ROOT_USER: 'root'
+#             MYSQL_ROOT_PASSWORD: ''
+#         ports:
+#             - '32769:3306'
+#
+#     composer:
+#         restart: 'no'
+#         image: composer/composer
+#         command: install
+#         volumes:
+#             - .:/app
+#
+#     phpmyadmin:
+#         depends_on:
+#             - mysql
+#         image: phpmyadmin/phpmyadmin
+#         restart: always
+#         ports:
+#             - 8090:80
+#         environment:
+#             PMA_HOST: mysql
+#             MYSQL_ROOT_PASSWORD: ''
+
+
 version: '3'
-
 services:
-    web:
-        container_name: arquigrafia_web
-        restart: always
-        build: .
-        command: php -S 0.0.0.0:9000 /app/index.php
-        ports:
-            - '9000:80'
-        volumes:
-            - .:/var/www/app
-        links:
-            - mysql
-
-    mysql:
-        container_name: mysql
-        image: mysql
-        command: --init-file /data/application/init.sql
-        volumes:
-            - ./init.sql:/data/application/init.sql
-        environment:
-            MYSQL_ALLOW_EMPTY_PASSWORD: 1
-            MYSQL_DATABASE: 'arquigrafia'
-            MYSQL_ROOT_USER: 'root'
-            MYSQL_ROOT_PASSWORD: ''
-        ports:
-            - '32769:3306'
-
-    composer:
-        restart: 'no'
-        image: composer/composer
-        command: install
-        volumes:
-            - .:/app
+  app:
+    build: .
+    ports:
+      - "8009:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DB_HOST=arquigrafia
+    env_file: .env
+    working_dir: /app
+    #php artisan migrate --database arquigrafia &&
+    command: bash -c 'php artisan serve --host 0.0.0.0'
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    image: "mysql:5.7"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD= 1
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=arquigrafia
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+    command: --init-file /app/data/application/init.sql
+    volumes:
+      - ./data/application:/app/data/application/
+      # - ./data/:/var/lib/mysql
+    ports:
+      - "3307:3306"
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8090:80
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ''
+  # php:
+  #   volumes:
+  #     - ./localpath/custom.ini:/usr/local/etc/php/conf.d/custom.ini
