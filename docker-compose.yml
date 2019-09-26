@@ -7,10 +7,10 @@ services:
     volumes:
       - .:/app
     environment:
-      - DB_HOST=arquigrafia
+      - DB_HOST=db
     env_file: .env
     working_dir: /app
-    command: bash -c 'php artisan migrate --database arquigrafia && php artisan serve --host 0.0.0.0'
+    command: bash -c 'php artisan serve --host 0.0.0.0'
     depends_on:
       - db
     links:
@@ -28,13 +28,3 @@ services:
       - ./data/application:/app/data/application/
     ports:
       - "3307:3306"
-  phpmyadmin:
-    depends_on:
-      - db
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    ports:
-      - 8090:80
-    environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: ''
