@@ -55,11 +55,11 @@ services:
     ports:
       - "8009:8000"
     volumes:
-      - .:/app
+      - .:/
     environment:
       - DB_HOST=arquigrafia
     env_file: .env
-    working_dir: /app
+    working_dir: /
     #php artisan migrate --database arquigrafia &&
     command: bash -c 'php artisan serve --host 0.0.0.0'
     depends_on:
@@ -73,9 +73,9 @@ services:
       - MYSQL_DATABASE=arquigrafia
       - MYSQL_USER=root
       - MYSQL_PASSWORD=''
-    command: --init-file /data/application/init.sql
+    command: --init-file /script/init.sql
     volumes:
-      - ./init.sql:/data/application/init.sql
+      - ./script:/script/
       # - ./data/:/var/lib/mysql
     ports:
       - "3307:3306"
