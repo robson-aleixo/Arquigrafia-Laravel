@@ -20,6 +20,7 @@ Route::get('/photos/import', 'ImportsController@import');
 /* phpinfo() */
 Route::get('/info/', function(){ return View::make('i'); });
 
+
 Route::group(['prefix' => '/'], function()
 {
     if ( Auth::check() ) // use Auth::check instead of Auth::user
