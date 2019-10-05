@@ -57,7 +57,7 @@ return array(
 			'host'      => '127.0.0.1',
 			'database'  => 'arquigrafia',
 			'username'  => 'root',
-			'password'  => '@Rpa1988',
+			'password'  => 'Ri19981234!',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
