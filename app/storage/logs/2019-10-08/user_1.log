@@ -16,3 +16,8 @@ Timeout atingido, novo acesso detectado
 [2019-10-08 15:48:33] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [].
 [2019-10-08 15:48:33] Acessou a home page, pela página , via Web - [VG]
 [2019-10-08 15:54:47] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 16:13:09] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 16:13:11] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 16:13:15] Logout pela página http://localhost:8009/, via Web - [VG]
+[2019-10-08 16:13:24] Login através do Arquigrafia, pela página http://localhost:8009/users/login, via Web - [VG]
+[2019-10-08 16:13:24] Acessou a home page, pela página http://localhost:8009/users/login, via Web - [VG]
