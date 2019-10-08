@@ -19,7 +19,6 @@ services:
   db:
     image: "mysql:5.7"
     environment:
-      MYSQL_ROOT_PASSWORD: Ri19981234!
       MYSQL_DATABASE: arquigrafia
       MYSQL_USER: root
       MYSQL_PASSWORD: ''
