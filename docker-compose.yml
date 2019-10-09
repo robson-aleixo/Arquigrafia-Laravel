@@ -22,6 +22,7 @@ services:
       MYSQL_DATABASE: arquigrafia
       MYSQL_USER: root
       MYSQL_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
     command: --init-file /app/script/init.sql
     volumes:
       - ./script:/app/script/
