@@ -1,0 +1,14 @@
+[2019-10-15 14:01:45] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [].
+[2019-10-15 14:01:45] Acessou a home page, pela página , via Web - [VG]
+Timeout atingido, novo acesso detectado
+[2019-10-15 14:29:56] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [http://localhost:8000/photos/upload].
+[2019-10-15 14:29:56] Upload da foto de ID nº: 1, pela página http://localhost:8000/photos/upload, via Web - [VG]
+[2019-10-15 14:29:56] Inseriu as tags: mamifero. Pertencentes a foto de ID nº: 1, via Web - [VG]
+Timeout atingido, novo acesso detectado
+[2019-10-15 15:10:42] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [http://localhost:8000/photos/upload].
+[2019-10-15 15:10:42] Acessou a home page, pela página http://localhost:8000/photos/upload, via Web - [VG]
+Timeout atingido, novo acesso detectado
+[2019-10-15 15:32:54] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [].
+[2019-10-15 15:32:54] Acessou a home page, pela página , via Web - [VG]
+[2019-10-15 15:33:00] Acessou a home page, pela página http://localhost:8000/, via Web - [VG]
+[2019-10-15 15:33:10] Acessou a home page, pela página http://localhost:8000/leaderboard, via Web - [VG]

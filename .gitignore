@@ -1,5 +1,6 @@
 /bootstrap/compiled.php
 /vendor
+.env
 composer.phar
 composer.lock
 .env.*.php
@@ -34,3 +35,5 @@ app/config/local/database.php
 app/config/local/mail.php
 app/config/mail.php
 app/config/app.php
+
+app/storage/views/*

@@ -53,12 +53,11 @@ return array(
 		),
 
 		'mysql' => array(
-			'driver'    => getenv('DB_CONNECTION'),
-			'host'      => getenv('DB_HOST'),
-			'database'  => getenv('DB_DATABASE'),
-			'username'  => getenv('DB_USERNAME'),
-			'password'  => getenv('DB_PASSOWRD'),
-			'port'      => getenv('DB_PORT'),
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'arquigrafia',
+			'username'  => 'username',
+			'password'  => 'Password1!', // trocar para o seu caso
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
