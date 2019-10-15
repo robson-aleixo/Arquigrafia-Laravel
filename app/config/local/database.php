@@ -56,8 +56,8 @@ return array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
 			'database'  => 'arquigrafia',
-			'username'  => 'root',
-			'password'  => '', // trocar para o seu caso
+			'username'  => 'username',
+			'password'  => 'Password1!', // trocar para o seu caso
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

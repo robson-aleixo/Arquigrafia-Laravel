@@ -1,0 +1,5 @@
+[2019-10-08 14:08:16] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [].
+[2019-10-08 14:08:16] Acessou a home page, pela página , via Web - [VG]
+Timeout atingido, novo acesso detectado
+[2019-10-08 14:50:49] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [http://localhost:8000/teste/415].
+[2019-10-08 14:50:49] Acessou a home page, pela página http://localhost:8000/teste/415, via Web - [VG]
