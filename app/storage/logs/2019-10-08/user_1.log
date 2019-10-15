@@ -1,5 +1,23 @@
-[2019-10-08 14:08:16] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [].
-[2019-10-08 14:08:16] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 14:55:18] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [http://localhost:8009/users/account].
+[2019-10-08 14:55:18] Nova conta criada pelo Arquigrafia, ID nº: 1 - [VG]
+[2019-10-08 14:56:08] Acessou a home page, pela página http://localhost:8009/users/account, via Web - [VG]
+[2019-10-08 14:56:12] Logout pela página http://localhost:8009/home, via Web - [VG]
+[2019-10-08 14:56:22] Login através do Arquigrafia, pela página http://localhost:8009/users/login, via Web - [VG]
+[2019-10-08 14:56:22] Acessou a home page, pela página http://localhost:8009/users/login, via Web - [VG]
 Timeout atingido, novo acesso detectado
-[2019-10-08 14:50:49] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [http://localhost:8000/teste/415].
-[2019-10-08 14:50:49] Acessou a home page, pela página http://localhost:8000/teste/415, via Web - [VG]
+[2019-10-08 15:19:11] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [].
+[2019-10-08 15:19:11] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 15:19:12] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 15:19:16] Logout pela página http://localhost:8009/, via Web - [VG]
+[2019-10-08 15:19:25] Login através do Arquigrafia, pela página http://localhost:8009/users/login, via Web - [VG]
+[2019-10-08 15:19:25] Acessou a home page, pela página http://localhost:8009/users/login, via Web - [VG]
+[2019-10-08 15:25:40] Acessou a home page, pela página , via Web - [VG]
+Timeout atingido, novo acesso detectado
+[2019-10-08 15:48:33] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [].
+[2019-10-08 15:48:33] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 15:54:47] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 16:13:09] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 16:13:11] Acessou a home page, pela página , via Web - [VG]
+[2019-10-08 16:13:15] Logout pela página http://localhost:8009/, via Web - [VG]
+[2019-10-08 16:13:24] Login através do Arquigrafia, pela página http://localhost:8009/users/login, via Web - [VG]
+[2019-10-08 16:13:24] Acessou a home page, pela página http://localhost:8009/users/login, via Web - [VG]
