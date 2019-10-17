@@ -17,6 +17,8 @@ public/arquigrafia-avatars/*
 public/packages/darsain/*
 public/arquigrafia-imports/*
 app/storage/original-images/*
+app/storage/logs/*
+app/storage/sessions/*
 
 node_modules/*
 
@@ -35,3 +37,5 @@ app/config/local/database.php
 app/config/local/mail.php
 app/config/mail.php
 app/config/app.php
+
+.vscode/*
