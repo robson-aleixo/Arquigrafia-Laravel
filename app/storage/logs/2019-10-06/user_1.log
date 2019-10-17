@@ -1,0 +1,13 @@
+[2019-10-06 14:51:57] Acesso do usuário de ID nº: [1], com ocupação [] e role [], a partir de [http://localhost:8000/users/login].
+[2019-10-06 14:51:57] Login através do Arquigrafia, pela página http://localhost:8000/users/login, via Web - [VG]
+[2019-10-06 14:51:57] Acessou a home page, pela página http://localhost:8000/users/login, via Web - [VG]
+[2019-10-06 14:58:19] Acessou a home page, pela página http://localhost:8000/users/login, via Web - [VG]
+[2019-10-06 14:58:34] Selecionou o usuário de ID nº: 1, pela página http://localhost:8000/home, via Web - [VG]
+[2019-10-06 14:58:37] Acessou a home page, pela página http://localhost:8000/users/1, via Web - [VG]
+[2019-10-06 14:58:38] Acessou a home page, pela página http://localhost:8000/home, via Web - [VG]
+[2019-10-06 14:58:42] Acessou a home page, pela página http://localhost:8000/home, via Web - [VG]
+[2019-10-06 14:58:48] Acessou a home page, pela página , via Web - [VG]
+[2019-10-06 14:58:49] Acessou a home page, pela página , via Web - [VG]
+[2019-10-06 14:58:53] Logout pela página http://localhost:8000/, via Web - [VG]
+[2019-10-06 14:59:21] Login através do Arquigrafia, pela página http://localhost:8000/users/login, via Web - [VG]
+[2019-10-06 14:59:21] Acessou a home page, pela página http://localhost:8000/users/login, via Web - [VG]
