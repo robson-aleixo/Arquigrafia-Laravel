@@ -13,15 +13,15 @@
         {{-- <body> --}}
         <h1> INSTITUIÇÕES </h1>
         <table style="width:100%">
-        @if(count($instituitions) > 0)
-            @foreach($instituitions as $instituition)
+        @if(count($institutions) > 0)
+            @foreach($institutions as $institution)
                 <tr>
-                    <td><ul>{{$instituition->name}}</ul></td>
-                    <td><ul>{{$instituition->photo}}</ul></td>
+                    <td><ul>{{$institution->name}}</ul></td>
+                    <td><ul>{{$institution->photo}}</ul></td>
                 </tr>
             @endforeach
         @else
-            <p>Woops.</p>
+            <p>No institutions to see here.</p>
         @endif
     </table>
     {{-- <body> --}}
