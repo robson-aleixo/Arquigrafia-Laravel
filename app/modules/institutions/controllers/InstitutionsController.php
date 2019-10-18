@@ -466,7 +466,7 @@ class InstitutionsController extends \BaseController {
           'video' => $photo->video
         ]);
     }
-    return Redirect::to('/home');
+    return \Redirect::to('/home');
   }
 
   /* Salvar edição do formulario institutional*/
