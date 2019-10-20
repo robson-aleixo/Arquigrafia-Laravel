@@ -18,7 +18,7 @@ class TagsController extends \BaseController {
 
 	public function index()
 	{
-		$tags = Tag::all();
+		$tags = Tag::where('type', 'acervo')->orderBy('name')->get();
         return \View::make('tag.index', ['tags' => $tags]);
 	}
 
@@ -56,7 +56,15 @@ class TagsController extends \BaseController {
             array(
                 'name' => 'required', 
                 'description' => 'sometimes', 
-                'category' => 'sometimes',
+                'cat_1' => 'sometimes',
+                'cat_2' => 'sometimes',
+                'cat_3' => 'sometimes',
+                'cat_4' => 'sometimes',
+                'cat_5' => 'sometimes',
+                'cat_6' => 'sometimes',
+                'cat_7' => 'sometimes',
+                'cat_8' => 'sometimes',
+                'cat_9' => 'sometimes',
                  'is' => 'sometimes|exists:tags,name'
             )
         );
@@ -71,7 +79,15 @@ class TagsController extends \BaseController {
         $tag = new Tag;
         $tag->name = $input['name'];
         $tag->description = $input['description'];
-        $tag->category = $input['category'];
+        $tag->cat_1 = $input['cat_1'];
+        $tag->cat_2 = $input['cat_2'];
+        $tag->cat_3 = $input['cat_3'];
+        $tag->cat_4 = $input['cat_4'];
+        $tag->cat_5 = $input['cat_5'];
+        $tag->cat_6 = $input['cat_6'];
+        $tag->cat_7 = $input['cat_7'];
+        $tag->cat_8 = $input['cat_8'];
+        $tag->cat_9 = $input['cat_9'];
         $tag->type = 'Acervo'; //only 'Acervo' tags can be edited and created by admins
         $equiv = Tag::where('name', $input['is'])->first();
         $tag->is = 0;
@@ -101,7 +117,15 @@ class TagsController extends \BaseController {
             array(
                 'name' => 'required', 
                 'description' => 'sometimes', 
-                'category' => 'sometimes', 
+                'cat_1' => 'sometimes',
+                'cat_2' => 'sometimes',
+                'cat_3' => 'sometimes',
+                'cat_4' => 'sometimes',
+                'cat_5' => 'sometimes',
+                'cat_6' => 'sometimes',
+                'cat_7' => 'sometimes',
+                'cat_8' => 'sometimes',
+                'cat_9' => 'sometimes',
                 'is' => 'sometimes|exists:tags,name'
             )
         );
@@ -116,7 +140,15 @@ class TagsController extends \BaseController {
         $tag = Tag::find($id);  
         $tag->name = $input['name'];
         $tag->description = $input['description'];
-        $tag->category = $input['category'];
+        $tag->cat_1 = $input['cat_1'];
+        $tag->cat_2 = $input['cat_2'];
+        $tag->cat_3 = $input['cat_3'];
+        $tag->cat_4 = $input['cat_4'];
+        $tag->cat_5 = $input['cat_5'];
+        $tag->cat_6 = $input['cat_6'];
+        $tag->cat_7 = $input['cat_7'];
+        $tag->cat_8 = $input['cat_8'];
+        $tag->cat_9 = $input['cat_9'];
         $tag->type = 'Acervo';
         $equiv = Tag::where('name', $input['is'])->first();
         if ($equiv != null) { $tag->is = $equiv->id;}
