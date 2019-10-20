@@ -95,7 +95,7 @@ class TagsController extends \BaseController {
         $tag->save();
 
         //returns you, inefficiently, to the tag.index view
-        $tags = Tag::all();
+        $tags = Tag::where('type', 'acervo')->orderBy('name')->get();
         return \View::make('tag.index', ['tags' => $tags]);
     }
 
@@ -156,7 +156,7 @@ class TagsController extends \BaseController {
         $tag->save();
 
         //returns you, inefficiently, to the tag.index view
-        $tags = Tag::all();
+        $tags = Tag::where('type', 'acervo')->orderBy('name')->get();
         return \View::make('tag.index', ['tags' => $tags]);
     }
 
@@ -165,7 +165,7 @@ class TagsController extends \BaseController {
         TagsController::purge($id);
 
         //returns you, inefficiently, to the tag.index view
-        $tags = Tag::all();
+        $tags = Tag::where('type', 'acervo')->orderBy('name')->get();
         return \View::make('tag.index', ['tags' => $tags]);
     }
 
