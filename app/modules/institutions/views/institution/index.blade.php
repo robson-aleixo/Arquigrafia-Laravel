@@ -1,4 +1,5 @@
 @extends('layouts.default')
+{{ HTML::style('css/inst.index.css'); }}
 {{-- <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -18,6 +19,7 @@
                 <tr>
                     <td><ul>{{$institution->name}}</ul></td>
                     <td><ul>{{$institution->photo}}</ul></td>
+                    <td><ul>{{$institution->site}}</ul></td>
                 </tr>
             @endforeach
         @else
