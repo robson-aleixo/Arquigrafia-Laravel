@@ -90,6 +90,10 @@
             @endif
           {{-- @endif --}}
 
+            @if(Auth::user()->admin == True)
+              <li><a href="{{ URL::to('/tags') }}" title="Visualize as tags de acervo"><i class="sheet">&nbsp;</i> RELATÓRIOS</a></li>
+            @endif
+
           <li>
             <div id="new-message-container" class="new-message">
               <a href="{{ URL::to('/chats') }}">MENSAGENS</a>
