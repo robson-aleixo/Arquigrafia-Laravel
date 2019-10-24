@@ -26,8 +26,9 @@ class TagsController extends \BaseController {
         }
 
         //gets the 'acervo' tags to display them in order
-        $tags = Tag::where('type', 'acervo')->orderBy('name')->get();
-        return \View::make('tag.index', ['tags' => $tags]);
+        $tags_acervo = Tag::where('type', 'Acervo')->orderBy('name')->get();
+        $tags_usuario = Tag::where('type', 'Livre')->orderBy('name')->get();
+        return \View::make('tag.index', ['tags_a' => $tags_acervo, 'tags_u' => $tags_usuario]);
 	}
 
 	public function refreshCount() {
