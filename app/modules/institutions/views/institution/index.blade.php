@@ -18,7 +18,7 @@
             @foreach($institutions as $institution)
                 <tr>
                     <td><ul>{{$institution->name}}</ul></td>
-                    <td><ul>{{$institution->photo}}</ul></td>
+                    <td><ul>{{$institution->photo->id}}</ul></td>
                     <td><ul>{{$institution->site}}</ul></td>
                 </tr>
             @endforeach

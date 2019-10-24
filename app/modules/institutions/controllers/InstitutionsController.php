@@ -22,8 +22,11 @@ class InstitutionsController extends \BaseController {
     $this->date = $date ?: new Date; 
   }
 
-  public function indexAll() {
+  public function indexTombos() {
     $institutions = Institution::all();
+    // foreach ($institutions as $institution) {
+    //   $photoId = $institution->photo()
+    // }
     return \View::make('institution.index', ['institutions' => $institutions]);
   }
 
