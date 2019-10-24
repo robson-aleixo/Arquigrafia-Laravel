@@ -4,7 +4,8 @@ services:
     build: .
     ports:
       - "8009:8000"
-    #volumes:
+    volumes:
+      - ./app:/app/app/
     #   - .:/app
     environment:
       - DB_HOST=db
