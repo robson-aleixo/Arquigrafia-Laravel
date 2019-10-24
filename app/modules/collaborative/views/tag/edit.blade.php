@@ -1,6 +1,5 @@
 @extends('layouts.default')
     @section('content')
-    {{-- <body> --}}
     <h1>Editar</h1>
     {{ Form::open(['action' => ['modules\collaborative\controllers\TagsController@update', $tagVec[0]->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
         <div class="form-group">
@@ -71,5 +70,4 @@
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
     {{ Form::close() }}
-    {{-- </body> --}}
     @endsection
