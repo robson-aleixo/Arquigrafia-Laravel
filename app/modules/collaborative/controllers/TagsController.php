@@ -18,7 +18,15 @@ class TagsController extends \BaseController {
 
 	public function index()
 	{
-		$tags = Tag::where('type', 'acervo')->orderBy('name')->get();
+        //checks if the user is an admin. If not, puts them back in the home page
+        $user = \Auth::user();
+        if ($user->admin == False) 
+        {
+            return \Redirect::to('/home');
+        }
+
+        //gets the 'acervo' tags to display them in order
+        $tags = Tag::where('type', 'acervo')->orderBy('name')->get();
         return \View::make('tag.index', ['tags' => $tags]);
 	}
 
@@ -43,6 +51,12 @@ class TagsController extends \BaseController {
 
 	public function create() 
     {
+        $user = \Auth::user();
+        if ($user->admin == False) 
+        {
+            return \Redirect::to('/home');
+        }
+
         return \View::make('tag.create');
     }
 
@@ -94,13 +108,17 @@ class TagsController extends \BaseController {
         if ($equiv != null) { $tag->is = $equiv->id;}
         $tag->save();
 
-        //returns you, inefficiently, to the tag.index view
-        $tags = Tag::where('type', 'acervo')->orderBy('name')->get();
-        return \View::make('tag.index', ['tags' => $tags]);
+        return \Redirect::to('/tags');
     }
 
     public function edit($id) 
     {
+        $user = \Auth::user();
+        if ($user->admin == False) 
+        {
+            return \Redirect::to('/home');
+        }
+        
         $tag = Tag::find($id);
         $equiv = Tag::find($tag->is);
         $equivName = '';
@@ -155,18 +173,19 @@ class TagsController extends \BaseController {
         else $tag->is = 0;
         $tag->save();
 
-        //returns you, inefficiently, to the tag.index view
-        $tags = Tag::where('type', 'acervo')->orderBy('name')->get();
-        return \View::make('tag.index', ['tags' => $tags]);
+        return \Redirect::to('/tags');
     }
 
     public function destroy($id)
     {
+        $user = \Auth::user();
+        if ($user->admin == False) 
+        {
+            return \Redirect::to('/home');
+        }
+        
         TagsController::purge($id);
-
-        //returns you, inefficiently, to the tag.index view
-        $tags = Tag::where('type', 'acervo')->orderBy('name')->get();
-        return \View::make('tag.index', ['tags' => $tags]);
+        return \Redirect::to('/tags');
     }
 
     public function purge($id) //actually destroys tags
