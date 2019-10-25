@@ -18,8 +18,7 @@
             @foreach($photos as $photo)
                 <tr>
                     <td><ul>{{$photo->tombo}}</ul></td>
-                    <td><ul>{{$photo->institution_id}}</ul></td>
-                    <td><ul>{{institutions_name[$photo->institution_id]}}</ul></td>
+                    <td><ul>{{$institution_names[$photo->id]}}</ul></td>
                 </tr>
             @endforeach
         @else

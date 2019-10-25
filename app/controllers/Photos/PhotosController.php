@@ -26,13 +26,14 @@ class PhotosController extends \BaseController {
   public function indexTombos()
   {
     $photos = Photo::where('tombo', '>', '0')->get();
-    $institutions_name = [];
+    $institution_names = [];
     foreach($photos as $photo) {
       $institutions = Institution::find($photo->institution_id);
-      $institutions_name[$photo->id] = $institutions->name;
+      $institution_names[$photo->id] = $institutions->name;
+      \Log::info($institution_names[$photo->id]);
     }
     // $photos = Photo::all();
-    return \View::make('/photos/tombos', ['photos' => $photos, 'institutions_name' => $institutions_name]);
+    return \View::make('/photos/tombos', ['photos' => $photos, 'institution_names' => $institution_names]);
   }
 
   public function index()
