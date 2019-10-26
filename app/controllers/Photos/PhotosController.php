@@ -23,17 +23,21 @@ class PhotosController extends \BaseController {
     $this->date = $date ?: new Date;
   }
 
-  public function indexTombos()
+  public function filterTombos()
   {
-    $photos = Photo::where('tombo', '>', '0')->get();
-    $institution_names = [];
-    foreach($photos as $photo) {
-      $institutions = Institution::find($photo->institution_id);
-      $institution_names[$photo->id] = $institutions->name;
-      \Log::info($institution_names[$photo->id]);
+    $photos = Photo::all();
+    $institutions = Institution::all();
+    $names = [];
+    foreach($institutions as $i) {
+      array_push($names, $i->name);
     }
-    // $photos = Photo::all();
-    return \View::make('/photos/tombos', ['photos' => $photos, 'institution_names' => $institution_names]);
+
+    $input = \Input::all();
+
+    $selected = $institutions[$input['institution']];
+    return \View::make('/photos/tombos',
+    ['photos' => $photos, 'institutions' => $institutions, 'names' => $names,
+     'selected' => $selected]);
   }
 
   public function index()
