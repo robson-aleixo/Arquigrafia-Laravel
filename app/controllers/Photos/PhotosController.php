@@ -25,7 +25,7 @@ class PhotosController extends \BaseController {
 
   public function filterTombos()
   {
-    $photos = Photo::all();
+    $photos = Photo::whereNotNull('institution_id');
     $institutions = Institution::all();
     $names = [];
     foreach($institutions as $i) {
@@ -34,12 +34,19 @@ class PhotosController extends \BaseController {
 
     $input = \Input::all();
     $selected = NULL;
-    if($input!= NULL and $input['institution'] != NULL and $input['institution'] != 'Todas') {
-      $selected = $institutions[$input['institution']];
+    $tombo = NULL;
+    if($input != NULL) {
+      if(array_key_exists('institution', $input)) {
+        $selected = $institutions[$input['institution']];
+        $photos = $photos->where('institution_id', $selected->id);
+      }
+      if(array_key_exists('tombo', $input)) {
+        $tombo = $input['tombo'];
+        $photos = $photos->where('tombo', $tombo); 
+      }
     }
     return \View::make('/photos/tombos',
-    ['photos' => $photos, 'institutions' => $institutions, 'names' => $names,
-     'selected' => $selected]);
+    ['photos' => $photos->get(), 'institutions' => $institutions, 'names' => $names, 'selected' => $selected]);
   }
 
   public function index()

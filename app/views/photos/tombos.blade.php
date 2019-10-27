@@ -12,9 +12,9 @@
 
     @section('content')
         {{-- <body> --}}
-        {{$titulo = '';}}
+        {{$titulo = ''}}
         @if($selected != NULL)
-            {{$titulo = 'de '.$selected->name;}}
+            {{$titulo = 'de '.$selected->name}}
         @endif
         <h1> Tombos {{$titulo}}</h1>
         <table style="width:100%">
@@ -22,21 +22,22 @@
         {{Form::select('institution', $names)}}
         {{Form::submit('Filtrar', ['class'=>'btn btn-primary'])}}
         {{ Form::close() }}
+        {{ Form::open(['action' => 'PhotosController@filterTombos', 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
+        {{Form::text('tombo', '', ['class' => 'form-control', 'placeholder' => '0000'])}}
+        {{Form::submit('Pesquisar', ['class'=>'btn btn-primary'])}}
+        {{ Form::close() }}
         <a href="/tombos">Todas</a href>
         <tr>
             <td><ul>Tombo</ul></td>
             <td><ul>Insituição</ul></td>
         @if(count($photos) > 0)
             @foreach($photos as $photo)
-                
-                    @if($selected == NULL or $selected->id == $photo->institution_id)
-                        <td><ul>{{$photo->tombo}}</ul></td>
-                        <td><ul>{{$names[institution_id]->name}}</ul></td>
-                    @endif
+                    <td><ul>{{$photo->tombo}}</ul></td>
+                    <td><ul>{{$institutions[institution_id]->name}}</ul></td>
                 </tr>
             @endforeach
         @else
-            <p>Não há Tombos a serem mostrados.</p>
+            <p>Não há Fotos a serem mostradas.</p>
         @endif
     </table>
     {{-- <body> --}}
