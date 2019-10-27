@@ -33,8 +33,10 @@ class PhotosController extends \BaseController {
     }
 
     $input = \Input::all();
-
-    $selected = $institutions[$input['institution']];
+    $selected = NULL;
+    if($input!= NULL and $input['institution'] != NULL and $input['institution'] != 'Todas') {
+      $selected = $institutions[$input['institution']];
+    }
     return \View::make('/photos/tombos',
     ['photos' => $photos, 'institutions' => $institutions, 'names' => $names,
      'selected' => $selected]);

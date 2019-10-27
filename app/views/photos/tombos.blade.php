@@ -14,23 +14,24 @@
         {{-- <body> --}}
         <h1> Tombos </h1>
         <table style="width:100%">
-        <a href="/tombos/select_instit">Selecionar instituição</a href>
         {{ Form::open(['action' => 'PhotosController@filterTombos', 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
         {{Form::select('institution', $names)}}
         {{Form::submit('Filtrar', ['class'=>'btn btn-primary'])}}
         {{ Form::close() }}
-
+        <tr>
+            <td><ul>Tombo</ul></td>
+            <td><ul>Insituição</ul></td>
         @if(count($photos) > 0)
             @foreach($photos as $photo)
-                <tr>
-                    @if($selected->id == $photo->institution_id)
+                
+                    @if($selected == NULL or $selected->id == $photo->institution_id)
                         <td><ul>{{$photo->tombo}}</ul></td>
-                        <td><ul>{{$selected->name}}</ul></td>
+                        <td><ul>{{$names->name}}</ul></td>
                     @endif
                 </tr>
             @endforeach
         @else
-            <p>No tombos to see here.</p>
+            <p>Não há Tombos a serem mostrados.</p>
         @endif
     </table>
     {{-- <body> --}}
