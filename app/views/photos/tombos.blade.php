@@ -12,12 +12,17 @@
 
     @section('content')
         {{-- <body> --}}
-        <h1> Tombos </h1>
+        {{$titulo = '';}}
+        @if($selected != NULL)
+            {{$titulo = 'de '.$selected->name;}}
+        @endif
+        <h1> Tombos {{$titulo}}</h1>
         <table style="width:100%">
         {{ Form::open(['action' => 'PhotosController@filterTombos', 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
         {{Form::select('institution', $names)}}
         {{Form::submit('Filtrar', ['class'=>'btn btn-primary'])}}
         {{ Form::close() }}
+        <a href="/tombos">Todas</a href>
         <tr>
             <td><ul>Tombo</ul></td>
             <td><ul>Insituição</ul></td>
@@ -26,7 +31,7 @@
                 
                     @if($selected == NULL or $selected->id == $photo->institution_id)
                         <td><ul>{{$photo->tombo}}</ul></td>
-                        <td><ul>{{$names->name}}</ul></td>
+                        <td><ul>{{$names[institution_id]->name}}</ul></td>
                     @endif
                 </tr>
             @endforeach
