@@ -28,11 +28,11 @@
         {{ Form::close() }}
         <a href="/tombos">Todas</a href>
         <tr>
-        <td><ul>Tombo</ul></td>
-        <td><ul>Suporte</ul></td>
-        <td><ul>Completude</ul></td>
-        <td><ul>Insituição</ul></td>
         @if(count($photos) > 0)
+            <td><ul>Tombo</ul></td>
+            <td><ul>Suporte</ul></td>
+            <td><ul>Completude</ul></td>
+            <td><ul>Insituição</ul></td>
             @foreach($photos as $photo)
                 <tr>
                     <td><ul>{{$photo->tombo}}</ul></td>
