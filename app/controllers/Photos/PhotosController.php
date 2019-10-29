@@ -47,7 +47,7 @@ class PhotosController extends \BaseController {
       }
     }
     return \View::make('/photos/tombos',
-    ['photos' => $photos->get(), 'institutions' => $institutions, 'names' => $names, 'selected' => $selected]);
+    ['photos' => $photos->paginate(50), 'institutions' => $institutions, 'names' => $names, 'selected' => $selected]);
   }
 
   public function index()

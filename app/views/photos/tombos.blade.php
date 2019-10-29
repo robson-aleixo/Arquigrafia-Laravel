@@ -46,6 +46,7 @@
         @endif
         </tr>
     </table>
+    {{$photos->links()}}
     {{-- <body> --}}
     @endsection
 </html>
