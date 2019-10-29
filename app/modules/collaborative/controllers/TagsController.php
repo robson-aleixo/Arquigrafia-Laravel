@@ -92,6 +92,19 @@ class TagsController extends \BaseController {
         return \View::make('tag.edit', ['tagVec' => [$tag, $equivName]]);
     }
 
+    public function query_description($name) 
+    {
+        // $tag = Tag::where('name', $name)->first();
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: Content-Type");
+        header('Content-Type: application/json');
+        $tag = Tag::find($name);
+        $json = array('description' => $tag->description);
+        // \log::info($tag->description);
+
+        return json_encode($json);
+    }
+
     public function update($id)
     {
         $input = \Input::all();

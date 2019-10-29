@@ -27,4 +27,5 @@ Route::get('/reports/showModalReport/{id}', 'modules\collaborative\controllers\R
 Route::get('/teste','modules\collaborative\controllers\TagsController@index');
 Route::get('/tags/create','modules\collaborative\controllers\TagsController@create');
 Route::get('/tags/{tag_id}/edit','modules\collaborative\controllers\TagsController@edit');
+Route::get('/tags/{tag_name}/description','modules\collaborative\controllers\TagsController@query_description');
 Route::resource('/teste','modules\collaborative\controllers\TagsController');

@@ -21,6 +21,9 @@
 <script type="text/javascript" src="{{ URL::to("/") }}/js/rotate.js" charset="utf-8"></script>
 <script type="text/javascript" src="{{ URL::to("/") }}/js/readURL.js" charset="utf-8"></script>
 
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="{{ URL::to("/") }}/css/jquery-ui/jquery-ui.min.css">
 <script type="text/javascript" src="{{ URL::to("/") }}/js/jquery-ui/jquery-ui.min.js" charset="utf-8"></script>
 @stop
@@ -178,6 +181,22 @@ label {
               </div>
               <div class="five columns alpha">
                 <textarea name="tags" id="tags" cols="60" rows="1" style="display: none;"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                  <table id="table_description" class="table table-striped" style="display: none;">
+                      <thead>
+                        <tr>
+                          <th>Nome</th>
+                          <th>Descrição</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
               </div>
             </td>
           </tr>
@@ -469,15 +488,32 @@ $(document).ready(function() {
     $('#add_tag').click(function(e) {
       e.preventDefault();
       var tag = $('#tags_input').val();
+      // var url = "/tags/"+tag+"/description";
+      var url = "/tags/4/description";
       if (tag == '') return;
       $('#tags').textext()[0].tags().addTags([ tag ]);
       $('#tags_input').val('');
+      $.ajax({
+            method: "GET",
+            dataType: "json",
+            url: url,
+            success: function(json) {  
+                var descrip_tag = json.description;
+            }
+        });
+      $("#table_description").attr("style", "display:'';");
+      $("#table_description").append(tag);
+      $("#table_description").append(descrip_tag);
     });
+    
+
     $('#tags_input').keypress(function(e) {
       var key = e.which || e.keyCode;
       if (key == 44 || key == 46 || key == 59)
         e.preventDefault();
     });
+
+
 
     // authors
     $('#work_authors').textext({ plugins: 'tags' });
