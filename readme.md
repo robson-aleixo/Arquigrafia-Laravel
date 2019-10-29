@@ -39,15 +39,21 @@ php artisan migrate --package=cmgmyr/messenger
 
 - The user validation did not work locally for development, because it expects an e-mail confirmation. After creating an user, an error message will appear. Then run the following commands:
 
-```php artisan tinker```
-
-```$p = User::find(1);```
-
-```$p->active = true;```
-
-```$p->save();```
-
-```exit;```
+```
+php artisan tinker
+```
+```
+$p = User::find(1);
+```
+```
+$p->active = true;
+```
+```
+$p->save();
+```
+```
+exit;
+```
 
 - Since we're still using PHP 5.6, some JSON post requests might throw an deprecation warning. So, we need to set on PHP.ini:
 
