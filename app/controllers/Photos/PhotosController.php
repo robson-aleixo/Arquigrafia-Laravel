@@ -25,11 +25,11 @@ class PhotosController extends \BaseController {
 
   public function filterTombos()
   {
-    $photos = Photo::whereNotNull('institution_id');
+    $photos = Photo::whereNotNull('tombo')->where('accepted', 0);
     $institutions = Institution::all();
     $names = [];
-    foreach($institutions as $i) {
-      array_push($names, $i->name);
+    foreach($institutions as $i) { 
+      $names[$i->id] = $i->name;
     }
 
     $input = \Input::all();
@@ -37,7 +37,8 @@ class PhotosController extends \BaseController {
     $tombo = NULL;
     if($input != NULL) {
       if(array_key_exists('institution', $input)) {
-        $selected = $institutions[$input['institution']];
+        assert($input['institution']-1 >= 0);
+        $selected = $institutions[$input['institution']-1];
         $photos = $photos->where('institution_id', $selected->id);
       }
       if(array_key_exists('tombo', $input)) {

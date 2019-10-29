@@ -28,17 +28,23 @@
         {{ Form::close() }}
         <a href="/tombos">Todas</a href>
         <tr>
-            <td><ul>Tombo</ul></td>
-            <td><ul>Insituição</ul></td>
+        <td><ul>Tombo</ul></td>
+        <td><ul>Suporte</ul></td>
+        <td><ul>Completude</ul></td>
+        <td><ul>Insituição</ul></td>
         @if(count($photos) > 0)
             @foreach($photos as $photo)
+                <tr>
                     <td><ul>{{$photo->tombo}}</ul></td>
-                    <td><ul>{{$institutions[institution_id]->name}}</ul></td>
+                    <td><ul>{{$photo->support}}</ul></td>
+                    <td><ul>{{$photo->accepted}}</ul></td>
+                    <td><ul>{{$names[$photo->institution_id]}}</ul></td>
                 </tr>
             @endforeach
         @else
             <p>Não há Fotos a serem mostradas.</p>
         @endif
+        </tr>
     </table>
     {{-- <body> --}}
     @endsection
