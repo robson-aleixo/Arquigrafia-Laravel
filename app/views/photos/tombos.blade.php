@@ -1,5 +1,5 @@
 @extends('layouts.default')
-{{ HTML::style('css/inst.index.css'); }}
+{{ HTML::style('css/tombos.css'); }}
 {{-- <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -18,7 +18,7 @@
             {{$titulo = 'de '.$selected->name}}
         @endif
         <h1> Tombos {{$titulo}}</h1>
-        <table style="text-align:center">
+        <table>
         {{ Form::open(['action' => 'PhotosController@filterTombos', 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
         {{Form::select('institution', $names)}}
         {{Form::submit('Filtrar', ['class'=>'btn btn-primary'])}}
@@ -30,10 +30,10 @@
         <a href="/tombos">Todas</a href>
         <tr>
         @if(count($photos) > 0)
-            <td><ul>Tombo</ul></td>
-            <td><ul>Suporte</ul></td>
-            <td><ul>Completude</ul></td>
-            <td><ul>Insituição</ul></td>
+            <th><ul>Tombo</ul></th>
+            <th><ul>Suporte</ul></th>
+            <th><ul>Completude</ul></th>
+            <th><ul>Insituição</ul></th>
             @foreach($photos as $photo)
                 <tr>
                     <td><ul>{{$photo->tombo}}</ul></td>
