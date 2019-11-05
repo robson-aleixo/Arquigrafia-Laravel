@@ -33,7 +33,7 @@
                         @foreach($tags_a as $tag)
                             <tr>
                             <td><ul>{{$tag->name}}</ul></td>
-                            @if($tag->is != 0)
+                            @if($tag->is != 0 and $tags_a->find($tag->is) != NULL)
                                 <td>Equivale a {{$tags_a->find($tag->is)->name}}</td>
                             @else
                                 <td></td>

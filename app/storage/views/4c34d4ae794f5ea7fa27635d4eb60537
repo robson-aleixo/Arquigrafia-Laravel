@@ -90,6 +90,10 @@
             <?php endif; ?>
           <?php /* <?php endif; ?> */ ?>
 
+            <?php if(Auth::user()->admin == True): ?>
+              <li><a href="<?php echo URL::to('/tags'); ?>" title="Visualize as tags de acervo"><i class="sheet">&nbsp;</i> RELATÓRIOS</a></li>
+            <?php endif; ?>
+
           <li>
             <div id="new-message-container" class="new-message">
               <a href="<?php echo URL::to('/chats'); ?>">MENSAGENS</a>
