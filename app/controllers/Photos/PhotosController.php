@@ -23,6 +23,33 @@ class PhotosController extends \BaseController {
     $this->date = $date ?: new Date;
   }
 
+  public function filterTombos()
+  {
+    $photos = Photo::whereNotNull('tombo')->where('accepted', 0);
+    $institutions = Institution::all();
+    $names = [];
+    foreach($institutions as $i) { 
+      $names[$i->id] = $i->name;
+    }
+
+    $input = \Input::all();
+    $selected = NULL;
+    $tombo = NULL;
+    if($input != NULL) {
+      if(array_key_exists('institution', $input)) {
+        assert($input['institution']-1 >= 0);
+        $selected = $institutions[$input['institution']-1];
+        $photos = $photos->where('institution_id', $selected->id);
+      }
+      if(array_key_exists('tombo', $input)) {
+        $tombo = $input['tombo'];
+        $photos = $photos->where('tombo', $tombo); 
+      }
+    }
+    return \View::make('/photos/tombos',
+    ['photos' => $photos->paginate(50), 'institutions' => $institutions, 'names' => $names, 'selected' => $selected]);
+  }
+
   public function index()
   {
     $photos = Photo::all();

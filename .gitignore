@@ -8,6 +8,8 @@ composer.lock
 .DS_Store
 Thumbs.db
 
+.vscode
+
 *dwsync.xml
 
 *database.php

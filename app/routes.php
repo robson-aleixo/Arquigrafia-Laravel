@@ -108,3 +108,7 @@ Route::get('oam/photo/{id}', 'OAMController@photo');
 
 /* AUDIO */
 Route::post('oam/audios', 'OAMController@storeAudio');
+
+/* TOMBOS */
+Route::get('/tombos', 'PhotosController@filterTombos');
+Route::post('/tombos', 'PhotosController@filterTombos');
