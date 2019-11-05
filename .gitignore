@@ -39,3 +39,5 @@ app/config/app.php
 app/storage/views/*
 app/storage/sessions/*
 app/storage/logs/*
+
+.vscode/launch.json
