@@ -26,7 +26,7 @@ class AddTagsColumn extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function ($table) {
+		Schema::table('tags', function ($table) {
     		$table->dropColumn('description');
             $table->dropColumn('category');
             $table->dropColumn('is');

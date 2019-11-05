@@ -1,39 +1,76 @@
+<html>
 @extends('layouts.default')
-{{-- <!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    </head> --}}
 
+    <head>
+        <title>Relatório de Tags</title>
+        <meta charset="UTF-8">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
 
     @section('content')
-        {{-- <body> --}}
         <h1> TAGS </h1>
-        <a href="/tags/create">Criar nova tag</a href>
-        <table style="width:100%">
-        @if(count($tags) > 0)
-            @foreach($tags as $tag)
-                <tr>
-                    <td><ul>{{$tag->name}}</ul></td>
-                    @if($tag->is != 0)
-                        <td>Equivale a {{$tags->find($tag->is)->name}}</td>
+        <a href="/tags/create">Clique aqui para criar uma nova tag de acervo</a href>
+        <hr>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                <h2>Tags de Acervo</h2>
+                <div style="height:500px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;display: inline-block;">
+                    <table style="twidth:100%" class="table table-striped">
+                    <tbody>
+                    @if(count($tags_a) > 0)
+                        @foreach($tags_a as $tag)
+                            <tr>
+                            <td><ul>{{$tag->name}}</ul></td>
+                            @if($tag->is != 0 and $tags_a->find($tag->is) != NULL)
+                                <td>Equivale a {{$tags_a->find($tag->is)->name}}</td>
+                            @else
+                                <td></td>
+                            @endif
+                        <td><a href="/tags/{{$tag->id}}/edit">Editar</a href></td>
+                        <td>{{Form::open(['action' => ['modules\collaborative\controllers\TagsController@destroy', $tag->id], 'method' => 'POST'])}}
+                        {{Form::hidden('_method', 'DELETE')}}
+                        {{Form::submit('Excluir')}}
+                        {{Form::close()}}</td>
+                        </tr>
+                        @endforeach
                     @else
-                        <td></td>
+                        <p>Não há tags de acervo para mostrar.</p>
                     @endif
-                    <td><a href="/tags/{{$tag->id}}/edit">Editar</a href></td>
-                    <td>{{Form::open(['action' => ['modules\collaborative\controllers\TagsController@destroy', $tag->id], 'method' => 'POST'])}}
-                    {{Form::hidden('_method', 'DELETE')}}
-                    {{Form::submit('Excluir')}}
-                    {{Form::close()}}</td>
-                </tr>
-            @endforeach
-        @else
-            <p>Woops.</p>
-        @endif
-    </table>
-    {{-- <body> --}}
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <h2>Tags de Usuário</h2>
+                <div style="height:500px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;display: inline-block;">
+                    <table style="width:100%" class="table table-striped">
+                    <tbody>
+                    @if(count($tags_u) > 0)
+                        @foreach($tags_u as $tag)
+                            <tr>
+                            <td><ul>{{$tag->name}}</ul></td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <p>Não há tags de usuário para mostrar.</p>
+                    @endif
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
     @endsection
 </html>

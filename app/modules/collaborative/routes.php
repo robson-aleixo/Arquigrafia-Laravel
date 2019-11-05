@@ -24,7 +24,7 @@ Route::post('/reports/photo','modules\collaborative\controllers\ReportsControlle
 Route::get('/reports/showModalReport/{id}', 'modules\collaborative\controllers\ReportsController@showModalReportPhoto');
 //Route::get('/photos/showModalReport/{id}', 'ReportController@showModalReportPhoto');
 
-Route::get('/teste','modules\collaborative\controllers\TagsController@index');
+Route::get('/tags','modules\collaborative\controllers\TagsController@index');
 Route::get('/tags/create','modules\collaborative\controllers\TagsController@create');
 Route::get('/tags/{tag_id}/edit','modules\collaborative\controllers\TagsController@edit');
-Route::resource('/teste','modules\collaborative\controllers\TagsController');
+Route::resource('/tags','modules\collaborative\controllers\TagsController');
