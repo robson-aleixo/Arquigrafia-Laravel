@@ -867,14 +867,14 @@ class InstitutionsController extends \BaseController {
       return \Redirect::to('/institution-management');
   }
 
-  public function destroy_employment($e_id){
+  public function destroy_employment($id){
     $user = \Auth::user();
     if ($user->admin == False) 
     {
       return \Redirect::to('/home');
     }
     \Log::info($id);
-    Employee::find($e_id)->delete();
+    Employee::find($id)->delete();
     return \Redirect::to('/institution-management');
   }
 

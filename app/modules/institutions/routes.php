@@ -16,5 +16,10 @@ Route::get('/friends/unfollowInstitution/{institution_id}', 'modules\institution
 
 Route::resource('/institutions','modules\institutions\controllers\InstitutionsController');
 
+/* GERENCIAMENTO DE CARGOS */
+Route::get('/institution-management', 'modules\institutions\controllers\InstitutionsController@institution_management');
+Route::get('/institution-management/create-employment', 'modules\institutions\controllers\InstitutionsController@create_employment');
+Route::delete('/institution-management/{id}', 'modules\institutions\controllers\InstitutionsController@destroy_employment');
+Route::post('/institution-management', 'modules\institutions\controllers\InstitutionsController@store_employment');
 
 

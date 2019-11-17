@@ -30,6 +30,7 @@
                     <td>{{Form::open(['action' => ['modules\institutions\controllers\InstitutionsController@destroy_employment', $e['id']], 'method' => 'POST'])}}
                     {{Form::hidden('_method', 'DELETE')}}
                     {{Form::submit('Excluir')}}
+                    {{Form::close()}}</td>
                 </tr>
             @endforeach
         @else
