@@ -9,7 +9,6 @@ services:
       - ./bootstrap:/app/data
       - ./javascript:/app/javascript
       - ./public:/app/public
-      - .
     #   - .:/app
     environment:
       - DB_HOST=db
@@ -31,7 +30,7 @@ services:
     command: --init-file /app/script/init.sql
     volumes:
       - ./script:/app/script/
-      - ./sql:app/sql
+      - ./sql:/app/sql
       # - ./data/:/var/lib/mysql
     ports:
       - "3307:3306"
