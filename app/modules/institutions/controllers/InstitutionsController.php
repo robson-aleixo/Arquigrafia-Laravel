@@ -5,6 +5,7 @@ use lib\utils\HelpTool;
 use modules\institutions\models\Institution;
 use modules\institutions\models\Employee as Employee;
 use modules\collaborative\models\Tag;
+use User;
 use Session;
 use Auth;
 use Photo;
@@ -20,14 +21,6 @@ class InstitutionsController extends \BaseController {
 
   public function __construct(Date $date = null) {
     $this->date = $date ?: new Date; 
-  }
-
-  public function indexTombos() {
-    $institutions = Institution::all();
-    // foreach ($institutions as $institution) {
-    //   $photoId = $institution->photo()
-    // }
-    return \View::make('institution.index', ['institutions' => $institutions]);
   }
 
   public function index() {
@@ -785,6 +778,31 @@ class InstitutionsController extends \BaseController {
     $pagination = Institution::paginatePhotosInstitutionAll($photos);
 
     return $this->paginationResponseSearch($pagination, 'add');
+  }
+
+  public function institution_management() {
+    $user = \Auth::user();
+    if ($user->admin == False) {
+      return \Redirect::to('/home');
+    }
+    $users = User::all();
+    $employments = Employee::all();
+    $institutions = Institution::all();
+    $employees = [];
+    $names = [];
+    foreach($institutions as $i) {
+      $names[$i->id] = $i->name;
+    }
+    foreach($employments as $e) {
+      $user = $user->find($e->user_id);
+      $inst = $institutions->find($e->institution_id);
+      $employees[$e->id] = [];
+      $employees[$e->id]['user'] = $user->login;
+      $employees[$e->id]['institution'] = $inst->name;
+    }
+    
+    return \View::make('/institution_management',
+    ['employees' => $employees, 'institutions' => $institutions, 'names' => $names]);
   }
 
   private function paginationResponseSearch($photos, $type) {

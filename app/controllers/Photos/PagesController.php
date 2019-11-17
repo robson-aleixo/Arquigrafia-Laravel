@@ -481,12 +481,4 @@ class PagesController extends BaseController {
     }
     return \View::make('admin_reports');
   }
-
-  public function institution_management() {
-    $user = \Auth::user();
-    if ($user->admin == False) {
-      return \Redirect::to('/home');
-    }
-    return \View::make('institution_management');
-  }
 }
