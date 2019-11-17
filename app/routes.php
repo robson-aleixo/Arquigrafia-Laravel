@@ -120,5 +120,6 @@ Route::post('/adm-reports', 'PagesController@admin_reports');
 /* GERENCIAMENTO DE CARGOS */
 Route::get('/institution-management', 'modules\institutions\controllers\InstitutionsController@institution_management');
 Route::get('/institution-management/create-employment', 'modules\institutions\controllers\InstitutionsController@create_employment');
+Route::delete('/institution-management/{e_id}', 'modules\institutions\controllers\InstitutionsController@destroy_employment');
 Route::post('/institution-management', 'modules\institutions\controllers\InstitutionsController@store_employment');
 // Route::resource('/institution-management','modules\institutions\controllers\InstitutionsController');

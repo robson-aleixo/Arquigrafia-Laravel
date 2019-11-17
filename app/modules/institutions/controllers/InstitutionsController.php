@@ -801,6 +801,7 @@ class InstitutionsController extends \BaseController {
       $inst = $institutions->find($e->institution_id);
       $role = $roles->find($e->role_id);
       $employees[$e->id] = [];
+      $employees[$e->id]['id'] = $e->id;
       $employees[$e->id]['user'] = $user->login;
       $employees[$e->id]['institution'] = $inst->name;
       if ($role != NULL) {
@@ -864,6 +865,17 @@ class InstitutionsController extends \BaseController {
       $employment->save();
 
       return \Redirect::to('/institution-management');
+  }
+
+  public function destroy_employment($e_id){
+    $user = \Auth::user();
+    if ($user->admin == False) 
+    {
+      return \Redirect::to('/home');
+    }
+    \Log::info($id);
+    Employee::find($e_id)->delete();
+    return \Redirect::to('/institution-management');
   }
 
   private function paginationResponseSearch($photos, $type) {

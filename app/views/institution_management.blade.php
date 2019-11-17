@@ -26,6 +26,10 @@
                     <td><ul>{{$e['user']}}</ul></td>
                     <td><ul>{{$e['institution']}}</ul></td>
                     <td><ul>{{$e['role']}}</ul></td>
+                    <td><ul>{{$e['id']}}</ul></td>
+                    <td>{{Form::open(['action' => ['modules\institutions\controllers\InstitutionsController@destroy_employment', $e['id']], 'method' => 'POST'])}}
+                    {{Form::hidden('_method', 'DELETE')}}
+                    {{Form::submit('Excluir')}}
                 </tr>
             @endforeach
         @else
