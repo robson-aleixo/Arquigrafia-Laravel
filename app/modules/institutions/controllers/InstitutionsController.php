@@ -5,6 +5,8 @@ use lib\utils\HelpTool;
 use modules\institutions\models\Institution;
 use modules\institutions\models\Employee as Employee;
 use modules\collaborative\models\Tag;
+use Illuminate\Support\Facades\Validator;
+use Role;
 use User;
 use Session;
 use Auth;
@@ -788,6 +790,7 @@ class InstitutionsController extends \BaseController {
     $users = User::all();
     $employments = Employee::all();
     $institutions = Institution::all();
+    $roles = Role::all();
     $employees = [];
     $names = [];
     foreach($institutions as $i) {
@@ -796,13 +799,71 @@ class InstitutionsController extends \BaseController {
     foreach($employments as $e) {
       $user = $user->find($e->user_id);
       $inst = $institutions->find($e->institution_id);
+      $role = $roles->find($e->role_id);
       $employees[$e->id] = [];
       $employees[$e->id]['user'] = $user->login;
       $employees[$e->id]['institution'] = $inst->name;
+      if ($role != NULL) {
+        $employees[$e->id]['role'] = $role->name;
+      }
+      else {
+        $employees[$e->id]['role'] = "Indefinido";
+      }
     }
     
     return \View::make('/institution_management',
     ['employees' => $employees, 'institutions' => $institutions, 'names' => $names]);
+  }
+
+  public function create_employment() {
+    $user = \Auth::user();
+    if ($user->admin == False) 
+    {
+        return \Redirect::to('/home');
+    }
+    $institutions = Institution::all();
+    $roles = Role::all();
+    $inst_names = [];
+    $role_names = [];
+    foreach($institutions as $i) { 
+      $inst_names[$i->id] = $i->name;
+    }
+    $role_names[0] = "Indefinido";
+    foreach($roles as $r) { 
+      $role_names[$r->id] = $r->name;
+    }
+
+    return \View::make('create_employment',
+    ['inst_names' => $inst_names, 'role_names' => $role_names]);
+  }
+
+  public function store_employment()
+  {
+      // first, we will receive the form from the tag.create view
+      $input = \Input::all();
+
+      $validator = \Validator::make(
+          $input,
+          array(
+              'name' => 'required|exists:users,login',
+          )
+      );
+      //for now, inputing wrong data resets the form
+      if ($validator->fails())
+      {
+        return \Redirect::to('/institution-management/create-employment');
+      }
+
+      //create the new tag and add it to the database
+      $employment = new Employee;
+      $employment->user_id = User::where('login', $input['name'])->first()->id;
+      $employment->institution_id = $input['institution'];
+      if ($input['role'] != 0 and $input['role'] != NULL) {
+        $employment->role_id = $input['role'];
+      }
+      $employment->save();
+
+      return \Redirect::to('/institution-management');
   }
 
   private function paginationResponseSearch($photos, $type) {
