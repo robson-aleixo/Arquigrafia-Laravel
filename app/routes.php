@@ -116,5 +116,3 @@ Route::post('/tombos', 'PhotosController@filterTombos');
 /* RELATÓRIOS */
 Route::get('/adm-reports', 'PagesController@admin_reports');
 Route::post('/adm-reports', 'PagesController@admin_reports');
-
-// Route::resource('/institution-management','modules\institutions\controllers\InstitutionsController');

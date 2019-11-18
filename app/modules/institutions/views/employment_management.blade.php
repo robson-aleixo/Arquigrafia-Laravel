@@ -13,24 +13,27 @@
     @section('content')
         <center>
         {{-- <body> --}}
-        <h1>Instituições</h1>
-        <a href="/institution-management/create">Criar nova instituição</a href>
+        <h1>Empregados</h1>
+        <a href="/employment-management/create-employment">Criar novo vínculo</a href>
         <table>
         <tr>
-        @if(count($institutions) > 0)
+        @if(count($employees) > 0)
+            <th><ul>Empregado</ul></th>
             <th><ul>Insituição</ul></th>
-            @foreach($institutions as $i)
+            <th><ul>Cargo</ul></th>
+            @foreach($employees as $e)
                 <tr>
-                    <td><ul><a href="/institutions/{{$i->id}}">{{$i->name}}</a href></ul></td>
-                    <td><ul><a href="/institutions/{{$i->id}}/edit">Editar</a href></ul></td>
-                    <td>{{Form::open(['action' => ['modules\institutions\controllers\InstitutionsController@destroy_institution', $i->id], 'method' => 'POST'])}}
+                    <td><ul>{{$e['user']}}</ul></td>
+                    <td><ul>{{$e['institution']}}</ul></td>
+                    <td><ul>{{$e['role']}}</ul></td>
+                    <td>{{Form::open(['action' => ['modules\institutions\controllers\InstitutionsController@destroy_employment', $e['id']], 'method' => 'POST'])}}
                     {{Form::hidden('_method', 'DELETE')}}
                     {{Form::submit('Excluir')}}
                     {{Form::close()}}</td>
                 </tr>
             @endforeach
         @else
-            <p>Não há Instituições a serem mostrados.</p>
+            <p>Não há Empregados a serem mostrados.</p>
         @endif
         </tr>
     </table>

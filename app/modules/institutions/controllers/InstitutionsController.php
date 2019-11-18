@@ -26,8 +26,10 @@ class InstitutionsController extends \BaseController {
   }
 
   public function index() {
-    $institution = Institution::all();
-    return $institution;
+    $institutions = Institution::all();
+    return \View::make('institution_management', [
+      'institutions' => $institutions
+    ]);
   }
 
   public function show($id) {
@@ -65,10 +67,95 @@ class InstitutionsController extends \BaseController {
     ]);
   }
 
+  /*Criar nova instituição*/
+  public function create() {
+    $user = \Auth::user();
+    if (!Session::has('institution_id') and $user->admin == False) {
+      return \Redirect::to('/home');
+    }
+    return \View::make('create');
+  }
+
+  /*Guarda dados da instituição*/
+  public function store() {
+    $user = \Auth::user();
+    if (!Session::has('institution_id') and $user->admin == False) {
+      return \Redirect::to('/home');
+    }
+    $institution = new Institution;
+    \Input::flash();
+    $input = \Input::only('name_institution', 'email', 'site', 'country', 'state', 'city',
+      'photo', 'address', 'phone','acronym_institution');
+    $rules = array('name_institution' => 'required',
+      "site" => "url",
+      "phone" => "regex:/^[0-9-() ]{8,25}$/");
+
+    if ($input['email'] !== $institution->email)
+      $rules['email'] = 'required|email|unique:institutions';
+
+    $validator = \Validator::make($input, $rules);
+    if ($validator->fails()) {
+      $messages = $validator->messages();
+      return \Redirect::to('/institution-management/create')->withErrors($messages);
+    } else {
+      $institution->name = trim($input['name_institution']);
+      $institution->email = $input['email'];
+      $institution->country = $input['country'];
+
+      if(!empty($input['acronym_institution']))
+        $institution->acronym = trim($input['acronym_institution']);
+      else
+        $institution->acronym = null; 
+
+      if(!empty($input['site']))
+        $institution->site = trim($input['site']);
+      else
+        $institution->site = null;
+
+      if(!empty($input['state']))
+        $institution->state = $input['state'];
+      else
+        $institution->state = null; 
+
+      if(!empty($input['city']))
+        $institution->city = trim($input['city']);
+      else
+        $institution->city = null;
+
+      if(!empty($input['address']))
+        $institution->address = trim($input['address']);
+      else
+        $institution->address = null;
+
+      if(!empty($input['phone']))
+        $institution->phone = trim($input['phone']);
+      else
+        $institution->phone = null;
+
+      $institution->touch();
+      $institution->save();
+
+      if (\Input::hasFile('photo') and \Input::file('photo')->isValid())  {
+        $file = \Input::file('photo');
+        $ext = $file->getClientOriginalExtension();
+        $institution->photo = "/arquigrafia-avatars-inst/".$institution->id.".jpg";
+        $institution->save();
+        $image = Image::make(\Input::file('photo'))->encode('jpg', 80);
+        $image->save(public_path().'/arquigrafia-avatars-inst/'.$institution->id.'.jpg');
+        $file->move(public_path().'/arquigrafia-avatars-inst', $institution->id."_original.".strtolower($ext));
+      }
+      static::updateHeaderInstitution($institution);
+
+      return \Redirect::to("/institution-management")->with('message', '<strong>Criação de perfil da instituição</strong><br>Instituição criada com sucesso');
+    }
+
+  }
+
   /*Editar dados da instituição*/
   public function edit($id) {
-    if (!Session::has('institutionId') ) {
-      return Redirect::to('/home');
+    $user = \Auth::user();
+    if (!Session::has('institution_id') and $user->admin == False) {
+      return \Redirect::to('/home');
     }
 
     $institution = Institution::find($id); 
@@ -77,6 +164,19 @@ class InstitutionsController extends \BaseController {
     return \View::make('edit', [
       'institution' => $institution
     ]);
+  }
+
+  public function destroy_institution($id) {
+    $user = \Auth::user();
+    if (!Session::has('institution_id') and $user->admin == False) {
+      return \Redirect::to('/home');
+    }
+    try {
+      Institution::find($id)->delete();
+    }
+    finally {
+      return \Redirect::to('/institution-management/');
+    }
   }
 
   /*Update dados da instituição*/
@@ -151,8 +251,7 @@ class InstitutionsController extends \BaseController {
   }
 
   /*formulario para instituição*/
-  public function formPhotos()
-  {
+  public function formPhotos() {
     if ( ! Session::has('institutionId') ) {
       return Redirect::to('/home');
     }
@@ -782,7 +881,7 @@ class InstitutionsController extends \BaseController {
     return $this->paginationResponseSearch($pagination, 'add');
   }
 
-  public function institution_management() {
+  public function employment_management() {
     $user = \Auth::user();
     if ($user->admin == False) {
       return \Redirect::to('/home');
@@ -812,7 +911,7 @@ class InstitutionsController extends \BaseController {
       }
     }
     
-    return \View::make('/institution_management',
+    return \View::make('/employment_management',
     ['employees' => $employees, 'institutions' => $institutions, 'names' => $names]);
   }
 
@@ -849,22 +948,22 @@ class InstitutionsController extends \BaseController {
               'name' => 'required|exists:users,login',
           )
       );
-      //for now, inputing wrong data resets the form
-      if ($validator->fails())
+      $user = User::where('login', $input['name'])->first();
+      $existing = Employee::where('user_id', $user->id)->where('institution_id', $input['institution'])->get();
+      if ($validator->fails() or count($existing) > 0)
       {
-        return \Redirect::to('/institution-management/create-employment');
+        return \Redirect::to('/employment-management/create-employment');
       }
 
-      //create the new tag and add it to the database
       $employment = new Employee;
-      $employment->user_id = User::where('login', $input['name'])->first()->id;
+      $employment->user_id = $user->id;
       $employment->institution_id = $input['institution'];
       if ($input['role'] != 0 and $input['role'] != NULL) {
         $employment->role_id = $input['role'];
       }
+      
       $employment->save();
-
-      return \Redirect::to('/institution-management');
+      return \Redirect::to('/employment-management');
   }
 
   public function destroy_employment($id){
@@ -873,9 +972,8 @@ class InstitutionsController extends \BaseController {
     {
       return \Redirect::to('/home');
     }
-    \Log::info($id);
     Employee::find($id)->delete();
-    return \Redirect::to('/institution-management');
+    return \Redirect::to('/employment-management');
   }
 
   private function paginationResponseSearch($photos, $type) {

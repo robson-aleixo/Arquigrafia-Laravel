@@ -17,6 +17,7 @@
                     <li><a href="/tags">Relatório de Tags</a href></li>
                     <li><a href="/tombos">Relatório de Tombos</a href></li>
                     <li><a href="/institution-management">Gerenciar Instituições</a href></li>
+                    <li><a href="/employment-management">Gerenciar Usuário-Instituição</a href></li>
                 <ul>
             </div>
         </div>
