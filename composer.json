@@ -20,7 +20,8 @@
 		"league/factory-muffin": "~2.1",
 		"doctrine/dbal": "~2.3",
 		"darsain/laravel-console": "dev-master",
-		"hamcrest/hamcrest-php": "^2.0@dev"
+		"hamcrest/hamcrest-php": "^2.0@dev",
+		"phpunit/phpunit": "^5"
 	},
 	"autoload": {
 		"classmap": [
@@ -42,6 +43,12 @@
             "modules\\":"app/modules",
             "subscriber\\":"app/subscriber"
 		}
+	},
+	"autoload-dev": {
+		"classmap": [
+			"app/tests",
+			"app/database/"
+		]
 	},
 	"scripts": {
 		"post-install-cmd": [

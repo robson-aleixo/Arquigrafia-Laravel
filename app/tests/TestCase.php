@@ -1,12 +1,17 @@
 <?php
+// use PHPUnit\Framework\TestCase;
+
+// namespace app\tests;
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
+// class TesteCase extends TestCase {
 
 	/**
 	 * Creates the application.
 	 *
 	 * @return \Symfony\Component\HttpKernel\HttpKernelInterface
 	 */
+
 	public function createApplication()
 	{
 		$unitTesting = true;
@@ -53,5 +58,17 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
         
         return $models;
     }
+
+    /** @test */
+    public function testShouldCreateTag() {
+        $all_tags = Tag::all();
+        $result = Tag::getOrCreate('new_tag');
+        $all_new_tags = Tag::all();
+    
+        $this->assertTrue( $all_tags->isEmpty() );
+        $this->assertTrue( $result instanceof Tag );
+        $this->assertEquals( 'new_tag', $result->name );
+        $this->assertEquals( 1, $all_new_tags->count() );
+        }
 
 }

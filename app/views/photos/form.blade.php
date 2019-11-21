@@ -186,7 +186,7 @@ label {
           </tr>
           <tr>
             <td>
-              <div>
+              <div class="five columns alpha">
                   <table id="table_description" class="table table-striped" style="display: none;">
                       <thead>
                         <tr>

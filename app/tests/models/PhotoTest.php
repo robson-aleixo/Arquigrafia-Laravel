@@ -1,6 +1,7 @@
 <?php
 
 use League\FactoryMuffin\Facade as FactoryMuffin;
+// use PHPUnit\Framework\TestCase;
 use Mockery as m;
 
 class PhotoTest extends TestCase {
@@ -15,7 +16,7 @@ class PhotoTest extends TestCase {
 	{
 		try {
   			FactoryMuffin::deleteSaved();
-  	} catch (Exception $e) {
+  		} catch (Exception $e) {
 			;
 		}
 	}

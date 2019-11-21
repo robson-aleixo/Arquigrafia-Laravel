@@ -1,7 +1,17 @@
 <?php
 
 use League\FactoryMuffin\Facade as FactoryMuffin;
+// use PHPUnit\Framework\TestCase;
+// include (app_path()."tests\TestCase.php");
+// use Illuminate\Foundation\Testing\TestCase;
+use Tests\TestCase;
 use Mockery as m;
+
+// namespace Tests\Unit;
+
+// use Tests\Testcase;
+// use Illuminate\Foundation\Testing\WithFaker;
+// use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TagTest extends TestCase {
   
@@ -88,4 +98,17 @@ class TagTest extends TestCase {
     $this->assertEquals(1, $tag->count);
   }
 
+  public function testShouldDeletTag() {
+    $all_tags = Tag::all();
+    $result = Tag::getOrCreate('new_tag');
+    $all_new_tags = Tag::all();
+    $result->delete();
+    $all_new_tags_del = Tag::all();
+
+    $this->assertTrue( $all_tags->isEmpty() );
+    $this->assertEquals( 1, $all_new_tags->count() );
+    $this->assertTrue( $all_new_tags_del->isEmpty() );
+  }
+
 }
+
