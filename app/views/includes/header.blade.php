@@ -91,7 +91,7 @@
           {{-- @endif --}}
 
             @if(Auth::user()->admin == True)
-              <li><a href="{{ URL::to('/tags') }}" title="Visualize as tags de acervo"><i class="sheet">&nbsp;</i> RELATÓRIOS</a></li>
+              <li><a href="{{ URL::to('/adm-reports') }}" title="Visualize os relatórios sobre os dados do Arquigrafia"><i class="sheet">&nbsp;</i> RELATÓRIOS</a></li>
             @endif
 
           <li>
