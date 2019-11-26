@@ -90,10 +90,6 @@
             <?php endif; ?>
           <?php /* <?php endif; ?> */ ?>
 
-            <?php if(Auth::user()->admin == True): ?>
-              <li><a href="<?php echo URL::to('/adm-reports'); ?>" title="Visualize os relatórios sobre os dados do Arquigrafia"><i class="sheet">&nbsp;</i> RELATÓRIOS</a></li>
-            <?php endif; ?>
-
           <li>
             <div id="new-message-container" class="new-message">
               <a href="<?php echo URL::to('/chats'); ?>">MENSAGENS</a>
@@ -108,8 +104,11 @@
               </a>
             </div>
           </li>
-
-        <!-- <li><a href="<?php echo URL::to("/badges"); ?>" id="badge" title="Vizualizar badges">&nbsp;</a></li>-->
+          
+          <?php if(Auth::user()->admin == True): ?>
+            <li class = "top-space"><a href="<?php echo URL::to('/adm-reports'); ?>" title="Visualize os relatórios sobre os dados do Arquigrafia"><i class="sheet">&nbsp;</i> RELATÓRIOS</a></li>
+          <?php endif; ?>
+          <!-- <li><a href="<?php echo URL::to("/badges"); ?>" id="badge" title="Vizualizar badges">&nbsp;</a></li>-->
         </ul>
 
         <div id="notes-box">
