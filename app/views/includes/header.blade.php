@@ -90,10 +90,6 @@
             @endif
           {{-- @endif --}}
 
-            @if(Auth::user()->admin == True)
-              <li><a href="{{ URL::to('/adm-reports') }}" title="Visualize os relatórios sobre os dados do Arquigrafia"><i class="sheet">&nbsp;</i> RELATÓRIOS</a></li>
-            @endif
-
           <li>
             <div id="new-message-container" class="new-message">
               <a href="{{ URL::to('/chats') }}">MENSAGENS</a>
@@ -108,8 +104,11 @@
               </a>
             </div>
           </li>
-
-        <!-- <li><a href="{{ URL::to("/badges") }}" id="badge" title="Vizualizar badges">&nbsp;</a></li>-->
+          
+          @if(Auth::user()->admin == True)
+            <li class = "top-space"><a href="{{ URL::to('/adm-reports') }}" title="Visualize os relatórios sobre os dados do Arquigrafia"><i class="sheet">&nbsp;</i> RELATÓRIOS</a></li>
+          @endif
+          <!-- <li><a href="{{ URL::to("/badges") }}" id="badge" title="Vizualizar badges">&nbsp;</a></li>-->
         </ul>
 
         <div id="notes-box">
