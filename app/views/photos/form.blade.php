@@ -488,8 +488,8 @@ $(document).ready(function() {
     $('#add_tag').click(function(e) {
       e.preventDefault();
       var tag = $('#tags_input').val();
-      // var url = "/tags/"+tag+"/description";
-      var url = "/tags/4/description";
+      var url = "/tags/"+tag+"/description";
+      // var url = "/tags/4/description";
       if (tag == '') return;
       $('#tags').textext()[0].tags().addTags([ tag ]);
       $('#tags_input').val('');
@@ -499,11 +499,12 @@ $(document).ready(function() {
             url: url,
             success: function(json) {  
                 var descrip_tag = json.description;
+                var html = '<tr><td>'+tag+'</td><td>'+descrip_tag+'</td></tr>'
+                $("#table_description").attr("style", "display:'';");
+                $("#table_description").append(html);
             }
         });
-      $("#table_description").attr("style", "display:'';");
-      $("#table_description").append(tag);
-      $("#table_description").append(descrip_tag);
+
     });
     
 
