@@ -11,5 +11,4 @@ jobs:
     steps:
     - uses: https://hub.docker.com/r/rockrick1/arquigrafia-web
     - name: Up the Docker
-      run: docker-compose up -d &&
-      python3 -c "print('ola')"
+      run: docker-compose up -d && python3 -c "print('ola')"
