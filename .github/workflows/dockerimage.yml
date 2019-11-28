@@ -4,21 +4,12 @@ on: [push]
 
 jobs:
 
-  - build:
+  build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: https://hub.docker.com/r/rockrick1/arquigrafia-web
     - name: Up the Docker
       run: docker-compose up -d &&
       python3 -c "print('ola')"
-
-  - tests:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: python3
-    - name: Run tests
-      run: python3 testes.py
