@@ -10,6 +10,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Build the Docker image
+    - name: Up the Docker
       # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      run: docker-compose build
+      run: docker-compose up 
