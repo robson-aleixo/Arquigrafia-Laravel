@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
 
-  build:
+  - build:
 
     runs-on: ubuntu-latest
 
@@ -14,7 +14,7 @@ jobs:
       run: docker-compose up -d &&
       python3 -c "print('ola')"
 
-  tests:
+  - tests:
 
     runs-on: ubuntu-latest
 
