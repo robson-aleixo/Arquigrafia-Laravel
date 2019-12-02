@@ -25,6 +25,12 @@ class PhotosController extends \BaseController {
 
   public function filterTombos()
   {
+    $user = \Auth::user();
+    if ($user->admin == False) 
+    {
+      return \Redirect::to('/home');
+    }
+    
     $photos = Photo::whereNotNull('tombo')->where('accepted', 0);
     $institutions = Institution::all();
     $names = [];
