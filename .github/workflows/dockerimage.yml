@@ -1,6 +1,9 @@
 name: Docker Image and Tests CI
 
-on: [push]
+on: 
+  push:
+    branches:
+      -workflows
 
 jobs:
 
