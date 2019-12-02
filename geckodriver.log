@@ -1,0 +1,37 @@
+1575304771071	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.84DNUfD033g2"
+1575304776812	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575304776813	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575304776813	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575304776813	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575304787318	Marionette	INFO	Listening on port 41119
+1575304787336	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575304965684	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Euge1QxtlLhL"
+1575304966414	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575304966414	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575304966414	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575304966414	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575304971885	Marionette	INFO	Listening on port 40969
+1575304971907	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1A0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1A0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575305528917	Marionette	INFO	Stopped listening on port 40969
+[Parent 14352, Gecko_IOThread] WARNING: pipe error (72): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 14352, Gecko_IOThread] WARNING: pipe error (80): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1575305531397	Marionette	INFO	Stopped listening on port 41119
