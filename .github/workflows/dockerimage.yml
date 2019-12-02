@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Up the Docker
-      run: docker-compose up -d && pip3 install selenium && python3 test.py
+      run: docker-compose up -d && pip3 install selenium && java -jar selenium-server-standalone-2.x.x.jar && python3 test.py

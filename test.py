@@ -1,8 +1,14 @@
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 
 # This is the first test to be run
 
-driver = webdriver.Firefox()
+# driver = webdriver.Chrome()
+driver = webdriver.Remote(
+   command_executor='http://127.0.0.1:4444/wd/hub',
+   desired_capabilities=DesiredCapabilities.CHROME)
+   
 driver.get('http://localhost:8000')
 element = driver.find_element_by_xpath("/html/body/div/div[4]/div[2]/div/div/div/div/a[2]/div")
 element.click()
