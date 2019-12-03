@@ -17,4 +17,6 @@
 
 USE arquigrafia;
 
-INSERT INTO users VALUES ('5', 'local5', NULL, 'local5', NULL, 'local5', '$2y$10$sAJ/y/sOAO/1s2w/DUNp3OLxUVY0lahBY3qstmJl5jYjLna7ogM6S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ARXnEMZl9pkNOH0TVs63bHsv3trWWnTgnArk6lPgbI4e09GdX75ko0kQYjWk', '2019-10-01 15:55:05', '2019-12-02 13:42:12', 'no', 'no', '0', 'JVd6nr0lTHhE4UogtuTrRdBbwP1jWo', 'yes', '
+INSERT INTO users VALUES ('5', 'local5', NULL, 'local5', NULL, 'local5', '$2y$10$sAJ/y/sOAO/1s2w/DUNp3OLxUVY0lahBY3qstmJl5jYjLna7ogM6S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ARXnEMZl9pkNOH0TVs63bHsv3trWWnTgnArk6lPgbI4e09GdX75ko0kQYjWk', '2019-10-01 15:55:05', '2019-12-02 13:42:12', 'no', 'no', '0', 'JVd6nr0lTHhE4UogtuTrRdBbwP1jWo', 'yes', '0', NULL, '1');
+
+
