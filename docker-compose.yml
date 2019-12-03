@@ -6,13 +6,16 @@ services:
       - "8009:8000"
     volumes:
       - ./app:/app/app/
+      - ./bootstrap:/app/data
+      - ./javascript:/app/javascript
+      - ./public:/app/public
     #   - .:/app
     environment:
       - DB_HOST=db
     # env_file: .env.local.php
     working_dir: /app
     # --package=cmgmyr/messenger
-    command: bash -c 'php artisan serve --host 0.0.0.0'
+    command: bash -c "sleep 10 && php artisan migrate && php artisan migrate --package=cmgmyr/messenger && php artisan serve --host=0.0.0.0 --port=8181"
     depends_on:
       - db
     links:
@@ -27,6 +30,7 @@ services:
     command: --init-file /app/script/init.sql
     volumes:
       - ./script:/app/script/
+      - ./sql:/app/sql
       # - ./data/:/var/lib/mysql
     ports:
       - "3307:3306"
