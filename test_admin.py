@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import time
 import sys
 
@@ -6,17 +7,27 @@ def test1(host):
     ### Test 1 - Test if the user can log in as an admin ###
     global passes
     result = False
+
     driver = webdriver.Firefox()
     driver.get(host)
-    login_button = driver.find_element_by_xpath("/html/body/div/div[4]/div[2]/div/div/div/div/a[2]/div")
+    login_button = driver.find_element_by_class_name("login-inicio")
     login_button.click()
-    name = driver.find_element_by_xpath('//*[@id="login"]')
-    name.send_keys("local2")
-    password = driver.find_element_by_xpath('//*[@id="password"]')
-    password.send_keys("local2")
-    login = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[1]/form/p[3]/input')
-    login.click()
-    report = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[3]/ul/li[6]/a')
+    driver.forward()
+    name = driver.find_element_by_id('login')
+    name.send_keys("teste1")
+    password = driver.find_element_by_id('password')
+    password.send_keys("teste1")
+    password.send_keys(Keys.ENTER)
+    driver.forward()
+
+    try:
+        print("ENTREI NO TRY")
+        report = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[3]/ul/li[6]/a')
+        print("PASSEI PELA LINHA")
+    except:
+        print("ENTREI NO EXCEPT")
+        report = None
+    
     if report is not None: #The report button should only appear when the user is an admin 
         result = True
         passes += 1
@@ -29,17 +40,24 @@ def test2(host):
 
     driver = webdriver.Firefox()
     driver.get(host)
-    login_button = driver.find_element_by_xpath("/html/body/div/div[4]/div[2]/div/div/div/div/a[2]/div")
+    login_button = driver.find_element_by_class_name("login-inicio")
     login_button.click()
-    name = driver.find_element_by_xpath('//*[@id="login"]')
-    name.send_keys("local2")
-    password = driver.find_element_by_xpath('//*[@id="password"]')
-    password.send_keys("local2")
-    login = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[1]/form/p[3]/input')
-    login.click()
-    report = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[3]/ul/li[6]/a')
+    driver.forward()
+    name = driver.find_element_by_id('login')
+    name.send_keys("teste2")
+    password = driver.find_element_by_id('password')
+    password.send_keys("teste2")
+    password.send_keys(Keys.ENTER)
+    driver.forward()
+    time.sleep(1)
 
+    try:
+        report = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[3]/ul/li[6]/a')
+    except:
+        report = None
+    
     driver.get(host + 'adm-reports')
+    driver.forward()
     time.sleep(.5)
     url = driver.current_url
 
