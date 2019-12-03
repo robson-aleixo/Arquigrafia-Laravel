@@ -1,0 +1,55 @@
+1575304959356	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.MD6UIIn4f5gG"
+1575304968091	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575304968091	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575304968092	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575304968092	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575304980169	Marionette	INFO	Listening on port 36569
+1575304980885	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+
+(/usr/lib/firefox/firefox:8407): dconf-WARNING **: 13:43:37.874: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+1575305071080	Marionette	INFO	Stopped listening on port 36569
+1575305076963	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.NQf0aJy6bvWH"
+Failed to import the site module
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site.py", line 570, in <module>
+    main()
+  File "/usr/lib/python3.6/site.py", line 563, in main
+    execsitecustomize()
+  File "/usr/lib/python3.6/site.py", line 507, in execsitecustomize
+    import sitecustomize
+  File "/usr/lib/python3.6/sitecustomize.py", line 3, in <module>
+    import apport_python_hook
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 951, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 894, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1157, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1129, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1271, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 96, in _path_isfile
+  File "<frozen importlib._bootstrap_external>", line 88, in _path_is_mode_type
+  File "<frozen importlib._bootstrap_external>", line 82, in _path_stat
+KeyboardInterrupt
+1575305100732	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.7InnO02WETHO"
+1575305104836	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575305104836	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575305104836	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575305104836	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575305113303	Marionette	INFO	Listening on port 36771
+1575305113389	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript error: resource://gre/actors/BrowserElementParent.jsm, line 314: TypeError: state is undefined
+JavaScript error: , line 0: NS_ERROR_UNEXPECTED: 
+JavaScript error: resource://gre/actors/BrowserElementParent.jsm, line 314: TypeError: state is undefined
+JavaScript error: , line 0: NS_ERROR_UNEXPECTED: 
+1575305527038	Marionette	INFO	Stopped listening on port 36771
