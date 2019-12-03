@@ -9,7 +9,7 @@ else
     python3 test_create_accounts.py
 fi
 
-php artisan tinker < tinkerino.php
+php artisan tinker < tinker_script.php
 
 mysql < test_auth.sql
 
