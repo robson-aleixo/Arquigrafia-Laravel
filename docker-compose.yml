@@ -1,7 +1,8 @@
-version: '3'
+version: '3.5'
 services:
   app:
     build: .
+    container_name: arquigrafialaravelapp
     ports:
       - "8009:8000"
     volumes:
@@ -21,6 +22,7 @@ services:
     links:
       - db
   db:
+    container_name: arquigrafialaraveldb
     image: "mysql:5.7"
     environment:
       MYSQL_DATABASE: arquigrafia

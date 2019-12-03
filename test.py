@@ -1,10 +1,14 @@
 from selenium import webdriver
+from pyvirtualdisplay import Display
 import os
 
+display = Display(visible=1)
+display.start()
+
 driver = webdriver.Firefox(executable_path=os.getcwd() + "/geckodriver")
-driver.get('http://localhost:8000')
+driver.get('http://localhost:8009')
 element = driver.find_element_by_xpath("/html/body/div/div[4]/div[2]/div/div/div/div/a[2]/div")
-assert report is not None
+assert element is not None
 # element.click()
 # name = driver.find_element_by_xpath('//*[@id="login"]')
 # name.send_keys("robson")

@@ -25,9 +25,11 @@ The Arquigrafia project is open-sourced software licensed under the [Creative Co
 
 > Run ```docker-compose up```
 
-> Run ```docker ps``` to list all containers and their ids
+<!-- > Run ```docker ps``` to list all containers and their ids
 
-> Run ```docker exec -it id_do_container_arquigrafia-laravel_app bash```
+> Run ```docker exec arquigrafialaravel php artisan migrate```
+
+> Run ```docker exec arquigrafialaravelrobson_db_1 bash```
 
 > Now you are inside de container, run ```php artisan migrate```
 
@@ -35,7 +37,7 @@ The Arquigrafia project is open-sourced software licensed under the [Creative Co
 
 ```bash
 php artisan migrate --package=cmgmyr/messenger
-```
+``` -->
 
 - The user validation did not work locally for development, because it expects an e-mail confirmation. After creating an user, an error message will appear. Then run the following commands:
 
