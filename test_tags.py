@@ -57,7 +57,7 @@ cat1.send_keys("Teste")
 submit = driver.find_element_by_xpath("/html/body/div[1]/form/input[2]")
 submit.click()
 secound_tag = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[1]/div/table/tbody/tr[2]/td[2]')
-equiv_tag = secound_tag.getText()
+equiv_tag = secound_tag.text
 if(equiv_tag == 'Equivale a aaaa'):
 	correct += 1
 
