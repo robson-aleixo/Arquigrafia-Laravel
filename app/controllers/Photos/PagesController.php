@@ -476,7 +476,7 @@ class PagesController extends BaseController {
 
   public function admin_reports() {
     $user = \Auth::user();
-    if ($user->admin == False) {
+    if (is_null($user) || $user->admin == False) {
       return \Redirect::to('/home');
     }
     return \View::make('admin_reports');
