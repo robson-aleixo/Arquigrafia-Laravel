@@ -17,7 +17,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN docker-php-ext-install pdo pdo_mysql
 WORKDIR /app
 COPY . /app
-RUN COMPOSER_MEMORY_LIMIT=-1 composer install
+# RUN COMPOSER_MEMORY_LIMIT=-1 composer install
 CMD sleep 5 && php artisan migrate --package=cmgmyr/messenger && php artisan serve --host=0.0.0.0 --port=8181 
 # CMD sleep 15 && php artisan migrate --package=cmgmyr/messenger && php artisan serve --host=0.0.0.0 --port=8181
 EXPOSE 8181
