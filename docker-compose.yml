@@ -23,7 +23,7 @@ services:
     links:
       - db
   db:
-    container_name: dbarquigrafial
+    container_name: dbarquigrafia
     image: "mysql:5.7"
     environment:
       MYSQL_DATABASE: arquigrafia

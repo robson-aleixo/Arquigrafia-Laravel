@@ -203,3 +203,1561 @@ Gdk-Message: 16:15:10.738: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource
 Gdk-Message: 16:15:10.738: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1028.
 
 Exiting due to channel error.
+1575425108922	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.JiAZv5qP9GQg"
+1575425110869	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575425110869	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575425110869	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575425110870	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575425119791	Marionette	INFO	Listening on port 35023
+1575425119871	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1575425135544	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.duqEEhfolYgk"
+Gdk-Message: 23:05:39.867: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1028.
+
+Gdk-Message: 23:05:39.867: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1028.
+
+Gdk-Message: 23:05:39.868: firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1028.
+
+Exiting due to channel error.
+1575425140191	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575425140196	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575425140197	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575425140197	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575425148157	Marionette	INFO	Listening on port 46335
+1575425148195	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+Gdk-Message: 23:06:01.516: firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1032.
+
+Gdk-Message: 23:06:01.515: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1032.
+
+Sandbox: Unexpected EOF, op 0 flags 02000000 path /etc/localtime
+Exiting due to channel error.
+Sandbox: Unexpected EOF, op 0 flags 02000000 path /etc/localtime
+Gdk-Message: 02:06:01.515: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1032.
+
+1575425365046	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.vjHopeTLVZat"
+1575425367793	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575425367793	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575425367793	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575425367793	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575425378672	Marionette	INFO	Listening on port 33585
+1575425378703	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/js/main.js, line 1: ReferenceError: $ is not defined
+JavaScript error: http://localhost:8000/js/jquery-ui/jquery-ui.min.js, line 6: ReferenceError: jQuery is not defined
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript error: http://localhost:8000/js/dist/landing.bundle.js, line 29032: ReferenceError: $ is not defined
+1575425715566	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.p2J02xyQv5yv"
+1575425717317	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575425717318	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575425717318	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575425717318	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575425720849	Marionette	INFO	Listening on port 37553
+1575425720893	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575425768141	Marionette	INFO	Stopped listening on port 37553
+1575425875932	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ENUyH3VKQNW0"
+1575425878161	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575425878161	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575425878162	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575425878162	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575425883366	Marionette	INFO	Listening on port 38411
+1575425883514	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/js/main.js, line 1: ReferenceError: $ is not defined
+JavaScript error: http://localhost:8000/js/jquery-ui/jquery-ui.min.js, line 6: ReferenceError: jQuery is not defined
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript error: http://localhost:8000/js/dist/landing.bundle.js, line 29032: ReferenceError: $ is not defined
+1575425923898	Marionette	INFO	Stopped listening on port 38411
+1575425976523	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.WkmVx1thfuPi"
+1575425979429	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575425979430	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575425979430	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575425979430	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575425987487	Marionette	INFO	Listening on port 34131
+1575425987572	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 17703, Gecko_IOThread] WARNING: pipe error (74): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 683))
+[Parent 17703, Gecko_IOThread] WARNING: pipe error (82): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575426031869	Marionette	INFO	Stopped listening on port 34131
+1575426032296	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.IBsHRl9qOKkB"
+1575426034082	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575426034083	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575426034083	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575426034083	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575426038830	Marionette	INFO	Listening on port 34213
+1575426038931	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575427062793	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.hlGynGOoDOcz"
+1575427065439	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575427065439	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575427065439	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575427065439	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575427072701	Marionette	INFO	Listening on port 41711
+1575427072780	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 20498, Gecko_IOThread] WARNING: pipe error (78): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 20498, Gecko_IOThread] WARNING: pipe error (55): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575427182468	Marionette	INFO	Stopped listening on port 41711
+1575427186739	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.S70arh8yB6FD"
+1575427187848	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575427188086	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575427188087	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575427188087	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575427193259	Marionette	INFO	Listening on port 35319
+1575427193281	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/js/main.js, line 1: ReferenceError: $ is not defined
+JavaScript error: http://localhost:8000/js/jquery-ui/jquery-ui.min.js, line 6: ReferenceError: jQuery is not defined
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript error: http://localhost:8000/js/dist/landing.bundle.js, line 29032: ReferenceError: $ is not defined
+[Parent 20942, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 20942, Gecko_IOThread] WARNING: pipe error (109): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575427221256	Marionette	INFO	Stopped listening on port 35319
+1575427223427	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.yGlWkMm9pUDb"
+1575427224978	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575427224979	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575427224979	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575427224979	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575427229506	Marionette	INFO	Listening on port 35695
+1575427229555	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575427406812	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.uFC8AZ5ROVP4"
+1575427407620	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575427407620	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575427407621	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575427407621	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575427414501	Marionette	INFO	Listening on port 42737
+1575427414557	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+SourceActor threw an exception: [Exception... "Failed to open input source 'file:///'"  nsresult: "0x80520015 (NS_ERROR_FILE_ACCESS_DENIED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: mainThreadFetch/< :: line 678"  data: yes]
+Stack: mainThreadFetch/<@resource://devtools/shared/DevToolsUtils.js:678:15
+mainThreadFetch@resource://devtools/shared/DevToolsUtils.js:530:10
+_fetchURLContents@resource://devtools/server/actors/utils/TabSources.js:580:22
+urlContents@resource://devtools/server/actors/utils/TabSources.js:547:17
+_resurrectSource@resource://devtools/server/actors/thread.js:2033:69
+addAllSources@resource://devtools/server/actors/thread.js:1334:14
+onSources@resource://devtools/server/actors/thread.js:1340:10
+onPacket@resource://devtools/server/debugger-server-connection.js:378:58
+receiveMessage@resource://devtools/shared/transport/child-transport.js:66:16
+Line: 678, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 678: NS_ERROR_FILE_ACCESS_DENIED: Failed to open input source 'file:///'
+1575427843873	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.3VIQlaXaZGQj"
+1575427844982	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575427844983	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575427844983	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575427844983	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575427850251	Marionette	INFO	Listening on port 35491
+1575427850300	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575427903864	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.hoeRIor3dVWe"
+1575427906168	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575427906168	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575427906168	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575427906168	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575427914257	Marionette	INFO	Listening on port 38109
+1575427914337	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 22137, Gecko_IOThread] WARNING: pipe error (78): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 22137, Gecko_IOThread] WARNING: pipe error (83): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: resource://gre/modules/IndexedDB.jsm, line 370: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+[Parent 22445, Gecko_IOThread] WARNING: pipe error (68): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1575428014225	Marionette	INFO	Stopped listening on port 35491
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575428016413	Marionette	INFO	Stopped listening on port 38109
+[Parent 16357, Gecko_IOThread] WARNING: pipe error (58): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 16357, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575428018536	Marionette	INFO	Stopped listening on port 33585
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 21174, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 21174, Gecko_IOThread] WARNING: pipe error (111): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1575428021289	Marionette	INFO	Stopped listening on port 35695
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1575428022637	Marionette	INFO	Stopped listening on port 34213
+1575428971289	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.uXvMViJLWZsx"
+1575428976268	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575428976268	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575428976269	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575428976269	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575428984840	Marionette	INFO	Listening on port 37517
+1575428984897	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/js/main.js, line 1: ReferenceError: $ is not defined
+JavaScript error: http://localhost:8000/js/jquery-ui/jquery-ui.min.js, line 6: ReferenceError: jQuery is not defined
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript error: http://localhost:8000/js/dist/landing.bundle.js, line 29032: ReferenceError: $ is not defined
+[Parent 25016, Gecko_IOThread] WARNING: pipe error (77): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575429011745	Marionette	INFO	Stopped listening on port 37517
+1575429013916	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.2YgYqllgWLP6"
+1575429015123	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575429015123	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575429015124	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575429015124	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575429022764	Marionette	INFO	Listening on port 43455
+1575429022859	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/js/main.js, line 1: ReferenceError: $ is not defined
+JavaScript error: http://localhost:8000/js/jquery-ui/jquery-ui.min.js, line 6: ReferenceError: jQuery is not defined
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript error: http://localhost:8000/js/dist/landing.bundle.js, line 29032: ReferenceError: $ is not defined
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+1575429063600	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.BGq8nYeDzGFg"
+1575429065279	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575429065279	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575429065279	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575429065280	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575429067331	Marionette	INFO	Stopped listening on port 43455
+1575429073503	Marionette	INFO	Listening on port 45565
+1575429073542	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 21554, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 21554, Gecko_IOThread] WARNING: pipe error (94): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575429201664	Marionette	INFO	Stopped listening on port 42737
+1575429204522	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.xjcVzhlTVaPd"
+1575429206582	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575429206582	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575429206582	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575429206582	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575429213867	Marionette	INFO	Listening on port 41887
+1575429213972	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/js/main.js, line 1: ReferenceError: $ is not defined
+JavaScript error: http://localhost:8000/js/jquery-ui/jquery-ui.min.js, line 6: ReferenceError: jQuery is not defined
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript error: http://localhost:8000/js/dist/landing.bundle.js, line 29032: ReferenceError: $ is not defined
+[Parent 25874, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575429240804	Marionette	INFO	Stopped listening on port 41887
+1575429241433	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ssc6kAV6HGvI"
+1575429242995	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575429242995	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575429242996	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575429242996	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575429250016	Marionette	INFO	Listening on port 39427
+1575429250077	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575429353276	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.iUbyTEbatOoI"
+1575429354905	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575429354905	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575429354905	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575429354905	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575429360144	Marionette	INFO	Listening on port 40803
+1575429360206	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 26523, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 26523, Gecko_IOThread] WARNING: pipe error (92): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575429450115	Marionette	INFO	Stopped listening on port 40803
+[Parent 25522, Gecko_IOThread] WARNING: pipe error (66): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 25522, Gecko_IOThread] WARNING: pipe error (74): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575429458173	Marionette	INFO	Stopped listening on port 45565
+SourceActor threw an exception: [Exception... "Failed to open input source 'file:///'"  nsresult: "0x80520015 (NS_ERROR_FILE_ACCESS_DENIED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: mainThreadFetch/< :: line 678"  data: yes]
+Stack: mainThreadFetch/<@resource://devtools/shared/DevToolsUtils.js:678:15
+mainThreadFetch@resource://devtools/shared/DevToolsUtils.js:530:10
+_fetchURLContents@resource://devtools/server/actors/utils/TabSources.js:580:22
+urlContents@resource://devtools/server/actors/utils/TabSources.js:547:17
+_resurrectSource@resource://devtools/server/actors/thread.js:2033:69
+addAllSources@resource://devtools/server/actors/thread.js:1334:14
+onSources@resource://devtools/server/actors/thread.js:1340:10
+onPacket@resource://devtools/server/debugger-server-connection.js:378:58
+receiveMessage@resource://devtools/shared/transport/child-transport.js:66:16
+Line: 678, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 678: NS_ERROR_FILE_ACCESS_DENIED: Failed to open input source 'file:///'
+1575430074280	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.KZLL29kDqoS6"
+1575430076565	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575430076566	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575430076566	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575430076566	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575430081288	Marionette	INFO	Listening on port 34497
+1575430081345	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575454727973	Marionette	INFO	Stopped listening on port 34497
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575454729950	Marionette	INFO	Stopped listening on port 39427
+1575462651813	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.yIJBUyMLHYGu"
+1575462656900	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575462656900	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575462656900	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575462656900	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575462668979	Marionette	INFO	Listening on port 36941
+1575462670039	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+SourceActor threw an exception: [Exception... "Failed to open input source 'file:///'"  nsresult: "0x80520015 (NS_ERROR_FILE_ACCESS_DENIED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: mainThreadFetch/< :: line 678"  data: yes]
+Stack: mainThreadFetch/<@resource://devtools/shared/DevToolsUtils.js:678:15
+mainThreadFetch@resource://devtools/shared/DevToolsUtils.js:530:10
+_fetchURLContents@resource://devtools/server/actors/utils/TabSources.js:580:22
+urlContents@resource://devtools/server/actors/utils/TabSources.js:547:17
+_resurrectSource@resource://devtools/server/actors/thread.js:2033:69
+addAllSources@resource://devtools/server/actors/thread.js:1334:14
+onSources@resource://devtools/server/actors/thread.js:1340:10
+onPacket@resource://devtools/server/debugger-server-connection.js:378:58
+receiveMessage@resource://devtools/shared/transport/child-transport.js:66:16
+Line: 678, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 678: NS_ERROR_FILE_ACCESS_DENIED: Failed to open input source 'file:///'
+1575463535159	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.BHWRUusoxLEu"
+1575463535906	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575463535906	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575463535906	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575463535906	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575463540433	Marionette	INFO	Listening on port 42597
+1575463540488	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 6807, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 6807, Gecko_IOThread] WARNING: pipe error (78): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575464294153	Marionette	INFO	Stopped listening on port 42597
+1575464298618	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.vP4nCz7xTx0Y"
+1575464299334	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575464299334	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575464299335	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575464299335	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575464306337	Marionette	INFO	Listening on port 34355
+1575464306343	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+SourceActor threw an exception: [Exception... "Failed to open input source 'file:///'"  nsresult: "0x80520015 (NS_ERROR_FILE_ACCESS_DENIED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: mainThreadFetch/< :: line 678"  data: yes]
+Stack: mainThreadFetch/<@resource://devtools/shared/DevToolsUtils.js:678:15
+mainThreadFetch@resource://devtools/shared/DevToolsUtils.js:530:10
+_fetchURLContents@resource://devtools/server/actors/utils/TabSources.js:580:22
+urlContents@resource://devtools/server/actors/utils/TabSources.js:547:17
+_resurrectSource@resource://devtools/server/actors/thread.js:2033:69
+addAllSources@resource://devtools/server/actors/thread.js:1334:14
+onSources@resource://devtools/server/actors/thread.js:1340:10
+onPacket@resource://devtools/server/debugger-server-connection.js:378:58
+receiveMessage@resource://devtools/shared/transport/child-transport.js:66:16
+Line: 678, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 678: NS_ERROR_FILE_ACCESS_DENIED: Failed to open input source 'file:///'
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1A0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1A0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+1575464615540	Marionette	INFO	Stopped listening on port 36941
+1575464619775	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.G5O9T5HZLyS2"
+1575464620660	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575464620660	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575464620660	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575464620660	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575464625343	Marionette	INFO	Listening on port 34911
+1575464625396	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 7794, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 7794, Gecko_IOThread] WARNING: pipe error (67): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575464690758	Marionette	INFO	Stopped listening on port 34911
+1575464692608	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.4KGCo82tl14m"
+1575464693296	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575464693296	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575464693296	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575464693296	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575464698642	Marionette	INFO	Listening on port 46825
+1575464698737	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575465369549	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.9iuQWmeLMAuL"
+1575465370283	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575465370283	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575465370283	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575465370283	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575465374530	Marionette	INFO	Listening on port 36467
+1575465374595	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575465416984	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.RbKgx7egDAg7"
+1575465417819	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575465417819	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575465417819	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575465417819	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575465421645	Marionette	INFO	Listening on port 41573
+1575465421699	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575465508619	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.0FKuiqLTmhx8"
+1575465509335	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575465509335	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575465509335	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575465509336	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575465513094	Marionette	INFO	Listening on port 44031
+1575465513132	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 8078, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 8078, Gecko_IOThread] WARNING: pipe error (107): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465572594	Marionette	INFO	Stopped listening on port 46825
+[Parent 9006, Gecko_IOThread] WARNING: pipe error (59): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 9006, Gecko_IOThread] WARNING: pipe error (67): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465575085	Marionette	INFO	Stopped listening on port 41573
+[Parent 8768, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465579249	Marionette	INFO	Stopped listening on port 36467
+[Parent 9297, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 9297, Gecko_IOThread] WARNING: pipe error (105): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465585357	Marionette	INFO	Stopped listening on port 44031
+[Parent 7379, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 7379, Gecko_IOThread] WARNING: pipe error (74): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465587178	Marionette	INFO	Stopped listening on port 34355
+1575465626667	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.KuMsyyRtMIOs"
+1575465627398	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575465627398	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575465627398	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575465627398	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575465632019	Marionette	INFO	Listening on port 33281
+1575465632103	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575465684649	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.MmIo3GrvFIDI"
+1575465685356	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575465685357	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575465685357	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575465685357	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575465689161	Marionette	INFO	Listening on port 35091
+1575465689172	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 9962, Gecko_IOThread] WARNING: pipe error (107): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 9962, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465826289	Marionette	INFO	Stopped listening on port 35091
+[Parent 9674, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 9674, Gecko_IOThread] WARNING: pipe error (78): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465829774	Marionette	INFO	Stopped listening on port 33281
+1575465834210	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.tWVJ0Y5FjxIi"
+1575465835554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575465835554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575465835554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575465835554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575465839272	Marionette	INFO	Listening on port 36185
+1575465839335	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575465887832	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.RylL23G1GoHU"
+1575465888975	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575465888975	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575465888976	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575465888976	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575465892810	Marionette	INFO	Listening on port 42025
+1575465892847	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 10568, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 683))
+[Parent 10568, Gecko_IOThread] WARNING: pipe error (106): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 10307, Gecko_IOThread] WARNING: pipe error (82): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 10307, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465961374	Marionette	INFO	Stopped listening on port 42025
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575465961483	Marionette	INFO	Stopped listening on port 36185
+1575465972230	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.vSeEkPe8lC0t"
+1575465973028	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575465973028	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575465973028	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575465973028	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575465979293	Marionette	INFO	Listening on port 43305
+1575465979389	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575466221623	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.JmsMzrlYN7XL"
+1575466222716	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575466222716	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575466222716	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575466222716	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575466226468	Marionette	INFO	Listening on port 46111
+1575466226539	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575466317989	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.pjDxBAj8LePc"
+1575466319558	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575466319559	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575466319559	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575466319559	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575466323246	Marionette	INFO	Listening on port 35333
+1575466323304	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575466396463	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Jb62l5Lqp607"
+1575466398395	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575466398395	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575466398395	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575466398395	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575466403680	Marionette	INFO	Listening on port 33247
+1575466403690	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575466536733	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.iDu6pMhUyBZ8"
+1575466538297	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575466538297	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575466538298	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575466538298	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575466542600	Marionette	INFO	Listening on port 46297
+1575466542652	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+[Parent 11816, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 11816, Gecko_IOThread] WARNING: pipe error (78): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 683))
+[Parent 11550, Gecko_IOThread] WARNING: pipe error (92): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 11550, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575466687417	Marionette	INFO	Stopped listening on port 33247
+[Parent 11273, Gecko_IOThread] WARNING: pipe error (78): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 11273, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575466688828	Marionette	INFO	Stopped listening on port 35333
+console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 683))
+[Parent 10879, Gecko_IOThread] WARNING: pipe error (67): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 10879, Gecko_IOThread] WARNING: pipe error (76): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575466691790	Marionette	INFO	Stopped listening on port 46111
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575466691849	Marionette	INFO	Stopped listening on port 43305
+[Parent 12172, Gecko_IOThread] WARNING: pipe error (75): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 12172, Gecko_IOThread] WARNING: pipe error (101): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575466696423	Marionette	INFO	Stopped listening on port 46297
+1575466701162	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.xbmVzSM5Jizw"
+1575466702605	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575466702605	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575466702606	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575466702606	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575466709054	Marionette	INFO	Listening on port 39401
+1575466709093	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 683))
+[Parent 12703, Gecko_IOThread] WARNING: pipe error (87): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 12703, Gecko_IOThread] WARNING: pipe error (104): Connection reset by peer: file /build/firefox-clezVp/firefox-70.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1575466756425	Marionette	INFO	Stopped listening on port 39401
+1575466826450	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.TSqOtaCZ68bm"
+1575466827986	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575466827986	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575466827986	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575466827986	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575466831560	Marionette	INFO	Listening on port 44901
+1575466831567	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575466966085	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ewfVkJCDUTHg"
+1575466966752	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575466966752	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575466966752	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575466966752	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575466970533	Marionette	INFO	Listening on port 35811
+1575466970599	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575467362589	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.flUC7SOutWVu"
+1575467363267	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575467363267	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575467363267	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575467363267	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575467367370	Marionette	INFO	Listening on port 43651
+1575467367405	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575467957382	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ysaIjFPDx0ce"
+1575467958342	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575467958342	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575467958342	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575467958342	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575467961851	Marionette	INFO	Listening on port 34817
+1575467961901	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575468001451	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.XPwh40x48DrL"
+1575468002277	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468002277	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468002277	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468002277	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468007209	Marionette	INFO	Listening on port 33921
+1575468007267	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575468239493	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.IRcMSDNfc4gT"
+1575468243141	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468243141	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468243141	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468243142	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468247528	Marionette	INFO	Listening on port 40785
+1575468247623	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575468382355	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.KBJiGjl5n3AE"
+1575468385076	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468385076	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468385077	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468385077	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468392273	Marionette	INFO	Listening on port 41139
+1575468392336	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+Gdk-Message: 11:08:00.491: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1052.
+
+Gdk-Message: 11:08:00.492: firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1052.
+
+Gdk-Message: 11:08:00.491: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1052.
+
+Gdk-Message: 11:08:00.491: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1052.
+
+1575468515636	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.zI8aP7f66895"
+1575468517893	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468517894	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468517895	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468517895	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468524696	Marionette	INFO	Listening on port 35475
+1575468524769	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575468579562	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.JGEVfGBs6ljN"
+1575468580857	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468580858	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468580858	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468580858	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468587395	Marionette	INFO	Listening on port 33031
+1575468587507	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+Gdk-Message: 11:10:35.876: firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+Gdk-Message: 11:10:35.876: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+Gdk-Message: 11:10:35.876: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+Exiting due to channel error.
+Sandbox: Unexpected EOF, op 0 flags 02000000 path /etc/localtime
+1575468652002	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.7Y0VHlNgrWul"
+1575468654098	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468654098	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468654098	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468654098	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468658587	Marionette	INFO	Listening on port 44559
+1575468658628	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+Gdk-Message: 11:11:44.980: firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+Gdk-Message: 11:11:44.980: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+Exiting due to channel error.
+Exiting due to channel error.
+1575468734713	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.0WCVPIg5wKF5"
+1575468737553	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468737554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468737554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468737554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468742583	Marionette	INFO	Listening on port 38503
+1575468742642	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+Gdk-Message: 11:12:50.180: firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+Gdk-Message: 11:12:50.180: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+Sandbox: Unexpected EOF, op 0 flags 02000000 path /etc/localtime
+Gdk-Message: 14:12:50.183: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+Sandbox: Unexpected EOF, op 0 flags 02000000 path /etc/localtime
+Gdk-Message: 14:12:50.181: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1056.
+
+1575468859197	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.6vEw8NmfHslw"
+1575468861003	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468861003	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468861003	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468861004	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468865665	Marionette	INFO	Listening on port 46741
+1575468865726	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575468883559	Marionette	INFO	Stopped listening on port 46741
+1575468924203	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.GCmw1uvZ8i1f"
+1575468925409	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468925409	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468925409	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468925409	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468931472	Marionette	INFO	Listening on port 39005
+1575468931522	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575468945995	Marionette	INFO	Stopped listening on port 39005
+1575468968620	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.CBHxyMF8amW0"
+1575468969609	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575468969609	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575468969610	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575468969610	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575468973739	Marionette	INFO	Listening on port 33635
+1575468973855	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/landing.bundle.js, line 5839: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+JavaScript warning: http://localhost:8000/js/dist/notifications.bundle.js, line 7684: unreachable code after return statement
+1575468987222	Marionette	INFO	Stopped listening on port 33635
