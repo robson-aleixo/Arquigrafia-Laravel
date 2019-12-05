@@ -25,21 +25,18 @@ The Arquigrafia project is open-sourced software licensed under the [Creative Co
 
 > Run ```docker-compose up```
 
-<!-- > Run ```docker ps``` to list all containers and their ids
-
-> Run ```docker exec arquigrafialaravel php artisan migrate```
-
-> Run ```docker exec arquigrafialaravelrobson_db_1 bash```
-
-> Now you are inside de container, run ```php artisan migrate```
+> Run ```docker exec apparquigrafia bash -c "php artisan migrate"```
 
 - This project uses Laravel Messenger for Laravel 4, and needs to run migrate:
 
-```bash
-php artisan migrate --package=cmgmyr/messenger
-``` -->
+> Run ```docker exec apparquigrafia bash -c "php artisan migrate --package=cmgmyr/messenger"```
+
 
 - The user validation did not work locally for development, because it expects an e-mail confirmation. After creating an user, an error message will appear. Then run the following commands:
+
+- For develop environment, there is a sql script (2019.01.18.sql) to populate databse
+
+- There are functional tests in python, to validate the pages navigation. These tests covarage only admin reports. They are located in python_tests directory. 
 
 ```
 php artisan tinker
