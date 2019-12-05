@@ -1,9 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from pyvirtualdisplay import Display
 import time
 import sys
 import os
 
+display = Display(visible=1, size=(1800,900))
+display.start()
 
 ## If you add more tests, change this number
 total = 2
@@ -74,6 +77,8 @@ try:
 except Exception as ex:
 	print("ERRO no teste de login não-admin: " + str(ex))
 
+driver.quit()
+display.stop()
 
-print("%i/%i tests passed" % (passes, total))
+print("Testes admin: "+str(passes)+" de "+str(total)+ " realizados com sucesso")
 
