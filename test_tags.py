@@ -5,7 +5,7 @@ import time
 # time.sleep(3.0)
 
 
-display = Display(visible=0, size=(1800,900))
+display = Display(visible=1, size=(1800,900))
 display.start()
 
 total = 4
@@ -13,14 +13,14 @@ correct = 0
 
 # Login na seção
 driver = webdriver.Firefox(executable_path=os.getcwd() + "/geckodriver")
-driver.get('http://localhost:8000')
+driver.get('http://localhost:8009')
 element = driver.find_element_by_xpath("/html/body/div/div[4]/div[2]/div/div/div/div/a[2]/div")
 element.click()
 driver.forward()
 username = driver.find_element_by_xpath('//*[@id="login"]')
-username.send_keys("robson")
+username.send_keys("local2")
 password = driver.find_element_by_xpath('//*[@id="password"]')
-password.send_keys("123456")
+password.send_keys("local2")
 login = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[1]/form/p[3]/input')
 login.click()
 driver.forward()
