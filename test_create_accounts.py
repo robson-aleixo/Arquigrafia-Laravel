@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from pyvirtualdisplay import Display
 import sys
+import os
 
 flag = ''
 if len(sys.argv) > 1:
@@ -9,7 +11,10 @@ host  = 'http://localhost:8000/'
 if flag == '-dk':
     host  = 'http://localhost:8009/'
 
-driver = webdriver.Firefox()
+display = Display(visible=1, size=(1800,900))
+display.start()
+
+driver = webdriver.Firefox(executable_path=os.getcwd() + "/geckodriver")
 driver.get(host)
 signup_button = driver.find_element_by_class_name("cadastro-inicio")
 signup_button.click()
@@ -27,7 +32,7 @@ check = driver.find_element_by_name('terms')
 check.click()
 password.send_keys(Keys.ENTER)
 
-driver2 = webdriver.Firefox()
+driver2 = webdriver.Firefox(executable_path=os.getcwd() + "/geckodriver")
 driver2.get(host)
 signup_button2 = driver2.find_element_by_class_name("cadastro-inicio")
 signup_button2.click()
@@ -44,3 +49,6 @@ confirm2.send_keys("teste2")
 check2 = driver2.find_element_by_name('terms')
 check2.click()
 password2.send_keys(Keys.ENTER)
+
+driver.quit()
+display.stop()
