@@ -2,8 +2,7 @@ from selenium import webdriver
 from pyvirtualdisplay import Display
 import os
 import time
-# time.sleep(3.0)
-
+import sys
 
 display = Display(visible=1, size=(1800,900))
 display.start()
@@ -11,9 +10,16 @@ display.start()
 total = 4
 correct = 0
 
+flag = ''
+if len(sys.argv) > 1:
+    flag = str(sys.argv[1])
+host  = 'http://localhost:8000/'
+if flag == '-dk':
+    host  = 'http://localhost:8009/'
+
 # Login na seção
 driver = webdriver.Firefox(executable_path=os.getcwd() + "/geckodriver")
-driver.get('http://localhost:8000')
+driver.get(host)
 element = driver.find_element_by_xpath("/html/body/div/div[4]/div[2]/div/div/div/div/a[2]/div")
 element.click()
 driver.forward()
@@ -62,14 +68,14 @@ try:
 	name.send_keys("aaaa")
 	submit = driver.find_element_by_xpath("/html/body/div[1]/form/input[2]")
 	submit.submit()
-	driver.get('http://localhost:8000/tags')
+	driver.get(host + 'tags')
 	fisrt_tag = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[1]/div/table/tbody/tr[1]/td[1]/ul')
 	tag_value = fisrt_tag.text
 	if(tag_value == 'aaaa'):
 		correct += 1
 		print("Teste de edição de tag concluído com sucesso")
 except Exception as ex:
-	print("ERRO no teste de edição de tag"+ str(ex))
+	print("ERRO no teste de edição de tag: "+ str(ex))
 
 # Teste 3
 try:
@@ -94,11 +100,11 @@ try:
 		correct += 1
 		print("Teste equivalência de tag concluído com sucesso") 
 except Exception as ex:
-	print("ERRO no teste de equivalência de tag"+ str(ex))
+	print("ERRO no teste de equivalência de tag: "+ str(ex))
 
 # Teste 4
 try:
-	driver.get('http://localhost:8000/tags')
+	driver.get(host + 'tags')
 	excluir = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[1]/div/table/tbody/tr[1]/td[4]/form/input[3]')
 	excluir.click()
 	driver.forward()
@@ -108,7 +114,7 @@ try:
 		correct += 1
 		print("Teste de exclusão de tag concluído com sucesso")
 except Exception as ex:
-	print("ERRO no teste de exclusão de tag"+ str(ex))
+	print("ERRO no teste de exclusão de tag: "+ str(ex))
 
 driver.quit()
 display.stop()

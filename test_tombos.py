@@ -2,6 +2,7 @@ from selenium import webdriver
 from pyvirtualdisplay import Display
 import os
 import time
+import sys
 # time.sleep(3.0)
 
 
@@ -11,9 +12,16 @@ display.start()
 total = 1
 correct = 0
 
+flag = ''
+if len(sys.argv) > 1:
+    flag = str(sys.argv[1])
+host  = 'http://localhost:8000/'
+if flag == '-dk':
+    host  = 'http://localhost:8009/'
+
 # Login na seção
 driver = webdriver.Firefox(executable_path=os.getcwd() + "/geckodriver")
-driver.get('http://localhost:8000')
+driver.get(host)
 element = driver.find_element_by_xpath("/html/body/div/div[4]/div[2]/div/div/div/div/a[2]/div")
 element.click()
 driver.forward()
