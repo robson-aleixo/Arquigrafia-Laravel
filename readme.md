@@ -17,6 +17,8 @@ The Arquigrafia project is open-sourced software licensed under the [Creative Co
 
 ## Configuration Tutorial
 
+First, it is necessary to configurate the ".env.local.php". There is example of it, called ".example.env.local.php". You need to copy this file and rename to ".env.local.php". Inside the file, you will see the necessary information. In the comentaries, it is explained the difference when tou wanto to execute with a docker or local.
+
 - This project uses Docker, follow these steps to build the environment
 
 > Install Docker, in case you haven't yet.
@@ -36,7 +38,7 @@ The Arquigrafia project is open-sourced software licensed under the [Creative Co
 
 - For develop environment, there is a sql script (2019.01.18.sql) to populate databse
 
-- There are functional tests in python, to validate the pages navigation. These tests covarage only admin reports. They are located in python_tests directory. 
+- There are functional tests in python programm language, to validate the pages navigation. These tests covarage only admin reports. They are located in python_tests directory. 
 
 ```
 php artisan tinker
